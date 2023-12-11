@@ -5,7 +5,7 @@
 - **8 memory-related bugs** (An input causing a memory corruption and a server crash.)
 - **2 logic flaws** (Incorrect logic implemented in code produces unexpected behavior.)
 
-### Flaws that are resolved after disclosure. 
+### Faults that are resolved after disclosure. 
 ![Faults found](/tables/faults.png)
 
 ### 18 QUIC implementations tested with 171 learned models
