@@ -15,6 +15,6 @@ ClientAuth: Handshake with client authentication<br/>
 RetryClientAuth: Handshake with client address validation and authentication<br/>
 PSK: Handshake with pre-shared key<br/>
 
-![Faults found](/tables/implementationsTable.png)
+![Faults found](/tables/quicImplementationsTable.png)
 
 
