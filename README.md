@@ -1,12 +1,12 @@
 # QUICTester
 
-### Total faults found: 54
-- **43 specification violations** (An implemented behavior violates the QUIC specification.)
+### Total faults found: 55
+- **44 specification violations** (An implemented behavior violates the QUIC specification.)
 - **8 memory-related bugs** (An input causing a memory corruption and a server crash.)
 - **3 logic flaws** (Incorrect logic implemented in code produces unexpected behavior.)
 
 ### Faults that are resolved after disclosure. 
-![Faults found](/tables/faults.png)
+![Faults found](/tables/latestFaults.png)
 
 ### 19 QUIC implementations tested with 186 learned models
 Basic: Basic handshake<br/>
