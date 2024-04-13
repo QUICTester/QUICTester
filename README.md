@@ -1,4 +1,4 @@
-# QUICTESTER: Protocol Temporal-State Fuzzing for Analyzing QUIC Implementations
+# QUICTESTER: Blackbox Protocol Fuzzer for QUIC Servers
 Learning-based fuzzing consists of 3 components, Learner, Mapper and the SUT (QUIC server). <br/>
 Develop and test on Ubuntu 20.04 with Python3.8.
 
