@@ -1,0 +1,42 @@
+Submodule learnlib-py4j-example contains modified content
+diff --git a/learnlib-py4j-example/java/pom.xml b/learnlib-py4j-example/java/pom.xml
+index 79687de..1bc63fd 100644
+--- a/learnlib-py4j-example/java/pom.xml
++++ b/learnlib-py4j-example/java/pom.xml
+@@ -32,8 +32,8 @@ limitations under the License.
+         <maven.compiler.target>1.8</maven.compiler.target>
+ 
+         <!-- Version of LearnLib to use -->
+-        <learnlib.version>0.13.1</learnlib.version>
+-        <py4j.version>0.10.8.1</py4j.version>
++        <learnlib.version>0.16.0</learnlib.version>
++        <py4j.version>0.10.9.7</py4j.version>
+         <shade-plugin.version>3.2.1</shade-plugin.version>
+     </properties>
+ 
+diff --git a/learnlib-py4j-example/java/src/main/java/com/github/mtf90/Main.java b/learnlib-py4j-example/java/src/main/java/com/github/mtf90/Main.java
+index 4262181..b9c824c 100644
+--- a/learnlib-py4j-example/java/src/main/java/com/github/mtf90/Main.java
++++ b/learnlib-py4j-example/java/src/main/java/com/github/mtf90/Main.java
+@@ -5,7 +5,19 @@ import py4j.GatewayServer;
+ public class Main {
+ 
+     public static void main(String[] args) {
+-        GatewayServer server = new GatewayServer();
+-        server.start();
++
++        if(args.length > 1){
++            try{
++                int serverPort = Integer.parseInt(args[0]);
++                int clientPort = Integer.parseInt(args[1]);
++
++                GatewayServer server = new GatewayServer(null, serverPort, clientPort, 0, 0, null);
++                server.start();
++            }catch (NumberFormatException e) {
++                System.err.println("Error: The argument/s is not a valid integer.");
++            }
++        }else{
++            System.out.println("Please provide the server port and client port.");
++        }
+     }
+ }

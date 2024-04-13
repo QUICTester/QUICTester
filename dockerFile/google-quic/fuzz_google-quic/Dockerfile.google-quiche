@@ -1,0 +1,49 @@
+FROM ubuntu:20.04
+ARG DEBIAN_FRONTEND=noninteractive
+# Use a different mirror for apt
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y  && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y git build-essential  graphviz curl lsb-release sudo python3-dev keyboard-configuration default-jdk
+
+WORKDIR /tmp
+RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git depot_tools
+ENV PATH="/tmp/depot_tools:$PATH"
+RUN mkdir chromium
+
+WORKDIR /tmp/chromium
+RUN fetch --no-history --nohooks chromium 
+
+WORKDIR /tmp/chromium/src
+RUN ./build/install-build-deps.sh
+RUN gclient runhooks
+
+RUN gn gen out/Default
+RUN ninja -C out/Default quic_server
+RUN mv out/Default out/noClientAuth
+
+RUN gn gen out/Default
+COPY google-quicheCA.patch .
+RUN patch -p1 < google-quicheCA.patch
+RUN ninja -C out/Default quic_server
+RUN mv out/Default out/clientAuth
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev
+
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+# make sure the fuzzer and server have enough stack size
+RUN echo "ulimit -s 65536" >> ~/.bashrc
+# use . to replace source because it is running in /bin/sh
+RUN . ~/.bashrc
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

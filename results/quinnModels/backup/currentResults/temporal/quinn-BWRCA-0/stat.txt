@@ -1,0 +1,77 @@
+Input Alphabets: 
+initPing_short
+initConClose_short
+initCltHello-vldACK_short
+initCltHello-invldACK_short
+hndPing_short
+hndFin_short
+hndConClose_short
+hndCert_short
+hndEmpCert_short
+hndInvldCert_short
+hndCertVer_short
+VldNewConID_short
+InvldNewConID_short
+initPing_long
+initConClose_long
+initCltHello-vldACK_long
+initCltHello-invldACK_long
+hndPing_long
+hndFin_long
+hndConClose_long
+hndCert_long
+hndEmpCert_long
+hndInvldCert_long
+hndCertVer_long
+VldNewConID_long
+InvldNewConID_long
+[IncRetryTkn]
+
+
+Output Alphabets: 
+
+retry
+PingACK
+<ConClosed>
+initSvrHello
+hndProNego
+hEncExt
+hndCertReq
+hndCert
+hndCertVer
+hndFin
+VldNewConID
+<ConAct>
+ConClose
+HndshkDone
+
+
+Date: 2023-06-04 18:48:14.476036
+Input Dictionary: BWRCA
+Target server port: 4460
+Mapper port: 3370
+-----------------------------------
+Learning Finished.
+Learning Rounds:  2
+Number of states: 9
+Time (in seconds)
+  Total                : 26530.96
+  Learning algorithm   : 22859.65
+  Conformance checking : 3671.31
+Learning Algorithm
+ # Membership Queries  : 7022
+ # MQ Saved by Caching : 57
+ # Steps               : 38944
+Equivalence Query
+ # Membership Queries  : 721
+ # Steps               : 5081
+-----------------------------------
+7743
+44025
+7.37
+7743
+44025
+7.37
+7743
+44025
+7.37

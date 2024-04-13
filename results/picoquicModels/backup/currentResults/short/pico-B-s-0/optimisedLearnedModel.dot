@@ -1,0 +1,20 @@
+digraph "picoModels/pico-B-s-1/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s0 -> s2  [label="initPing_short/PingACK "];
+s0 -> s2  [label="initConClose_short/<ConAct> "];
+s0 -> s1  [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s0 -> s1  [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s1 -> s4  [label="hndFin_short/HndshkDone "];
+s1 -> s3  [label="hndConClose_short/<ConClosed> "];
+s2 -> s3  [label="initConClose_short/<ConClosed> "];
+s2 -> s1  [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s2 -> s1  [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s4 -> s5  [label="VldNewConID_short/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

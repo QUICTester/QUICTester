@@ -1,0 +1,38 @@
+digraph "picoModels/pico-BWCA-l-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s7 [label=s7];
+s8 [label=s8];
+s0 -> s2  [label="initPing_long/PingACK "];
+s0 -> s2  [label="initConClose_long/<ConAct> "];
+s0 -> s1  [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "];
+s1 -> s5  [label="hndFin_long/ConClose "];
+s1 -> s5  [label="hndConClose_long/<ConClosed> "];
+s1 -> s4  [label="hndCert_long/ "];
+s1 -> s5  [label="hndCertVer_long/ConClose "];
+s1 -> s3  [label="hndInvldCert_long/ "];
+s2 -> s5  [label="initConClose_long/<ConClosed> "];
+s2 -> s1  [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "];
+s2 -> s1  [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "];
+s3 -> s5  [label="hndFin_long/ConClose "];
+s3 -> s5  [label="hndConClose_long/<ConClosed> "];
+s3 -> s5  [label="hndCert_long/ConClose "];
+s3 -> s5  [label="hndCertVer_long/ConClose "];
+s4 -> s5  [label="hndFin_long/ConClose "];
+s4 -> s5  [label="hndConClose_long/<ConClosed> "];
+s4 -> s5  [label="hndCert_long/ConClose "];
+s4 -> s6  [label="hndCertVer_long/ "];
+s6 -> s7  [label="hndFin_long/VldNewConID,HndshkDone "];
+s6 -> s5  [label="hndConClose_long/<ConClosed> "];
+s6 -> s5  [label="hndCert_long/ConClose "];
+s6 -> s5  [label="hndCertVer_long/ConClose "];
+s7 -> s8  [label="VldNewConID_long/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

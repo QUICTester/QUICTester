@@ -1,0 +1,18 @@
+digraph "xquicModels/xquic-B-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s0 -> s2  [label="initConClose/ConClose "];
+s0 -> s1  [label="initCltHello-vldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="initCltHello-invldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s1 -> s2  [label="initConClose/ConClose "];
+s1 -> s2  [label="initCltHello-vldACK/ConClose "];
+s1 -> s2  [label="initCltHello-invldACK/ConClose "];
+s1 -> s3  [label="hndFin/VldNewConID,HndshkDone "];
+s1 -> s2  [label="hndConClose/<ConClosed> "];
+s3 -> s2  [label="hndFin/ConClose "];
+s3 -> s2  [label="hndConClose/ConClose "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

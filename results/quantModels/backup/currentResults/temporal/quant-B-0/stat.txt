@@ -1,0 +1,67 @@
+Input Alphabets: 
+initPing_short
+initConClose_short
+initCltHello-vldACK_short
+initCltHello-invldACK_short
+hndPing_short
+hndFin_short
+hndConClose_short
+VldNewConID_short
+InvldNewConID_short
+initPing_long
+initConClose_long
+initCltHello-vldACK_long
+initCltHello-invldACK_long
+hndPing_long
+hndFin_long
+hndConClose_long
+VldNewConID_long
+InvldNewConID_long
+
+
+Output Alphabets: 
+ConClose
+<ConAct>
+initSvrHello
+hndEncExt
+hndCert
+hndCertVer
+hndFin
+
+PingACK
+HndshkDone
+<ConClosed>
+
+
+Date: 2023-06-21 02:53:27.384439
+Input Dictionary: B
+Target server port: 4485
+Mapper port: 3395
+-----------------------------------
+Learning Finished.
+Learning Rounds:  2
+Number of states: 13
+Time (in seconds)
+  Total                : 49201.75
+  Learning algorithm   : 43025.49
+  Conformance checking : 6176.26
+Learning Algorithm
+ # Membership Queries  : 5539
+ # MQ Saved by Caching : 105
+ # Steps               : 28582
+Equivalence Query
+ # Membership Queries  : 790
+ # Steps               : 5328
+-----------------------------------
+6329
+33910
+13.67
+6329
+33910
+13.67
+6329
+33910
+13.67
+6329
+33910
+13.67

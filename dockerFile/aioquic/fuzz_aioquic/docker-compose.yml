@@ -1,0 +1,155 @@
+version: "3.5"
+services:
+
+  fuzz_aioquic_B:
+    image: quictester/fuzz_aioquic:239f99b8
+    container_name: fuzz_aioquic_B
+    build:
+       context: .
+       dockerfile: Dockerfile.aioquic
+    environment:
+      - LEARNER_PORT_TEMP=3301
+      - SERVER_PORT_TEMP=4401
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5501
+      - SERVER_PORT_SHORT=6601
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7701
+      - SERVER_PORT_LONG=8801
+      - INPUT_LONG=B-l
+
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CA_CERT=/tmp/secrets/caCert/ca-cert.pem
+      - SERVER_NAME=aioquic
+      - SERVER_PATH=/tmp/aioquic/examples/http3_server.py
+    ports:
+      - "3301:3301"
+      - "4401:4401"
+      - "13301:13301"
+      - "14401:14401"
+
+      - "5501:5501"
+      - "6601:6601"
+      - "15501:15501"
+      - "16601:16601"
+
+      - "7701:7701"
+      - "8801:8801"
+      - "17701:17701"
+      - "18801:18801"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_aioquic_BWR:
+    image: quictester/fuzz_aioquic:239f99b8
+    container_name: fuzz_aioquic_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.aioquic
+    environment:
+      - LEARNER_PORT_TEMP=3302
+      - SERVER_PORT_TEMP=4402
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5502
+      - SERVER_PORT_SHORT=6602
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7702
+      - SERVER_PORT_LONG=8802
+      - INPUT_LONG=BWR-l
+
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=--retry
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CA_CERT=/tmp/secrets/caCert/ca-cert.pem
+      - SERVER_NAME=aioquic
+      - SERVER_PATH=/tmp/aioquic/examples/http3_server.py
+    ports:
+      - "3302:3302"
+      - "4402:4402"
+      - "13302:13302"
+      - "14402:14402"
+
+      - "5502:5502"
+      - "6602:6602"
+      - "15502:15502"
+      - "16602:16602"
+
+      - "7702:7702"
+      - "8802:8802"
+      - "17702:17702"
+      - "18802:18802"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_aioquic_PSK:
+    image: quictester/fuzz_aioquic:239f99b8
+    container_name: fuzz_aioquic_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.aioquic
+    environment:
+      - LEARNER_PORT_TEMP=3353
+      - SERVER_PORT_TEMP=4453
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5553
+      - SERVER_PORT_SHORT=6653
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7753
+      - SERVER_PORT_LONG=8853
+      - INPUT_LONG=PSK-l
+
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CA_CERT=/tmp/secrets/caCert/ca-cert.pem
+      - SERVER_NAME=aioquic
+      - SERVER_PATH=/tmp/aioquic/examples/http3_server.py
+    ports:
+      - "3353:3353"
+      - "4453:4453"
+      - "13353:13353"
+      - "14453:14453"
+
+      - "5553:5553"
+      - "6653:6653"
+      - "15553:15553"
+      - "16653:16653"
+
+      - "7753:7753"
+      - "8853:8853"
+      - "17753:17753"
+      - "18853:18853"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

@@ -1,0 +1,38 @@
+digraph "msquicModels/msquic-BWR-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s7 [label=s7];
+s8 [label=s8];
+s0 -> s2  [label="initPing/retry "];
+s0 -> s1  [label="initConClose/retry "];
+s0 -> s2  [label="initCltHello-vldACK/retry "];
+s0 -> s2  [label="initCltHello-invldACK/retry "];
+s1 -> s5  [label="initConClose/<ConClosed> "];
+s1 -> s5  [label="hndConClose/<ConClosed> "];
+s1 -> s4  [label="[IncRetryTkn]/ "];
+s2 -> s1  [label="initConClose/ "];
+s2 -> s3  [label="[IncRetryTkn]/ "];
+s3 -> s5  [label="initConClose/ConClose "];
+s3 -> s7  [label="initCltHello-vldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s3 -> s7  [label="initCltHello-invldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s5  [label="initConClose/<ConClosed> "];
+s4 -> s6  [label="initCltHello-vldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s6  [label="initCltHello-invldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s5  [label="hndConClose/<ConClosed> "];
+s6 -> s5  [label="initConClose/<ConClosed> "];
+s6 -> s8  [label="hndFin/HndshkDone,VldNewConID,hndNewSesTkt "];
+s6 -> s5  [label="hndConClose/<ConClosed> "];
+s7 -> s5  [label="initConClose/<ConClosed> "];
+s7 -> s8  [label="hndFin/HndshkDone,VldNewConID,hndNewSesTkt "];
+s7 -> s5  [label="hndConClose/ConClose "];
+s8 -> s5  [label="initConClose/<ConClosed> "];
+s8 -> s5  [label="hndConClose/<ConClosed> "];
+s8 -> s1  [label="VldNewConID/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

@@ -1,0 +1,53 @@
+Input Alphabets: 
+initPing_short
+initConClose_short
+initCltHello-vldACK:AES-128-GCM-SHA256_short
+initCltHello-vldACK:AES-256-GCM-SHA384_short
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short
+initCltHello-invldACK:AES-128-GCM-SHA256_short
+initCltHello-invldACK:AES-256-GCM-SHA384_short
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short
+initNoFr_short
+initUnxpFrType_short
+hndPing_short
+hndFin_short
+hndConClose_short
+hndNoFr_short
+hndUnxpFrType_short
+VldNewConID_short
+InvldNewConID_short
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+[IncRetryTkn]
+
+
+Output Alphabets: 
+retry
+
+<ConClosed>
+PingACK
+<ConAct>
+initSvrHello
+hndEncExt
+hndCert
+hndCertVer
+hndFin
+NewSessionTicket
+ConClose
+HndshkDone
+VldNewConID
+
+
+Date: 2024-04-02 17:02:01.642837
+Input Dictionary: BWR-s
+Target server port: 6602
+Mapper port: 5502
+-----------------------------------
+TTT Algorithm
+Wp Method
+learning rounds [#]: 8
+Number of states: 11
+Membership queries [Resets]: 11707
+Total Learning Time (hours): 9.591662539444444
+-----------------------------------
+Crash Count: 0

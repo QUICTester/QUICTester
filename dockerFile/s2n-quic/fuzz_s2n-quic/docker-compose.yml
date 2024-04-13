@@ -1,0 +1,145 @@
+version: "3.5"
+services:
+
+  fuzz_s2n-quic_B:
+    image: quictester/fuzz_s2n-quic:ec651875
+    container_name: fuzz_s2n-quic_B
+    build:
+       context: .
+       dockerfile: Dockerfile.s2n-quic
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3347
+      - SERVER_PORT_TEMP=4447
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5547
+      - SERVER_PORT_SHORT=6647
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7747
+      - SERVER_PORT_LONG=8847
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - RETRY=
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=s2n-quic
+      - SERVER_PATH=/tmp/s2n-quic/target/release/s2n-quic-qns
+    ports:
+      - "3347:3347"
+      - "4447:4447"
+      - "13347:13347"
+      - "14447:14447"
+
+      - "5547:5547"
+      - "6647:6647"
+      - "15547:15547"
+      - "16647:16647"
+
+      - "7747:7747"
+      - "8847:8847"
+      - "17747:17747"
+      - "18847:18847"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_s2n-quic_BWR:
+    image: quictester/fuzz_s2n-quic:ec651875
+    container_name: fuzz_s2n-quic_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.s2n-quic
+    environment:
+      - LEARNER_PORT_TEMP=3348
+      - SERVER_PORT_TEMP=4448
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5548
+      - SERVER_PORT_SHORT=6648
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7748
+      - SERVER_PORT_LONG=8848
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - RETRY=--testcase retry
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=s2n-quic
+      - SERVER_PATH=/tmp/s2n-quic/target/release/s2n-quic-qns
+    ports:
+      - "3348:3348"
+      - "4448:4448"
+      - "13348:13348"
+      - "14448:14448"
+
+      - "5548:5548"
+      - "6648:6648"
+      - "15548:15548"
+      - "16648:16648"
+
+      - "7748:7748"
+      - "8848:8848"
+      - "17748:17748"
+      - "18848:18848"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  # fuzz_s2n-quic_PSK:
+  #   image: quictester/fuzz_s2n-quic:ec651875
+  #   container_name: fuzz_s2n-quic_PSK
+  #   build:
+  #      context: .
+  #      dockerfile: Dockerfile.s2n-quic
+  #   environment:
+  #     - LEARNER_PORT_TEMP=3385
+  #     - SERVER_PORT_TEMP=4485
+  #     - INPUT_TEMP=PSK
+
+  #     - LEARNER_PORT_SHORT=5585
+  #     - SERVER_PORT_SHORT=6685
+  #     - INPUT_SHORT=PSK-s
+
+  #     - LEARNER_PORT_LONG=7785
+  #     - SERVER_PORT_LONG=8885
+  #     - INPUT_LONG=PSK-l
+
+  #     - CONFIG=PSK
+  #     - RETRY=
+  #     - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+  #     - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+  #     - SERVER_NAME=s2n-quic
+  #     - SERVER_PATH=/tmp/s2n-quic/target/release/s2n-quic-qns
+  #   ports:
+  #     - "3385:3385"
+  #     - "4485:4485"
+
+  #     - "5585:5585"
+  #     - "6685:6685"
+
+  #     - "7785:7785"
+  #     - "8885:8885"
+
+  #   volumes:
+  #     - ../../../quicLearner/:/tmp/quicLearner/
+  #     - ../../../quicMapper/:/tmp/quicMapper/
+  #     - ../../../secrets/:/tmp/secrets/
+  #     - ../../../results/:/tmp/results/
+  #   network_mode: "host"

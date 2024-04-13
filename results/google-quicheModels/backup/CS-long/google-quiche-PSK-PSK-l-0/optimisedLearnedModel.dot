@@ -1,0 +1,31 @@
+digraph "../results/google-quicheModels/google-quiche-PSK-PSK-l-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s0 -> s3  [label="initConClose_long/<ConClosed> "];
+s0 -> s2  [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndFin,NewSessionTicket,NewSessionTicket "];
+s0 -> s2  [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndFin,NewSessionTicket,NewSessionTicket "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose_long/<ConClosed> "];
+s1 -> s5  [label="initCltHello-vldACK_long/ "];
+s1 -> s5  [label="initCltHello-invldACK_long/ "];
+s2 -> s4  [label="hndFin_long/HndshkDone,NewToken,VldNewConID "];
+s2 -> s3  [label="hndConClose_long/<ConClosed> "];
+s2 -> s3  [label="hndNoFr_long/ConClose "];
+s2 -> s3  [label="hndUnxpFrType_long/ConClose "];
+s2 -> s3  [label="0rttConClose_long/<ConClosed> "];
+s2 -> s3  [label="0rttFin_long/ConClose "];
+s2 -> s3  [label="0rttNoFr_long/ConClose "];
+s2 -> s3  [label="0rttUnxpFrType_long/ConClose "];
+s2 -> s3  [label="0rttACK_long/ConClose "];
+s4 -> s6  [label="VldNewConID_long/ "];
+s4 -> s3  [label="InvldNewConID_long/ConClose "];
+s5 -> s3  [label="initConClose_long/<ConClosed> "];
+s5 -> s3  [label="0rttConClose_long/<ConClosed> "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

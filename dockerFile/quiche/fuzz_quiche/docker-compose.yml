@@ -1,0 +1,246 @@
+version: "3.5"
+services:
+  fuzz_quiche_B:
+    image: quictester/fuzz_quiche:24a959ab
+    container_name: fuzz_quiche_B
+    build:
+       context: .
+       dockerfile: Dockerfile.quiche
+    environment:
+      - LEARNER_PORT_TEMP=3330
+      - SERVER_PORT_TEMP=4430
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5530
+      - SERVER_PORT_SHORT=6630
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7730
+      - SERVER_PORT_LONG=8830
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=--no-retry
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiche
+      - SERVER_PATH=/tmp/quiche/quiche-server_noClientAuth
+    ports:
+      - "3330:3330"
+      - "4430:4430"
+      - "13330:13330"
+      - "14430:14430"
+
+      - "5530:5530"
+      - "6630:6630"
+      - "15530:15530"
+      - "16630:16630"
+
+      - "7730:7730"
+      - "8830:8830"
+      - "17730:17730"
+      - "18830:18830"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quiche_BWR:
+    image: quictester/fuzz_quiche:24a959ab
+    container_name: fuzz_quiche_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.quiche
+    environment:
+      - LEARNER_PORT_TEMP=3331
+      - SERVER_PORT_TEMP=4431
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5531
+      - SERVER_PORT_SHORT=6631
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7731
+      - SERVER_PORT_LONG=8831
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiche
+      - SERVER_PATH=/tmp/quiche/quiche-server_noClientAuth
+    ports:
+      - "3331:3331"
+      - "4431:4431"
+      - "13331:13331"
+      - "14431:14431"
+
+      - "5531:5531"
+      - "6631:6631"
+      - "15531:15531"
+      - "16631:16631"
+
+      - "7731:7731"
+      - "8831:8831"
+      - "17731:17731"
+      - "18831:18831"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quiche_BWCA:
+    image: quictester/fuzz_quiche:24a959ab
+    container_name: fuzz_quiche_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.quiche
+    environment:
+      - LEARNER_PORT_TEMP=3332
+      - SERVER_PORT_TEMP=4432
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5532
+      - SERVER_PORT_SHORT=6632
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7732
+      - SERVER_PORT_LONG=8832
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - LEARN_LIB=--learnlib
+      - RETRY=--no-retry
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiche
+      - SERVER_PATH=/tmp/quiche/quiche-server_clientAuth
+    ports:
+      - "3332:3332"
+      - "4432:4432"
+      - "13332:13332"
+      - "14432:14432" 
+
+      - "5532:5532"
+      - "6632:6632"
+      - "15532:15532"
+      - "16632:16632"
+
+      - "7732:7732"
+      - "8832:8832"
+      - "17732:17732"
+      - "18832:18832"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quiche_BWRCA:
+    image: quictester/fuzz_quiche:24a959ab
+    container_name: fuzz_quiche_BWRCA
+    build:
+       context: .
+       dockerfile: Dockerfile.quiche
+    environment:
+      - LEARNER_PORT_TEMP=3333
+      - SERVER_PORT_TEMP=4433
+      - INPUT_TEMP=BWRCA
+
+      - LEARNER_PORT_SHORT=5533
+      - SERVER_PORT_SHORT=6633
+      - INPUT_SHORT=BWRCA-s
+
+      - LEARNER_PORT_LONG=7733
+      - SERVER_PORT_LONG=8833
+      - INPUT_LONG=BWRCA-l
+
+      - CONFIG=BWRCA
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiche
+      - SERVER_PATH=/tmp/quiche/quiche-server_clientAuth
+    ports:
+      - "3333:3333"
+      - "4433:4433"
+      - "13333:13333"
+      - "14433:14433"
+
+      - "5533:5533"
+      - "6633:6633"
+      - "15533:15533"
+      - "16633:16633"
+
+      - "7733:7733"
+      - "8833:8833"
+      - "17733:17733"
+      - "18833:18833"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quiche_PSK:
+    image: quictester/fuzz_quiche:24a959ab
+    container_name: fuzz_quiche_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.quiche
+    environment:
+      - LEARNER_PORT_TEMP=3373
+      - SERVER_PORT_TEMP=4473
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5573
+      - SERVER_PORT_SHORT=6673
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7773
+      - SERVER_PORT_LONG=8873
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=--no-retry --early-data
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiche
+      - SERVER_PATH=/tmp/quiche/quiche-server_noClientAuth
+    ports:
+      - "3373:3373"
+      - "4473:4473"
+      - "13373:13373"
+      - "14473:14473"
+
+      - "5573:5573"
+      - "6673:6673"
+      - "15573:15573"
+      - "16673:16673"
+
+      - "7773:7773"
+      - "8873:8873"
+      - "17773:17773"
+      - "18873:18873"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

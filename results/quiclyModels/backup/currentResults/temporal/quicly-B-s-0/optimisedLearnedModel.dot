@@ -1,0 +1,22 @@
+digraph "quiclyModels/quicly-B-s-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s0 -> s2  [label="initConClose/<ConClosed> "];
+s0 -> s1  [label="initCltHello-vldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin,VldNewConID, "];
+s0 -> s1  [label="initCltHello-invldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin,VldNewConID, "];
+s0 -> s2  [label="hndConClose/<ConClosed> "];
+s1 -> s2  [label="initConClose/<ConClosed> "];
+s1 -> s3  [label="hndFin/HndshkDone, "];
+s1 -> s2  [label="hndConClose/<ConClosed> "];
+s3 -> s2  [label="initConClose/<ConClosed> "];
+s3 -> s2  [label="hndConClose/<ConClosed> "];
+s3 -> s4  [label="VldNewConID/ "];
+s3 -> s2  [label="InvldNewConID/ConClose, "];
+s4 -> s2  [label="initConClose/<ConClosed> "];
+s4 -> s2  [label="hndConClose/<ConClosed> "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

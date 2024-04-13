@@ -1,0 +1,46 @@
+digraph g {
+
+s0 [shape="circle" label="s0"];
+s1 [shape="circle" label="s1"];
+s2 [shape="circle" label="s2"];
+s3 [shape="circle" label="s3"];
+s4 [shape="circle" label="s4"];
+s5 [shape="circle" label="s5"];
+s6 [shape="circle" label="s6"];
+s7 [shape="circle" label="s7"];
+s8 [shape="circle" label="s8"];
+s9 [shape="circle" label="s9"];
+s10 [shape="circle" label="s10"];
+s0 -> s3 [label="initPing/retry "];
+s0 -> s3 [label="initConClose/retry "];
+s0 -> s3 [label="initCltHello-vldACK/retry "];
+s0 -> s3 [label="initCltHello-invldACK/retry "];
+s0 -> s1 [label="[RmPadFrmInitPkts]/ "];
+s1 -> s2 [label="initConClose/<ConClosed> "];
+s3 -> s1 [label="[RmPadFrmInitPkts]/ "];
+s3 -> s4 [label="[IncRetryTkn]/ "];
+s4 -> s5 [label="initPing/PingACK "];
+s4 -> s5 [label="initConClose/<ConAct> "];
+s4 -> s6 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,NewSessionTicket "];
+s4 -> s6 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,NewSessionTicket "];
+s4 -> s1 [label="[RmPadFrmInitPkts]/ "];
+s5 -> s2 [label="initConClose/<ConClosed> "];
+s5 -> s6 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,NewSessionTicket "];
+s5 -> s6 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,NewSessionTicket "];
+s5 -> s2 [label="initNoFr/ConClose "];
+s6 -> s7 [label="hndFin/HndshkDone,VldNewConID "];
+s6 -> s2 [label="hndConClose/<ConClosed> "];
+s6 -> s2 [label="hndNoFr/ConClose "];
+s6 -> s9 [label="[ChgDestConID-Ori]/ "];
+s7 -> s10 [label="VldNewConID/ "];
+s7 -> s2 [label="InvldNewConID/ConClose "];
+s7 -> s8 [label="[ChgDestConID-Ori]/ "];
+s8 -> s2 [label="hndConClose/<ConClosed> "];
+s9 -> s2 [label="initConClose/<ConClosed> "];
+s9 -> s2 [label="hndConClose/<ConClosed> "];
+s10 -> s8 [label="[ChgDestConID-Ori]/ "];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

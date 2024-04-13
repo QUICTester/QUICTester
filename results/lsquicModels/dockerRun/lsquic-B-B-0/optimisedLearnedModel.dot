@@ -1,0 +1,35 @@
+digraph "../results/lsquicModels/lsquic-B-B-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s7 [label=s7];
+s8 [label=s8];
+s9 [label=s9];
+s0 -> s4  [label="initPing/PingACK "];
+s0 -> s3  [label="initConClose/<ConClosed> "];
+s0 -> s2  [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s2  [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose/<ConClosed> "];
+s2 -> s5  [label="hndFin/HndshkDone,VldNewConID,NewSessionTicket,NewSessionTicket "];
+s2 -> s3  [label="hndConClose/<ConClosed> "];
+s2 -> s3  [label="hndUnxpFrType/ConClose "];
+s2 -> s9  [label="[ChgDestConID-Ori]/ "];
+s4 -> s3  [label="initConClose/<ConClosed> "];
+s4 -> s2  [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s2  [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s3  [label="initUnxpFrType/ConClose "];
+s5 -> s7  [label="VldNewConID/ "];
+s5 -> s6  [label="[ChgDestConID-Ori]/ "];
+s6 -> s8  [label="VldNewConID/ "];
+s7 -> s8  [label="[ChgDestConID-Ori]/ "];
+s9 -> s6  [label="hndFin/HndshkDone,VldNewConID,NewSessionTicket,NewSessionTicket "];
+s9 -> s3  [label="hndConClose/<ConClosed> "];
+s9 -> s3  [label="hndUnxpFrType/ConClose "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

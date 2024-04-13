@@ -1,0 +1,79 @@
+Input Alphabets: 
+iP_short
+iCC_short
+iCH-vACK_short
+iCH-iACK_short
+hP_short
+hF_short
+hCC_short
+hC_short
+hEC_short
+hIC_short
+hCV_short
+VNCID_short
+INCID_short
+iP_long
+iCC_long
+iCH-vACK_long
+iCH-iACK_long
+hP_long
+hF_long
+hCC_long
+hC_long
+hEC_long
+hIC_long
+hCV_long
+VNCID_long
+INCID_long
+[IRT]
+[IRT-NC]
+
+
+Output Alphabets: 
+
+r
+<CC>
+[WF]
+iSH
+hPN
+hEE
+hCR
+hC
+hCV
+hF
+<CA>
+nPA
+nCC
+VNCID
+hHD
+hNST
+
+
+-----------------------------------
+Learning Finished.
+Learning Rounds:  2
+Number of states: 10
+Time (in seconds)
+  Total                : 24876.62
+  Learning algorithm   : 22506.06
+  Conformance checking : 2370.56
+Learning Algorithm
+ # Membership Queries  : 10543
+ # MQ Saved by Caching : 45
+ # Steps               : 55511
+Equivalence Query
+ # Membership Queries  : 783
+ # Steps               : 5254
+-----------------------------------
+11326
+60765
+6.91
+11326
+60765
+6.91
+11326
+60765
+6.91
+11326
+60765
+6.91

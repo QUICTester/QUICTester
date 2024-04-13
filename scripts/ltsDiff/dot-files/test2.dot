@@ -1,0 +1,16 @@
+digraph "" {
+	E -> F	[key=0,
+		label=load];
+	E -> H	[key=0,
+		label=exit];
+	F -> E	[key=0,
+		label=close];
+	F -> G	[key=0,
+		label=edit];
+	F -> I	[key=0,
+		label="save as"];
+	G -> G	[key=0,
+		label=edit];
+	I -> F	[key=0,
+		label=ok];
+}

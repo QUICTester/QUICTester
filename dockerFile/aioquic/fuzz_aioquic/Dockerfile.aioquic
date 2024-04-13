@@ -1,0 +1,30 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y && apt upgrade --fix-missing -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y git build-essential graphviz python3 python3-pip python3-tk libssl-dev python3-dev lsof default-jdk
+
+WORKDIR /tmp
+RUN git clone https://github.com/aiortc/aioquic.git aioquic
+
+WORKDIR /tmp/aioquic
+RUN git checkout 239f99b8
+
+RUN python3 -m pip install -e . 
+RUN python3 -m pip install asgiref dnslib httpbin starlette wsproto pydot
+RUN python3 -m pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir
+RUN python3 -m pip install Werkzeug==2.0.3
+RUN python3 -m pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+# make sure the fuzzer and server have enough stack size
+RUN echo "ulimit -s 65536" >> ~/.bashrc
+# use "." to replace "source" because it is running in /bin/sh
+RUN . ~/.bashrc
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

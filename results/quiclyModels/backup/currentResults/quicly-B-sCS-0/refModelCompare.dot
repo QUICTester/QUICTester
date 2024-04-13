@@ -1,0 +1,36 @@
+digraph "" {
+	a -> e	[key=0,
+		color=green,
+		label="initConClose "];
+	a -> e	[key=1,
+		color=green,
+		label="hndConClose "];
+	b -> a	[key=0,
+		label="VldNewConID "];
+	b -> e	[key=0,
+		color=green,
+		label="initConClose "];
+	b -> e	[key=1,
+		color=green,
+		label="hndConClose "];
+	b -> e	[key=2,
+		color=green,
+		label="InvldNewConID "];
+	c -> d	[key=0,
+		label="initCltHello-vldACK "];
+	c -> d	[key=1,
+		label="initCltHello-invldACK "];
+	c -> e	[key=0,
+		label="initConClose "];
+	c -> e	[key=1,
+		color=green,
+		label="hndConClose "];
+	d -> b	[key=0,
+		label="hndFin "];
+	d -> e	[key=0,
+		label="hndConClose "];
+	d -> e	[key=1,
+		color=green,
+		label="initConClose "];
+	f -> c	[key=0];
+}

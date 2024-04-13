@@ -1,0 +1,88 @@
+Input Alphabets: 
+initPing_short
+initConClose_short
+initCltHello-vldACK:AES-128-GCM-SHA256_short
+initCltHello-vldACK:AES-256-GCM-SHA384_short
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short
+initCltHello-invldACK:AES-128-GCM-SHA256_short
+initCltHello-invldACK:AES-256-GCM-SHA384_short
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short
+hndPing_short
+hndFin_short
+hndConClose_short
+hndCert_short
+hndEmpCert_short
+hndInvldCert_short
+hndCertVer_short
+VldNewConID_short
+InvldNewConID_short
+initPing_long
+initConClose_long
+initCltHello-vldACK:AES-128-GCM-SHA256_long
+initCltHello-vldACK:AES-256-GCM-SHA384_long
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_long
+initCltHello-invldACK:AES-128-GCM-SHA256_long
+initCltHello-invldACK:AES-256-GCM-SHA384_long
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_long
+hndPing_long
+hndFin_long
+hndConClose_long
+hndCert_long
+hndEmpCert_long
+hndInvldCert_long
+hndCertVer_long
+VldNewConID_long
+InvldNewConID_long
+[IncRetryTkn]
+
+
+Output Alphabets: 
+PingACK
+<ConClosed>
+initSvrHello
+hndEncExt
+hndCert
+hndCertVer
+hndFin
+
+<ConAct>
+HndshkDone
+VldNewConID
+ConClose
+
+
+Date: 2023-07-04 06:09:55.428261
+Input Dictionary: BWRCA-CS
+Target server port: 4461
+Mapper port: 3371
+-----------------------------------
+Learning Finished.
+Learning Rounds:  1
+Number of states: 5
+Time (in seconds)
+  Total                : 26929.8
+  Learning algorithm   : 23606.98
+  Conformance checking : 3322.82
+Learning Algorithm
+ # Membership Queries  : 6125
+ # MQ Saved by Caching : 35
+ # Steps               : 20825
+Equivalence Query
+ # Membership Queries  : 743
+ # Steps               : 5000
+-----------------------------------
+6868
+25825
+7.48
+6868
+25825
+7.48
+6868
+25825
+7.48
+6868
+25825
+7.48
+6868
+25825
+7.48

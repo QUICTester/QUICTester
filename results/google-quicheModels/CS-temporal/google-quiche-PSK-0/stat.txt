@@ -1,0 +1,73 @@
+Input Alphabets: 
+initPing_short
+initPing_long
+initConClose_short
+initConClose_long
+initCltHello-vldACK_short
+initCltHello-vldACK_long
+initCltHello-invldACK_short
+initCltHello-invldACK_long
+initNoFr_short
+initNoFr_long
+initUnxpFrType_short
+initUnxpFrType_long
+hndPing_short
+hndPing_long
+hndFin_short
+hndFin_long
+hndConClose_short
+hndConClose_long
+hndNoFr_short
+hndNoFr_long
+hndUnxpFrType_short
+hndUnxpFrType_long
+VldNewConID_short
+VldNewConID_long
+InvldNewConID_short
+InvldNewConID_long
+0rttPing_short
+0rttPing_long
+0rttConClose_short
+0rttConClose_long
+0rttFin_short
+0rttFin_long
+0rttNoFr_short
+0rttNoFr_long
+0rttUnxpFrType_short
+0rttUnxpFrType_long
+0rttACK_short
+0rttACK_long
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+
+
+Output Alphabets: 
+
+<ConClosed>
+initSvrHello
+hndEncExt
+hndFin
+NewSessionTicket
+<ConAct>
+PingACK
+HndshkDone
+NewToken
+VldNewConID
+ConClose
+
+
+Date: 2024-04-10 08:45:32.030848
+Input Dictionary: PSK
+Target server port: 4454
+Mapper port: 3354
+-----------------------------------
+TTT Algorithm
+Wp Method
+learning rounds [#]: 6
+Number of states: 7
+Membership queries [Resets]: 23462
+Total Learning Time (hours): 19.19384220361111
+-----------------------------------
+Crash Count: 0
+
+Crash Input Sequences: 

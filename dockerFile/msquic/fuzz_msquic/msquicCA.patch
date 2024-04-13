@@ -1,0 +1,19 @@
+--- msquic/src/inc/msquichelper.h	2024-02-01 15:13:06.342913743 +1030
++++ msquic/src/inc/msquichelper.h	2024-02-01 15:13:31.486801035 +1030
+@@ -463,12 +463,12 @@
+     const QUIC_CREDENTIAL_CONFIG* Config = &Helper.CredConfig;
+ 
+     // EDITED HERE for no client authentication
+-    Helper.CredConfig.Flags = QUIC_CREDENTIAL_FLAG_NONE;
++    // Helper.CredConfig.Flags = QUIC_CREDENTIAL_FLAG_NONE;
+ 
+     // ADDED HERE for client authentication
+-    //Helper.CredConfig.Flags = QUIC_CREDENTIAL_FLAG_SET_CA_CERTIFICATE_FILE;
+-    //Helper.CredConfig.Flags |= QUIC_CREDENTIAL_FLAG_REQUIRE_CLIENT_AUTHENTICATION;
+-    //Helper.CredConfig.CaCertificateFile = "/tmp/secrets/caCert/ca-cert.pem";
++    Helper.CredConfig.Flags = QUIC_CREDENTIAL_FLAG_SET_CA_CERTIFICATE_FILE;
++    Helper.CredConfig.Flags |= QUIC_CREDENTIAL_FLAG_REQUIRE_CLIENT_AUTHENTICATION;
++    Helper.CredConfig.CaCertificateFile = "/tmp/secrets/caCert/ca-cert.pem";
+ 
+     const char* Cert;
+     const char* KeyFile;

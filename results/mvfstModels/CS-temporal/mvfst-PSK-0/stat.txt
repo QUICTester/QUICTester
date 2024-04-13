@@ -1,0 +1,78 @@
+Input Alphabets: 
+initPing_short
+initPing_long
+initConClose_short
+initConClose_long
+initCltHello-vldACK_short
+initCltHello-vldACK_long
+initCltHello-invldACK_short
+initCltHello-invldACK_long
+initNoFr_short
+initNoFr_long
+initUnxpFrType_short
+initUnxpFrType_long
+hndPing_short
+hndPing_long
+hndFin_short
+hndFin_long
+hndConClose_short
+hndConClose_long
+hndNoFr_short
+hndNoFr_long
+hndUnxpFrType_short
+hndUnxpFrType_long
+VldNewConID_short
+VldNewConID_long
+InvldNewConID_short
+InvldNewConID_long
+0rttPing_short
+0rttPing_long
+0rttConClose_short
+0rttConClose_long
+0rttFin_short
+0rttFin_long
+0rttNoFr_short
+0rttNoFr_long
+0rttUnxpFrType_short
+0rttUnxpFrType_long
+0rttACK_short
+0rttACK_long
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+
+
+Output Alphabets: 
+<ConClosed>
+
+ConClose
+initSvrHello
+hndEncExt
+hndFin
+NewSessionTicket
+HndshkDone
+
+
+Date: 2024-01-03 10:02:21.981523
+Input Dictionary: PSK
+Target server port: 4489
+Mapper port: 3389
+-----------------------------------
+Learning Finished.
+Learning Rounds:  1
+Number of states: 6
+Time (in seconds)
+  Total                : 30872.04
+  Learning algorithm   : 22586.42
+  Conformance checking : 8285.62
+Learning Algorithm
+ # Membership Queries  : 9600
+ # MQ Saved by Caching : 40
+ # Steps               : 30400
+Equivalence Query
+ # Membership Queries  : 3067
+ # Steps               : 20000
+-----------------------------------
+Crash Count: 0
+12667
+50400
+8.58

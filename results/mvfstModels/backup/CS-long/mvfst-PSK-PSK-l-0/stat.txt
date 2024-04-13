@@ -1,0 +1,59 @@
+Input Alphabets: 
+initPing_long
+initConClose_long
+initCltHello-vldACK_long
+initCltHello-invldACK_long
+initNoFr_long
+initUnxpFrType_long
+hndPing_long
+hndFin_long
+hndConClose_long
+hndNoFr_long
+hndUnxpFrType_long
+VldNewConID_long
+InvldNewConID_long
+0rttPing_long
+0rttConClose_long
+0rttFin_long
+0rttNoFr_long
+0rttUnxpFrType_long
+0rttACK_long
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+
+
+Output Alphabets: 
+<ConClosed>
+
+ConClose
+initSvrHello
+hndEncExt
+hndFin
+NewSessionTicket
+HndshkDone
+
+
+Date: 2024-01-03 18:12:53.524065
+Input Dictionary: PSK-l
+Target server port: 8889
+Mapper port: 7789
+-----------------------------------
+Learning Finished.
+Learning Rounds:  1
+Number of states: 6
+Time (in seconds)
+  Total                : 17442.51
+  Learning algorithm   : 7749.37
+  Conformance checking : 9693.14
+Learning Algorithm
+ # Membership Queries  : 2646
+ # MQ Saved by Caching : 21
+ # Steps               : 8379
+Equivalence Query
+ # Membership Queries  : 2967
+ # Steps               : 20000
+-----------------------------------
+Crash Count: 0
+5613
+28379
+4.85

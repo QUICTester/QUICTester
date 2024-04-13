@@ -1,0 +1,24 @@
+digraph "../results/kwikModels/kwik-PSK-PSK-l-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s0 -> s4  [label="initPing_long/retry "];
+s0 -> s4  [label="initConClose_long/retry "];
+s0 -> s4  [label="initCltHello-vldACK_long/retry "];
+s0 -> s4  [label="initCltHello-invldACK_long/retry "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose_long/<ConClosed> "];
+s1 -> s2  [label="initCltHello-vldACK_long/ "];
+s1 -> s2  [label="initCltHello-invldACK_long/ "];
+s2 -> s3  [label="initConClose_long/<ConClosed> "];
+s2 -> s3  [label="0rttConClose_long/<ConClosed> "];
+s4 -> s5  [label="initCltHello-vldACK_long/retry "];
+s4 -> s5  [label="initCltHello-invldACK_long/retry "];
+s4 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s5 -> s2  [label="[RmPadFrmInitPkts]/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

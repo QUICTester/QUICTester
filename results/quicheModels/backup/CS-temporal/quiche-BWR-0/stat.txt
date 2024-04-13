@@ -1,0 +1,80 @@
+Input Alphabets: 
+initPing_short
+initConClose_short
+initCltHello-vldACK:AES-128-GCM-SHA256_short
+initCltHello-vldACK:AES-256-GCM-SHA384_short
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short
+initCltHello-invldACK:AES-128-GCM-SHA256_short
+initCltHello-invldACK:AES-256-GCM-SHA384_short
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short
+initNoFr_short
+initUnxpFrType_short
+hndPing_short
+hndFin_short
+hndNoFr_short
+hndUnxpFrType_short
+hndConClose_short
+VldNewConID_short
+InvldNewConID_short
+initPing_long
+initConClose_long
+initCltHello-vldACK:AES-128-GCM-SHA256_long
+initCltHello-vldACK:AES-256-GCM-SHA384_long
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_long
+initCltHello-invldACK:AES-128-GCM-SHA256_long
+initCltHello-invldACK:AES-256-GCM-SHA384_long
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_long
+initNoFr_long
+initUnxpFrType_long
+hndPing_long
+hndFin_long
+hndNoFr_long
+hndUnxpFrType_long
+hndConClose_long
+VldNewConID_long
+InvldNewConID_long
+[IncRetryTkn]
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+
+
+Output Alphabets: 
+retry
+
+PingACK
+<ConClosed>
+initSvrHello
+hndEncExt
+hndCert
+hndCertVer
+hndFin
+<ConAct>
+VldNewConID
+HndshkDone
+ConClose
+
+
+Date: 2023-10-22 11:35:02.513014
+Input Dictionary: BWR-CS
+Target server port: 4477
+Mapper port: 3387
+-----------------------------------
+Learning Finished.
+Learning Rounds:  3
+Number of states: 11
+Time (in seconds)
+  Total                : 158769.82
+  Learning algorithm   : 128755.72
+  Conformance checking : 30014.1
+Learning Algorithm
+ # Membership Queries  : 17428
+ # MQ Saved by Caching : 126
+ # Steps               : 95520
+Equivalence Query
+ # Membership Queries  : 3546
+ # Steps               : 22823
+-----------------------------------
+Crash Count: 3
+20974
+118343
+44.1

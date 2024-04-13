@@ -1,0 +1,152 @@
+version: "3.5"
+services:
+
+  fuzz_kwik_B:
+    image: quictester/fuzz_kwik:745fd4e2
+    container_name: fuzz_kwik_B
+    build:
+       context: .
+       dockerfile: Dockerfile.kwik
+    environment:
+      - LEARNER_PORT_TEMP=3305
+      - SERVER_PORT_TEMP=4405
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5505
+      - SERVER_PORT_SHORT=6605
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7705
+      - SERVER_PORT_LONG=8805
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - RETRY=--noRetry
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=kwik
+      - SERVER_PATH=/tmp/kwik/build/libs/kwik.jar net.luminis.quic.run.SampleWebServer
+    ports:
+      - "3305:3305"
+      - "4405:4405"
+      - "13305:13305"
+      - "14405:14405"
+
+      - "5505:5505"
+      - "6605:6605"
+      - "15505:15505"
+      - "16605:16605"
+
+      - "7705:7705"
+      - "8805:8805"
+      - "17705:17705"
+      - "18805:18805"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_kwik_BWR:
+    image: quictester/fuzz_kwik:745fd4e2
+    container_name: fuzz_kwik_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.kwik
+    environment:
+      - LEARNER_PORT_TEMP=3306
+      - SERVER_PORT_TEMP=4406
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5506
+      - SERVER_PORT_SHORT=6606
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7706
+      - SERVER_PORT_LONG=8806
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - RETRY=
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=kwik
+      - SERVER_PATH=/tmp/kwik/build/libs/kwik.jar net.luminis.quic.run.SampleWebServer
+    ports:
+      - "3306:3306"
+      - "4406:4406"
+      - "13306:13306"
+      - "14406:14406"
+
+      - "5506:5506"
+      - "6606:6606"
+      - "15506:15506"
+      - "16606:16606"
+
+      - "7706:7706"
+      - "8806:8806"
+      - "17706:17706"
+      - "18806:18806"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_kwik_PSK:
+    image: quictester/fuzz_kwik:745fd4e2
+    container_name: fuzz_kwik_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.kwik
+    environment:
+      - LEARNER_PORT_TEMP=3355
+      - SERVER_PORT_TEMP=4455
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5555
+      - SERVER_PORT_SHORT=6655
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7755
+      - SERVER_PORT_LONG=8855
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - RETRY=
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=kwik
+      - SERVER_PATH=/tmp/kwik/build/libs/kwik.jar net.luminis.quic.run.SampleWebServer
+    ports:
+      - "3355:3355"
+      - "4455:4455"
+      - "13355:13355"
+      - "14455:14455"
+
+      - "5555:5555"
+      - "6655:6655"
+      - "15555:15555"
+      - "16655:16655"
+
+      - "7755:7755"
+      - "8855:8855"
+      - "17755:17755"
+      - "18855:18855"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

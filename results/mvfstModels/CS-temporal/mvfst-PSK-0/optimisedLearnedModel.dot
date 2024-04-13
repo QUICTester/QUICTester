@@ -1,0 +1,31 @@
+digraph "../results/mvfstModels/mvfst-PSK-PSK-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s0 -> s3  [label="initConClose/ConClose "];
+s0 -> s2  [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndFin "];
+s0 -> s2  [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndFin "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose/<ConClosed> "];
+s1 -> s5  [label="initCltHello-vldACK/ "];
+s1 -> s5  [label="initCltHello-invldACK/ "];
+s2 -> s3  [label="initConClose/<ConClosed> "];
+s2 -> s4  [label="hndFin/NewSessionTicket,HndshkDone "];
+s2 -> s3  [label="hndConClose/ConClose "];
+s2 -> s3  [label="hndNoFr/ConClose "];
+s2 -> s3  [label="hndUnxpFrType/ConClose "];
+s2 -> s3  [label="0rttConClose/ConClose "];
+s2 -> s3  [label="0rttFin/ConClose "];
+s2 -> s3  [label="0rttNoFr/ConClose "];
+s2 -> s3  [label="0rttUnxpFrType/ConClose "];
+s2 -> s3  [label="0rttACK/ConClose "];
+s4 -> s3  [label="initConClose/<ConClosed> "];
+s4 -> s3  [label="hndConClose/<ConClosed> "];
+s5 -> s3  [label="initConClose/<ConClosed> "];
+s5 -> s3  [label="0rttConClose/<ConClosed> "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

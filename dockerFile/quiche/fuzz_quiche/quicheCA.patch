@@ -1,0 +1,17 @@
+--- quiche/apps/src/bin/quiche-server.rs	2024-03-02 11:31:39.915865845 +1030
++++ quiche/apps/src/bin/quiche-server.rs	2023-06-02 10:06:28.550387938 +0930
+@@ -101,9 +101,13 @@
+     // Create the configuration for the QUIC connections.
+     let mut config = quiche::Config::new(quiche::PROTOCOL_VERSION).unwrap();
+ 
++    // ADDED HERE
++    // client authentication
++    config.verify_peer(true);
++    config.load_verify_locations_from_file("/tmp/secrets/caCert/ca-cert.pem").unwrap();
++    
+     config.load_cert_chain_from_pem_file(&args.cert).unwrap();
+     config.load_priv_key_from_pem_file(&args.key).unwrap();
+-
+     config.set_application_protos(&conn_args.alpns).unwrap();
+ 
+     config.set_max_idle_timeout(conn_args.idle_timeout);

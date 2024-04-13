@@ -1,0 +1,20 @@
+digraph "neqoModels/neqo-B-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s0 -> s3  [label="initPing/PingACK "];
+s0 -> s2  [label="initConClose/<ConClosed> "];
+s0 -> s1  [label="initCltHello-vldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="initCltHello-invldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s1 -> s4  [label="hndFin/HndshkDone,VldNewConID,hndNewSesTkt "];
+s1 -> s2  [label="hndConClose/ConClose "];
+s3 -> s2  [label="initConClose/ConClose "];
+s3 -> s1  [label="initCltHello-vldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s3 -> s1  [label="initCltHello-invldACK/initSvrHello,hndProNego,hEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s5  [label="VldNewConID/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

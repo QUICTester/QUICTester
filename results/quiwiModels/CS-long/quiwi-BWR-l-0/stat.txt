@@ -1,0 +1,63 @@
+Input Alphabets: 
+initPing_long
+initConClose_long
+initCltHello-vldACK:AES-128-GCM-SHA256_long
+initCltHello-vldACK:AES-256-GCM-SHA384_long
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_long
+initCltHello-invldACK:AES-128-GCM-SHA256_long
+initCltHello-invldACK:AES-256-GCM-SHA384_long
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_long
+initNoFr_long
+initUnxpFrType_long
+hndPing_long
+hndFin_long
+hndConClose_long
+hndNoFr_long
+hndUnxpFrType_long
+VldNewConID_long
+InvldNewConID_long
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+[IncRetryTkn]
+
+
+Output Alphabets: 
+retry
+
+<ConClosed>
+initSvrHello
+hndEncExt
+hndCert
+hndCertVer
+hndFin
+PingACK
+<ConAct>
+NewSessionTicket
+HndshkDone
+ConClose
+
+
+Date: 2023-12-12 20:40:50.075896
+Input Dictionary: BWR-l
+Target server port: 8846
+Mapper port: 7746
+-----------------------------------
+Learning Finished.
+Learning Rounds:  3
+Number of states: 10
+Time (in seconds)
+  Total                : 32611.69
+  Learning algorithm   : 20752.52
+  Conformance checking : 11859.17
+Learning Algorithm
+ # Membership Queries  : 6448
+ # MQ Saved by Caching : 196
+ # Steps               : 38847
+Equivalence Query
+ # Membership Queries  : 3416
+ # Steps               : 23031
+-----------------------------------
+Crash Count: 0
+9864
+61878
+9.06

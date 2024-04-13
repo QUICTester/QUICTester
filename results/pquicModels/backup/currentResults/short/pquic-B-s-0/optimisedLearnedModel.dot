@@ -1,0 +1,17 @@
+digraph "pquicModels/pquic-B-s-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s0 -> s1  [label="initPing_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="initConClose_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,<ConAct> "];
+s0 -> s1  [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s1 -> s3  [label="initConClose_short/ConClose "];
+s1 -> s2  [label="hndFin_short/HndshkDone "];
+s1 -> s3  [label="hndConClose_short/ConClose "];
+s2 -> s3  [label="initConClose_short/ConClose "];
+s2 -> s3  [label="hndConClose_short/ConClose "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

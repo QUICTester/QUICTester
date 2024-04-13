@@ -1,0 +1,39 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y git build-essential openjdk-11-jdk graphviz default-jdk
+
+WORKDIR /tmp
+RUN git clone https://github.com/ptrd/kwik.git  kwik
+
+WORKDIR /tmp/kwik
+RUN git checkout 745fd4e2
+RUn git submodule update --init --recursive
+
+COPY kwik.patch .
+RUN patch -p1 < kwik.patch
+
+RUN chmod +x gradlew
+RUN ./gradlew build
+
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev
+
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+# make sure the fuzzer and server have enough stack size
+RUN echo "ulimit -s 65536" >> ~/.bashrc
+# use . to replace source because it is running in /bin/sh
+RUN . ~/.bashrc
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

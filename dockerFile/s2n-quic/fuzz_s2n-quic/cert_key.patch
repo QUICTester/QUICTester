@@ -1,0 +1,49 @@
+--- s2n-quic/examples/echo/src/bin/quic_echo_server.rs	2024-02-05 11:57:17.307774907 +1030
++++ s2n-quic/examples/echo/src/bin/quic_echo_server.rs	2023-06-02 10:06:42.142327792 +0930
+@@ -3,23 +3,36 @@
+ 
+ use s2n_quic::Server;
+ use std::error::Error;
++use std::env;
++use std::path::Path;
+ 
+ /// NOTE: this certificate is to be used for demonstration purposes only!
+-pub static CERT_PEM: &str = include_str!(concat!(
+-    env!("CARGO_MANIFEST_DIR"),
+-    "/../../quic/s2n-quic-core/certs/cert.pem"
+-));
++//pub static CERT_PEM: &str = include_str!(concat!(
++//    env!("CARGO_MANIFEST_DIR"),
++//    "/../../quic/s2n-quic-core/certs/cert.pem"
++//));
+ /// NOTE: this certificate is to be used for demonstration purposes only!
+-pub static KEY_PEM: &str = include_str!(concat!(
+-    env!("CARGO_MANIFEST_DIR"),
+-    "/../../quic/s2n-quic-core/certs/key.pem"
+-));
++//pub static KEY_PEM: &str = include_str!(concat!(
++//    env!("CARGO_MANIFEST_DIR"),
++//    "/../../quic/s2n-quic-core/certs/key.pem"
++//));
++
+ 
+ #[tokio::main]
+ async fn main() -> Result<(), Box<dyn Error>> {
++    let args: Vec<String> = env::args().collect();
++    
++    let mut interface = String::from("127.0.0.1:");
++    let port = &args[1];
++    let cert = &args[2];
++    let key = &args[3];
++    //let retry = &args[4];
++
++    interface.push_str(&port);
++
+     let mut server = Server::builder()
+-        .with_tls((CERT_PEM, KEY_PEM))?
+-        .with_io("127.0.0.1:4433")?
++        .with_tls((Path::new(&*cert), Path::new(&*key)))?
++        .with_io(&*interface)?
+         .start()?;
+ 
+     while let Some(mut connection) = server.accept().await {

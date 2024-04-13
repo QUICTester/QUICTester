@@ -1,0 +1,29 @@
+digraph "../results/pquicModels/pquic-PSK-l-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s0 -> s3  [label="initConClose_long/<ConClosed> "];
+s0 -> s2  [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndFin,NewSessionTicket "];
+s0 -> s2  [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndFin,NewSessionTicket "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose_long/<ConClosed> "];
+s2 -> s3  [label="initConClose_long/ConClose "];
+s2 -> s3  [label="hndConClose_long/ConClose "];
+s2 -> s6  [label="hndUnxpFrType_long/ "];
+s2 -> s5  [label="[ChgDestConID-Ori]/ "];
+s2 -> s4  [label="[RmPadFrmInitPkts]/ "];
+s4 -> s3  [label="hndConClose_long/ConClose "];
+s4 -> s6  [label="hndUnxpFrType_long/ "];
+s4 -> s6  [label="[ChgDestConID-Ori]/ "];
+s5 -> s3  [label="initConClose_long/ConClose "];
+s5 -> s3  [label="hndConClose_long/<ConClosed> "];
+s5 -> s6  [label="[RmPadFrmInitPkts]/ "];
+s6 -> s3  [label="initConClose_long/<ConClosed> "];
+s6 -> s3  [label="hndConClose_long/<ConClosed> "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

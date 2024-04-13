@@ -1,0 +1,12 @@
+--- src/net/third_party/quiche/src/quiche/quic/core/quic_types.h	2024-03-05 11:54:19.864671945 +1030
++++ src/net/third_party/quiche/src/quiche/quic/core/quic_types.h	2024-03-05 11:54:45.816477098 +1030
+@@ -846,7 +846,8 @@
+   // SSL_set_signing_algorithm_prefs.
+   std::optional<QuicSignatureAlgorithmVector> signing_algorithm_prefs;
+   // Client certificate mode for mTLS support. Only used at server side.
+-  ClientCertMode client_cert_mode = ClientCertMode::kNone;
++  // QUICTester: ADDED HERE change to kRequire for clientAuth and kNone for no clientAuth
++  ClientCertMode client_cert_mode = ClientCertMode::kRequire;
+   // As a client, the ECHConfigList to use with ECH. If empty, ECH is not
+   // offered.
+   std::string ech_config_list;

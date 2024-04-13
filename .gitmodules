@@ -1,0 +1,3 @@
+[submodule "learnlib-py4j-example"]
+	path = learnlib-py4j-example
+	url = https://github.com/mtf90/learnlib-py4j-example.git

@@ -1,0 +1,63 @@
+Input Alphabets: 
+initPing_short
+initConClose_short
+initCltHello-vldACK_short
+initCltHello-invldACK_short
+hndPing_short
+hndFin_short
+hndConClose_short
+hndCert_short
+hndEmpCert_short
+hndInvldCert_short
+hndCertVer_short
+VldNewConID_short
+InvldNewConID_short
+[IncRetryTkn]
+
+
+Output Alphabets: 
+
+retry
+initSvrHello
+hndEncExt
+hndCertReq
+hndCert
+hndCertVer
+hndFin
+PingACK
+<ConClosed>
+<ConAct>
+ConClose
+VldNewConID
+HndshkDone
+
+
+Date: 2023-06-13 22:45:16.359098
+Input Dictionary: BWRCA-s
+Target server port: 4478
+Mapper port: 3388
+-----------------------------------
+Learning Finished.
+Learning Rounds:  2
+Number of states: 10
+Time (in seconds)
+  Total                : 19162.28
+  Learning algorithm   : 13787.82
+  Conformance checking : 5374.46
+Learning Algorithm
+ # Membership Queries  : 2092
+ # MQ Saved by Caching : 27
+ # Steps               : 11014
+Equivalence Query
+ # Membership Queries  : 741
+ # Steps               : 5025
+-----------------------------------
+2833
+16039
+5.32
+2833
+16039
+5.32
+2833
+16039
+5.32

@@ -1,0 +1,17 @@
+digraph{
+"Start Game"
+"Bowling Game"
+"Pause"
+
+"Start Game" -> "Bowling Game" [label="Start / 1"]
+"Start Game" -> "Start Game" [label="Exit / 1"]
+"Start Game" -> "Pause" [label="Pause / 1"] 
+"Bowling Game" -> "Bowling Game" [label="Start / 0"] 
+"Bowling Game" -> "Bowling Game" [label="Exit / 0"]
+"Bowling Game" -> "Pause" [label="Pause / 1"]
+"Pause"  -> "Bowling Game" [label="Start / 1"]
+"Pause"  -> "Start Game" [label="Exit / 1"]
+"Pause"  -> "Pause" [label="Pause / 0"] 
+}
+
+

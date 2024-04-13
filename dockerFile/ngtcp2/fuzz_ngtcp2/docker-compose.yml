@@ -1,0 +1,258 @@
+version: "3.5"
+services:
+
+  fuzz_ngtcp2_B:
+    image: quictester/fuzz_ngtcp2:f65399b5
+    container_name: fuzz_ngtcp2_B
+    build:
+       context: .
+       dockerfile: Dockerfile.ngtcp2
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3319
+      - SERVER_PORT_TEMP=4419
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5519
+      - SERVER_PORT_SHORT=6619
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7719
+      - SERVER_PORT_LONG=8819
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=ngtcp2
+      - SERVER_PATH=/tmp/ngtcp2/examples/server
+    ports:
+      - "3319:3319"
+      - "4419:4419"
+      - "13319:13319"
+      - "14419:14419"
+
+      - "5519:5519"
+      - "6619:6619"
+      - "15519:15519"
+      - "16619:16619"
+
+      - "7719:7719"
+      - "8819:8819"
+      - "17719:17719"
+      - "18819:18819"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_ngtcp2_BWR:
+    image: quictester/fuzz_ngtcp2:f65399b5
+    container_name: fuzz_ngtcp2_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.ngtcp2
+    environment:
+      - LEARNER_PORT_TEMP=3320
+      - SERVER_PORT_TEMP=4420
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5520
+      - SERVER_PORT_SHORT=6620
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7720
+      - SERVER_PORT_LONG=8820
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=-V
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=ngtcp2
+      - SERVER_PATH=/tmp/ngtcp2/examples/server
+    ports:
+      - "3320:3320"
+      - "4420:4420"
+      - "13320:13320"
+      - "14420:14420"
+
+      - "5520:5520"
+      - "6620:6620"
+      - "15520:15520"
+      - "16620:16620"
+
+      - "7720:7720"
+      - "8820:8820"
+      - "17720:17720"
+      - "18820:18820"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_ngtcp2_BWCA:
+    image: quictester/fuzz_ngtcp2:f65399b5
+    container_name: fuzz_ngtcp2_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.ngtcp2
+    environment:
+      - LEARNER_PORT_TEMP=3321
+      - SERVER_PORT_TEMP=4421
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5521
+      - SERVER_PORT_SHORT=6621
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7721
+      - SERVER_PORT_LONG=8821
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=--verify-client
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=ngtcp2
+      - SERVER_PATH=/tmp/ngtcp2/examples/server
+    ports:
+      - "3321:3321"
+      - "4421:4421"
+      - "13321:13321"
+      - "14421:14421"
+
+      - "5521:5521"
+      - "6621:6621"
+      - "15521:15521"
+      - "16621:16621"
+
+      - "7721:7721"
+      - "8821:8821"
+      - "17721:17721"
+      - "18821:18821"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_ngtcp2_BWRCA:
+    image: quictester/fuzz_ngtcp2:f65399b5
+    container_name: fuzz_ngtcp2_BWRCA
+    build:
+       context: .
+       dockerfile: Dockerfile.ngtcp2
+    environment:
+      - LEARNER_PORT_TEMP=3322
+      - SERVER_PORT_TEMP=4422
+      - INPUT_TEMP=BWRCA
+
+      - LEARNER_PORT_SHORT=5522
+      - SERVER_PORT_SHORT=6622
+      - INPUT_SHORT=BWRCA-s
+
+      - LEARNER_PORT_LONG=7722
+      - SERVER_PORT_LONG=8822
+      - INPUT_LONG=BWRCA-l
+
+      - CONFIG=BWRCA
+      - LEARN_LIB=--learnlib
+      - RETRY=-V
+      - CLIENT_AUTH=--verify-client
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=ngtcp2
+      - SERVER_PATH=/tmp/ngtcp2/examples/server
+    ports:
+      - "3322:3322"
+      - "4422:4422"
+      - "13322:13322"
+      - "14422:14422"
+
+      - "5522:5522"
+      - "6622:6622"
+      - "15522:15522"
+      - "16622:16622"
+
+      - "7722:7722"
+      - "8822:8822"
+      - "17722:17722"
+      - "18822:18822"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_ngtcp2_PSK:
+    image: quictester/fuzz_ngtcp2:f65399b5
+    container_name: fuzz_ngtcp2_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.ngtcp2
+    environment:
+      - LEARNER_PORT_TEMP=3365
+      - SERVER_PORT_TEMP=4465
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5565
+      - SERVER_PORT_SHORT=6665
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7765
+      - SERVER_PORT_LONG=8865
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=ngtcp2
+      - SERVER_PATH=/tmp/ngtcp2/examples/server
+    ports:
+      - "3365:3365"
+      - "4465:4465"
+      - "13365:13365"
+      - "14465:14465"
+
+      - "5565:5565"
+      - "6665:6665"
+      - "15565:15565"
+      - "16665:16665"
+
+      - "7765:7765"
+      - "8865:8865"
+      - "17765:17765"
+      - "18865:18865"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

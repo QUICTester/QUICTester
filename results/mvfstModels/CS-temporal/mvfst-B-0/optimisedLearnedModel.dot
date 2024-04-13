@@ -1,0 +1,25 @@
+digraph "../results/mvfstModels/mvfst-B-B-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s0 -> s3  [label="initConClose/ConClose "];
+s0 -> s2  [label="initCltHello-vldACK:AES-128-GCM-SHA256/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s3  [label="initCltHello-vldACK:AES-256-GCM-SHA384/ConClose "];
+s0 -> s3  [label="initCltHello-vldACK:CHACHA20-POLY1305-SHA256/ConClose "];
+s0 -> s2  [label="initCltHello-invldACK:AES-128-GCM-SHA256/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s3  [label="initCltHello-invldACK:AES-256-GCM-SHA384/ConClose "];
+s0 -> s3  [label="initCltHello-invldACK:CHACHA20-POLY1305-SHA256/ConClose "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose/<ConClosed> "];
+s2 -> s3  [label="initConClose/<ConClosed> "];
+s2 -> s4  [label="hndFin/NewSessionTicket,HndshkDone "];
+s2 -> s3  [label="hndConClose/ConClose "];
+s2 -> s3  [label="hndNoFr/ConClose "];
+s2 -> s3  [label="hndUnxpFrType/ConClose "];
+s4 -> s3  [label="initConClose/<ConClosed> "];
+s4 -> s3  [label="hndConClose/<ConClosed> "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

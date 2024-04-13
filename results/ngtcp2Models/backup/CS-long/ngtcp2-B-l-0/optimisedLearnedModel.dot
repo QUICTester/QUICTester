@@ -1,0 +1,26 @@
+digraph "../results/ngtcp2Models/ngtcp2-B-lCS-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s0 -> s3  [label="initConClose_long/<ConClosed> "];
+s0 -> s2  [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s2  [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose_long/<ConClosed> "];
+s2 -> s5  [label="hndFin_long/VldNewConID,HndshkDone,NewToken,NewToken "];
+s2 -> s3  [label="hndConClose_long/<ConClosed> "];
+s2 -> s3  [label="hndNoFr_long/ConClose "];
+s2 -> s3  [label="hndUnxpFrType_long/ConClose "];
+s2 -> s4  [label="[ChgDestConID-Ori]/ "];
+s4 -> s3  [label="initConClose_long/<ConClosed> "];
+s4 -> s3  [label="hndConClose_long/<ConClosed> "];
+s5 -> s6  [label="VldNewConID_long/ "];
+s5 -> s4  [label="[ChgDestConID-Ori]/ "];
+s6 -> s4  [label="[ChgDestConID-Ori]/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

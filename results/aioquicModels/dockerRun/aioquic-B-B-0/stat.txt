@@ -1,0 +1,76 @@
+Input Alphabets: 
+initPing_short
+initPing_long
+initConClose_short
+initConClose_long
+initCltHello-vldACK:AES-128-GCM-SHA256_short
+initCltHello-vldACK:AES-128-GCM-SHA256_long
+initCltHello-vldACK:AES-256-GCM-SHA384_short
+initCltHello-vldACK:AES-256-GCM-SHA384_long
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_long
+initCltHello-invldACK:AES-128-GCM-SHA256_short
+initCltHello-invldACK:AES-128-GCM-SHA256_long
+initCltHello-invldACK:AES-256-GCM-SHA384_short
+initCltHello-invldACK:AES-256-GCM-SHA384_long
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_long
+initNoFr_short
+initNoFr_long
+initUnxpFrType_short
+initUnxpFrType_long
+hndPing_short
+hndPing_long
+hndFin_short
+hndFin_long
+hndConClose_short
+hndConClose_long
+hndNoFr_short
+hndNoFr_long
+hndUnxpFrType_short
+hndUnxpFrType_long
+VldNewConID_short
+VldNewConID_long
+InvldNewConID_short
+InvldNewConID_long
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+
+
+Output Alphabets: 
+
+<ConClosed>
+PingACK
+<ConAct>
+initSvrHello
+hndEncExt
+hndCert
+hndCertVer
+hndFin
+NewSessionTicket
+HndshkDone
+VldNewConID
+ConClose
+
+
+Date: 2024-02-01 02:31:53.401326
+Input Dictionary: B
+Target server port: 4401
+Mapper port: 3301
+-----------------------------------
+Learning Finished.
+Learning Rounds:  2
+Number of states: 10
+Time (in seconds)
+  Total                : 58673.06
+  Learning algorithm   : 44065.49
+  Conformance checking : 14607.57
+Learning Algorithm
+ # Membership Queries  : 14714
+ # MQ Saved by Caching : 93
+ # Steps               : 62704
+Equivalence Query
+ # Membership Queries  : 3655
+ # Steps               : 24198
+-----------------------------------
+Crash Count: 0

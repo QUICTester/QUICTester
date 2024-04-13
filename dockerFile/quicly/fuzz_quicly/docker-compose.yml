@@ -1,0 +1,151 @@
+version: "3.5"
+services:
+
+  fuzz_quicly_B:
+    image: quictester/fuzz_quicly:d44cc8b2
+    container_name: fuzz_quicly_B
+    build:
+       context: .
+       dockerfile: Dockerfile.quicly
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3339
+      - SERVER_PORT_TEMP=4439
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5539
+      - SERVER_PORT_SHORT=6639
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7739
+      - SERVER_PORT_LONG=8839
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quicly
+      - SERVER_PATH=/tmp/quicly/cli
+    ports:
+      - "3339:3339"
+      - "4439:4439"
+      - "13339:13339"
+      - "14439:14439"
+
+      - "5539:5539"
+      - "6639:6639"
+      - "15539:15539"
+      - "16639:16639"
+
+      - "7739:7739"
+      - "8839:8839"
+      - "17739:17739"
+      - "18839:18839"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quicly_BWR:
+    image: quictester/fuzz_quicly:d44cc8b2
+    container_name: fuzz_quicly_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.quicly
+    environment:
+      - LEARNER_PORT_TEMP=3340
+      - SERVER_PORT_TEMP=4440
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5540
+      - SERVER_PORT_SHORT=6640
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7740
+      - SERVER_PORT_LONG=8840
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=-R
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quicly
+      - SERVER_PATH=/tmp/quicly/cli
+    ports:
+      - "3340:3340"
+      - "4440:4440"
+      - "13340:13340"
+      - "14440:14440"
+
+      - "5540:5540"
+      - "6640:6640"
+      - "15540:15540"
+      - "16640:16640"
+
+      - "7740:7740"
+      - "8840:8840"
+      - "17740:17740"
+      - "18840:18840"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+  
+  fuzz_quicly_PSK:
+    image: quictester/fuzz_quicly:d44cc8b2
+    container_name: fuzz_quicly_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.quicly
+    environment:
+      - LEARNER_PORT_TEMP=3383
+      - SERVER_PORT_TEMP=4483
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5583
+      - SERVER_PORT_SHORT=6683
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7783
+      - SERVER_PORT_LONG=8883
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quicly
+      - SERVER_PATH=/tmp/quicly/cli
+    ports:
+      - "3383:3383"
+      - "4483:4483"
+      - "13383:13383"
+      - "14483:14483"
+
+      - "5583:5583"
+      - "6683:6683"
+      - "15583:15583"
+      - "16683:16683"
+
+      - "7783:7783"
+      - "8883:8883"
+      - "17783:17783"
+      - "18883:18883"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

@@ -1,0 +1,64 @@
+Input Alphabets: 
+initPing_long
+initConClose_long
+initCltHello-vldACK:AES-128-GCM-SHA256_long
+initCltHello-vldACK:AES-256-GCM-SHA384_long
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_long
+initCltHello-invldACK:AES-128-GCM-SHA256_long
+initCltHello-invldACK:AES-256-GCM-SHA384_long
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_long
+initNoFr_long
+initUnxpFrType_long
+hndPing_long
+hndFin_long
+hndConClose_long
+hndNoFr_long
+hndUnxpFrType_long
+VldNewConID_long
+InvldNewConID_long
+[ChgDestConID-Ori]
+[RmPadFrmInitPkts]
+hndCert_long
+hndCertVer_long
+hndEmpCert_long
+hndInvldCert_long
+
+
+Output Alphabets: 
+ConClose
+initSvrHello
+hndEncExt
+hndCertReq
+hndCert
+hndCertVer
+hndFin
+
+<ConClosed>
+NewSessionTicket
+HndshkDone
+
+
+Date: 2024-01-04 01:17:53.650423
+Input Dictionary: BWCA-l
+Target server port: 8888
+Mapper port: 7788
+-----------------------------------
+Learning Finished.
+Learning Rounds:  1
+Number of states: 8
+Time (in seconds)
+  Total                : 24265.2
+  Learning algorithm   : 14641.19
+  Conformance checking : 9624.01
+Learning Algorithm
+ # Membership Queries  : 4232
+ # MQ Saved by Caching : 23
+ # Steps               : 15870
+Equivalence Query
+ # Membership Queries  : 2919
+ # Steps               : 20000
+-----------------------------------
+Crash Count: 0
+7151
+35870
+6.74

@@ -1,0 +1,51 @@
+digraph g {
+
+s0 [shape="circle" label="s0"];
+s1 [shape="circle" label="s1"];
+s2 [shape="circle" label="s2"];
+s3 [shape="circle" label="s3"];
+s4 [shape="circle" label="s4"];
+s5 [shape="circle" label="s5"];
+s6 [shape="circle" label="s6"];
+s7 [shape="circle" label="s7"];
+s8 [shape="circle" label="s8"];
+s0 -> s1 [label="initConClose/<ConClosed> "];
+s0 -> s2 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndFin "];
+s0 -> s2 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndFin "];
+s0 -> s3 [label="[RmPadFrmInitPkts]/ "];
+s2 -> s4 [label="hndFin/VldNewConID,HndshkDone,NewToken,NewSessionTicket "];
+s2 -> s1 [label="hndConClose/<ConClosed> "];
+s2 -> s1 [label="hndNoFr/ConClose "];
+s2 -> s1 [label="hndUnxpFrType/ConClose "];
+s2 -> s1 [label="0rttConClose/<ConClosed> "];
+s2 -> s1 [label="0rttFin/ConClose "];
+s2 -> s1 [label="0rttNoFr/ConClose "];
+s2 -> s1 [label="0rttUnxpFrType/ConClose "];
+s2 -> s1 [label="0rttACK/ConClose "];
+s2 -> s6 [label="[ChgDestConID-Ori]/ "];
+s3 -> s1 [label="initConClose/<ConClosed> "];
+s3 -> s8 [label="initCltHello-vldACK/ "];
+s3 -> s8 [label="initCltHello-invldACK/ "];
+s4 -> s7 [label="VldNewConID/ "];
+s4 -> s1 [label="InvldNewConID/ConClose "];
+s4 -> s5 [label="[ChgDestConID-Ori]/ "];
+s5 -> s1 [label="hndConClose/<ConClosed> "];
+s6 -> s1 [label="initConClose/<ConClosed> "];
+s6 -> s1 [label="hndConClose/<ConClosed> "];
+s6 -> s1 [label="0rttConClose/<ConClosed> "];
+s6 -> s1 [label="0rttFin/ConClose "];
+s6 -> s1 [label="0rttNoFr/ConClose "];
+s6 -> s1 [label="0rttUnxpFrType/ConClose "];
+s6 -> s1 [label="0rttACK/ConClose "];
+s7 -> s5 [label="[ChgDestConID-Ori]/ "];
+s8 -> s1 [label="initConClose/<ConClosed> "];
+s8 -> s3 [label="0rttPing/retry "];
+s8 -> s3 [label="0rttConClose/retry "];
+s8 -> s3 [label="0rttNoFr/retry "];
+s8 -> s3 [label="0rttUnxpFrType/retry "];
+s8 -> s3 [label="0rttACK/retry "];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

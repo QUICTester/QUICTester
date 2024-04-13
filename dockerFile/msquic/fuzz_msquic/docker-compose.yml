@@ -1,0 +1,246 @@
+version: "3.5"
+services:
+  fuzz_msquic_B:
+    image: quictester/fuzz_msquic:5c070cdc
+    container_name: fuzz_msquic_B
+    build:
+       context: .
+       dockerfile: Dockerfile.msquic
+    environment:
+      - LEARNER_PORT_TEMP=3311
+      - SERVER_PORT_TEMP=4411
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5511
+      - SERVER_PORT_SHORT=6611
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7711
+      - SERVER_PORT_LONG=8811
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - RETRY=-retry:0
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=msquic
+      - SERVER_PATH=/tmp/msquic/artifacts/bin/linux/x64_Debug_openssl/quicinteropserver_noClientAuthentication
+    ports:
+      - "3311:3311"
+      - "4411:4411"
+      - "13311:13311"
+      - "14411:14411"
+
+      - "5511:5511"
+      - "6611:6611"
+      - "15511:15511"
+      - "16611:16611"
+
+      - "7711:7711"
+      - "8811:8811"
+      - "17711:17711"
+      - "18811:18811"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_msquic_BWR:
+    image: quictester/fuzz_msquic:5c070cdc
+    container_name: fuzz_msquic_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.msquic
+    environment:
+      - LEARNER_PORT_TEMP=3312
+      - SERVER_PORT_TEMP=4412
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5512
+      - SERVER_PORT_SHORT=6612
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7712
+      - SERVER_PORT_LONG=8812
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - RETRY=-retry:1
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=msquic
+      - SERVER_PATH=/tmp/msquic/artifacts/bin/linux/x64_Debug_openssl/quicinteropserver_noClientAuthentication
+    ports:
+      - "3312:3312"
+      - "4412:4412"
+      - "13312:13312"
+      - "14412:14412"
+
+      - "5512:5512"
+      - "6612:6612"
+      - "15512:15512"
+      - "16612:16612"
+
+      - "7712:7712"
+      - "8812:8812"
+      - "17712:17712"
+      - "18812:18812"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_msquic_BWCA:
+    image: quictester/fuzz_msquic:5c070cdc
+    container_name: fuzz_msquic_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.msquic
+    environment:
+      - LEARNER_PORT_TEMP=3313
+      - SERVER_PORT_TEMP=4413
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5513
+      - SERVER_PORT_SHORT=6613
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7713
+      - SERVER_PORT_LONG=8813
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - RETRY=-retry:0
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=msquic
+      - SERVER_PATH=/tmp/msquic/artifacts/bin/linux/x64_Debug_openssl/quicinteropserver_clientAuthentication
+    ports:
+      - "3313:3313"
+      - "4413:4413"
+      - "13313:13313"
+      - "14413:14413"
+
+      - "5513:5513"
+      - "6613:6613"
+      - "15513:15513"
+      - "16613:16613"
+
+      - "7713:7713"
+      - "8813:8813"
+      - "17713:17713"
+      - "18813:18813"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_msquic_BWRCA:
+    image: quictester/fuzz_msquic:5c070cdc
+    container_name: fuzz_msquic_BWRCA
+    build:
+       context: .
+       dockerfile: Dockerfile.msquic
+    environment:
+      - LEARNER_PORT_TEMP=3314
+      - SERVER_PORT_TEMP=4414
+      - INPUT_TEMP=BWRCA
+
+      - LEARNER_PORT_SHORT=5514
+      - SERVER_PORT_SHORT=6614
+      - INPUT_SHORT=BWRCA-s
+
+      - LEARNER_PORT_LONG=7714
+      - SERVER_PORT_LONG=8814
+      - INPUT_LONG=BWRCA-l
+
+      - CONFIG=BWRCA
+      - RETRY=-retry:1
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=msquic
+      - SERVER_PATH=/tmp/msquic/artifacts/bin/linux/x64_Debug_openssl/quicinteropserver_clientAuthentication
+    ports:
+      - "3314:3314"
+      - "4414:4414"
+      - "13314:13314"
+      - "14414:14414"
+
+      - "5514:5514"
+      - "6614:6614"
+      - "15514:15514"
+      - "16614:16614"
+
+      - "7714:7714"
+      - "8814:8814"
+      - "17714:17714"
+      - "18814:18814"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_msquic_PSK:
+    image: quictester/fuzz_msquic:5c070cdc
+    container_name: fuzz_msquic_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.msquic
+    environment:
+      - LEARNER_PORT_TEMP=3359
+      - SERVER_PORT_TEMP=4459
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5559
+      - SERVER_PORT_SHORT=6659
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7759
+      - SERVER_PORT_LONG=8859
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - RETRY=-retry:0
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=msquic
+      - SERVER_PATH=/tmp/msquic/artifacts/bin/linux/x64_Debug_openssl/quicinteropserver_noClientAuthentication
+    ports:
+      - "3359:3359"
+      - "4459:4459"
+      - "13359:13359"
+      - "14459:14459"
+
+      - "5559:5559"
+      - "6659:6659"
+      - "15559:15559"
+      - "16659:16659"
+
+      - "7759:7759"
+      - "8859:8859"
+      - "17759:17759"
+      - "18859:18859"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

@@ -1,0 +1,33 @@
+digraph "ngtcp2Models/ngtcp2-BWCA-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s7 [label=s7];
+s0 -> s2  [label="initConClose/<ConClosed> "];
+s0 -> s1  [label="initCltHello-vldACK/initSvrHello,hndProNego,hEncExt,hndCertReq,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="initCltHello-invldACK/initSvrHello,hndProNego,hEncExt,hndCertReq,hndCert,hndCertVer,hndFin "];
+s1 -> s2  [label="hndFin/ConClose "];
+s1 -> s2  [label="hndConClose/<ConClosed> "];
+s1 -> s4  [label="hndCert/ "];
+s1 -> s2  [label="hndCertVer/ConClose "];
+s1 -> s3  [label="hndInvldCert/ "];
+s3 -> s2  [label="hndFin/ConClose "];
+s3 -> s2  [label="hndConClose/<ConClosed> "];
+s3 -> s2  [label="hndCert/ConClose "];
+s3 -> s2  [label="hndCertVer/ConClose "];
+s4 -> s2  [label="hndFin/ConClose "];
+s4 -> s2  [label="hndConClose/<ConClosed> "];
+s4 -> s2  [label="hndCert/ConClose "];
+s4 -> s5  [label="hndCertVer/ "];
+s5 -> s6  [label="hndFin/VldNewConID,HndshkDone,hndNewSesTkt,hndNewSesTkt "];
+s5 -> s2  [label="hndConClose/<ConClosed> "];
+s5 -> s2  [label="hndCert/ConClose "];
+s5 -> s2  [label="hndCertVer/ConClose "];
+s6 -> s7  [label="VldNewConID/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

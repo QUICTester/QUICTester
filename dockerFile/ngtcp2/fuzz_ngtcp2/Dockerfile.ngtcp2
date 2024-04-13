@@ -1,0 +1,54 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git graphviz pkg-config autoconf automake autotools-dev libtool libev-dev libcunit1
+
+# install openssl
+WORKDIR /tmp
+RUN git clone https://github.com/quictls/openssl.git openssl
+WORKDIR /tmp/openssl
+RUN git checkout f105ac0b
+RUN ./config enable-tls1_3 --prefix=$PWD/build
+RUN make
+RUN make install_sw
+
+# install nghttp3
+WORKDIR /tmp
+RUN git clone https://github.com/ngtcp2/nghttp3.git nghttp3
+WORKDIR /tmp/nghttp3
+RUN git checkout 8597ab3a
+RUN autoreconf -i
+RUN ./configure --prefix=$PWD/build --enable-lib-only
+RUN make check
+RUN make install
+
+# install ngtcp2
+WORKDIR /tmp
+RUN git clone https://github.com/ngtcp2/ngtcp2.git ngtcp2
+WORKDIR /tmp/ngtcp2
+RUN git checkout f65399b5
+ENV CXX "g++ -std=c++17"
+RUN autoreconf -i
+RUN ./configure PKG_CONFIG_PATH=$PWD/../openssl/build/lib/pkgconfig:$PWD/../nghttp3/build/lib/pkgconfig LDFLAGS="-Wl,-rpath,$PWD/../openssl/build/lib"
+RUN make check
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+# make sure the fuzzer and server have enough stack size
+RUN echo "ulimit -s 65536" >> ~/.bashrc
+# use . to replace source because it is running in /bin/sh
+RUN . ~/.bashrc
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

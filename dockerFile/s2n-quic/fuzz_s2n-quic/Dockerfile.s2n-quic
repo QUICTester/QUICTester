@@ -1,0 +1,44 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl graphviz default-jdk
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+
+WORKDIR /tmp
+RUN git clone https://github.com/aws/s2n-quic.git  s2n-quic
+
+WORKDIR /tmp/s2n-quic
+RUN git checkout ec651875
+COPY cert_key.patch retry_token_exp.patch Cargo.lock .
+RUN patch -p1 < cert_key.patch
+RUN patch -p1 < retry_token_exp.patch
+RUN cargo build --release
+
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip \
+                        python3-tk \
+                        lsof \
+                        libssl-dev \
+                        python3-dev
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+# make sure the fuzzer and server have enough stack size
+RUN echo "ulimit -s 65536" >> ~/.bashrc
+# use . to replace source because it is running in /bin/sh
+RUN . ~/.bashrc
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

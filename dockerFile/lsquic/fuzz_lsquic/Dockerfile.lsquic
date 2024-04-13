@@ -1,0 +1,64 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git graphviz cmake wget libssl-dev libz-dev libevent-dev
+
+WORKDIR /tmp
+RUN wget https://dl.google.com/go/go1.19.linux-amd64.tar.gz
+RUN tar -xvf go1.19.linux-amd64.tar.gz
+RUN mv go /usr/local
+ENV GOROOT=/usr/local/go
+ENV GOPATH=$HOME/go
+ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+RUN . ~/.profile
+RUN go version
+
+RUN git clone https://boringssl.googlesource.com/boringssl boringssl
+WORKDIR /tmp/boringssl
+RUN git checkout 31bad2514d21f6207f3925ba56754611c462a873
+RUN cmake . &&  make
+# RUN cmake -DBUILD_SHARED_LIBS=1 .
+# RUN make
+ENV BORINGSSL /tmp/boringssl
+
+WORKDIR /tmp
+RUN git clone https://github.com/litespeedtech/lsquic.git  lsquic
+
+WORKDIR /tmp/lsquic
+RUN git checkout 1b113d19
+RUN git submodule init
+RUN git submodule update
+# RUN cmake -DLSQUIC_SHARED_LIB=1 -DBORINGSSL_DIR=/tmp/boringssl/ .
+RUN cmake -DBORINGSSL_DIR=$BORINGSSL . 
+RUN make
+RUN make test
+# COPY lsquicCA.patch .
+# RUN patch -p1 < lsquicCA.patch
+# RUN 
+
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip \
+                        python3-tk \
+                        lsof \
+                        libssl-dev \
+                        python3-dev \
+                        default-jdk
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+# make sure the fuzzer and server have enough stack size
+RUN echo "ulimit -s 65536" >> ~/.bashrc
+# use . to replace source because it is running in /bin/sh
+# RUN . ~/.bashrc
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

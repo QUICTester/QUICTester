@@ -1,0 +1,53 @@
+digraph g {
+
+s0 [shape="circle" label="s0"];
+s1 [shape="circle" label="s1"];
+s2 [shape="circle" label="s2"];
+s3 [shape="circle" label="s3"];
+s4 [shape="circle" label="s4"];
+s5 [shape="circle" label="s5"];
+s6 [shape="circle" label="s6"];
+s7 [shape="circle" label="s7"];
+s8 [shape="circle" label="s8"];
+s9 [shape="circle" label="s9"];
+s10 [shape="circle" label="s10"];
+s0 -> s3 [label="initPing/PingACK "];
+s0 -> s3 [label="initConClose/<ConAct> "];
+s0 -> s1 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndFin,NewSessionTicket "];
+s0 -> s1 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndFin,NewSessionTicket "];
+s0 -> s4 [label="[RmPadFrmInitPkts]/ "];
+s1 -> s5 [label="hndFin/HndshkDone,VldNewConID "];
+s1 -> s2 [label="hndConClose/<ConClosed> "];
+s1 -> s2 [label="hndNoFr/ConClose "];
+s1 -> s2 [label="0rttConClose/<ConClosed> "];
+s1 -> s2 [label="0rttFin/ConClose "];
+s1 -> s2 [label="0rttNoFr/ConClose "];
+s1 -> s2 [label="0rttACK/ConClose "];
+s1 -> s7 [label="[ChgDestConID-Ori]/ "];
+s3 -> s2 [label="initConClose/<ConClosed> "];
+s3 -> s1 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndFin,NewSessionTicket "];
+s3 -> s1 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndFin,NewSessionTicket "];
+s3 -> s2 [label="initNoFr/ConClose "];
+s4 -> s2 [label="initConClose/<ConClosed> "];
+s4 -> s10 [label="initCltHello-vldACK/ "];
+s4 -> s10 [label="initCltHello-invldACK/ "];
+s5 -> s8 [label="VldNewConID/ "];
+s5 -> s2 [label="InvldNewConID/ConClose "];
+s5 -> s6 [label="[ChgDestConID-Ori]/ "];
+s6 -> s9 [label="VldNewConID/ "];
+s6 -> s2 [label="InvldNewConID/ConClose "];
+s7 -> s6 [label="hndFin/HndshkDone,VldNewConID "];
+s7 -> s2 [label="hndConClose/<ConClosed> "];
+s7 -> s2 [label="hndNoFr/ConClose "];
+s7 -> s2 [label="0rttConClose/<ConClosed> "];
+s7 -> s2 [label="0rttFin/ConClose "];
+s7 -> s2 [label="0rttNoFr/ConClose "];
+s7 -> s2 [label="0rttACK/ConClose "];
+s8 -> s9 [label="[ChgDestConID-Ori]/ "];
+s10 -> s2 [label="initConClose/<ConClosed> "];
+s10 -> s2 [label="0rttConClose/<ConClosed> "];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

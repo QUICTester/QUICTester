@@ -1,0 +1,37 @@
+--- s2n-quic/quic/s2n-quic/src/provider/address_token/default.rs	2024-02-05 11:57:30.463669432 +1030
++++ s2n-quic/quic/s2n-quic/src/provider/address_token/default.rs	2024-02-05 12:00:56.478243443 +1030
+@@ -79,7 +79,8 @@
+     }
+ }
+ 
+-const DEFAULT_KEY_ROTATION_PERIOD: Duration = Duration::from_millis(1000);
++// EDITED HERE
++const DEFAULT_KEY_ROTATION_PERIOD: Duration = Duration::from_millis(20000); // default = 1000, change to 20000 for learning (prevent messy and non-deterministic model), change to 5000 for valid and invalid retry token transitions.
+ 
+ #[derive(Debug)]
+ pub struct Provider {
+@@ -108,6 +109,7 @@
+     fn start(self) -> Result<Self::Format, Self::Error> {
+         // The keys must remain valid for two rotation periods or they will regenerate their
+         // material and validation will fail.
++        println!("here here here");
+         let format = Format {
+             key_rotation_period: self.key_rotation_period,
+             current_key_rotates_at: s2n_quic_platform::time::now(),
+@@ -199,6 +201,7 @@
+         context: &mut super::Context<'_>,
+         token: &Token,
+     ) -> Option<connection::InitialId> {
++        println!("key rotation period = {:?}", self.key_rotation_period);
+         if self.keys[token.header.key_id() as usize]
+             .duplicate_filter
+             .contains(token)
+@@ -219,6 +222,8 @@
+                 .add(token);
+ 
+             return token.original_destination_connection_id();
++        }else{
++            println!("Token is not valid!!!"); // ADDED HERE for debugging
+         }
+ 
+         None

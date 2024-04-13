@@ -1,0 +1,33 @@
+digraph "../results/quiclyModels/quicly-B-sP-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s7 [label=s7];
+s0 -> s3  [label="initPing_short/PingACK "];
+s0 -> s3  [label="initConClose_short/<ConAct> "];
+s0 -> s2  [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s0 -> s2  [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s0 -> s3  [label="initConClose-noPad_short/<ConAct> "];
+s0 -> s1  [label="initCltHello-noPad-vldACK_short/ "];
+s0 -> s1  [label="initCltHello-noPad-invldACK_short/ "];
+s1 -> s6  [label="initPing_short/PingACK "];
+s1 -> s6  [label="initConClose_short/<ConAct> "];
+s1 -> s6  [label="initCltHello-vldACK_short/ "];
+s1 -> s6  [label="initCltHello-invldACK_short/ "];
+s1 -> s6  [label="initConClose-noPad_short/<ConAct> "];
+s2 -> s5  [label="hndFin_short/HndshkDone "];
+s2 -> s4  [label="hndConClose_short/<ConClosed> "];
+s3 -> s4  [label="initConClose_short/<ConClosed> "];
+s3 -> s2  [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s3 -> s2  [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin,VldNewConID "];
+s3 -> s6  [label="initCltHello-noPad-vldACK_short/ "];
+s3 -> s6  [label="initCltHello-noPad-invldACK_short/ "];
+s5 -> s7  [label="VldNewConID_short/ "];
+s6 -> s4  [label="initConClose_short/<ConClosed> "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

@@ -1,0 +1,75 @@
+Input Alphabets: 
+initPing_short
+initConClose_short
+initCltHello-vldACK_short
+initCltHello-invldACK_short
+hndPing_short
+hndFin_short
+hndConClose_short
+hndCert_short
+hndCertVer_short
+hndEmpCert_short
+hndInvldCert_short
+VldNewConID_short
+InvldNewConID_short
+initPing_long
+initConClose_long
+initCltHello-vldACK_long
+initCltHello-invldACK_long
+hndPing_long
+hndFin_long
+hndConClose_long
+hndCert_long
+hndCertVer_long
+hndEmpCert_long
+hndInvldCert_long
+VldNewConID_long
+InvldNewConID_long
+
+
+Output Alphabets: 
+PingACK
+<ConAct>
+initSvrHello
+hndProNego
+hEncExt
+hndCertReq
+hndCert
+hndCertVer
+hndFin
+
+<ConClosed>
+ConClose
+VldNewConID
+hndHndshkDone
+
+
+Date: 2023-05-17 10:04:04.526092
+Input Dictionary: BWCA
+Target server port: 4437
+Mapper port: 3347
+-----------------------------------
+Learning Finished.
+Learning Rounds:  2
+Number of states: 12
+Time (in seconds)
+  Total                : 33667.21
+  Learning algorithm   : 30199.34
+  Conformance checking : 3467.87
+Learning Algorithm
+ # Membership Queries  : 8413
+ # MQ Saved by Caching : 42
+ # Steps               : 35367
+Equivalence Query
+ # Membership Queries  : 786
+ # Steps               : 5167
+-----------------------------------
+9199
+40534
+9.35
+9199
+40534
+9.35
+9199
+40534
+9.35

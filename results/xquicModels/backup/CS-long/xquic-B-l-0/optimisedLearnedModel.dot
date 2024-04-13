@@ -1,0 +1,30 @@
+digraph "../results/xquicModels/xquic-B-lCS-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s0 -> s4  [label="initPing_long/PingACK "];
+s0 -> s3  [label="initConClose_long/ConClose "];
+s0 -> s2  [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s2  [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
+s1 -> s3  [label="initConClose_long/<ConClosed> "];
+s2 -> s3  [label="initConClose_long/ConClose "];
+s2 -> s3  [label="initCltHello-vldACK_long/ConClose "];
+s2 -> s3  [label="initCltHello-invldACK_long/ConClose "];
+s2 -> s3  [label="initUnxpFrType_long/ConClose "];
+s2 -> s5  [label="hndFin_long/VldNewConID,HndshkDone "];
+s2 -> s3  [label="hndConClose_long/<ConClosed> "];
+s2 -> s3  [label="hndUnxpFrType_long/ConClose "];
+s4 -> s3  [label="initConClose_long/ConClose "];
+s4 -> s2  [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s2  [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s3  [label="initUnxpFrType_long/ConClose "];
+s5 -> s3  [label="hndFin_long/ConClose "];
+s5 -> s3  [label="hndConClose_long/ConClose "];
+s5 -> s3  [label="hndUnxpFrType_long/ConClose "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

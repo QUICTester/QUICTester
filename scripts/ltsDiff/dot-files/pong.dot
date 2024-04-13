@@ -1,0 +1,17 @@
+digraph{
+"Start Game"
+"Pong Game"
+"Pause"
+
+"Start Game" -> "Pong Game" [label="Start / 1"]
+"Start Game" -> "Start Game" [label="Exit / 0"]
+"Start Game" -> "Start Game" [label="Pause / 0"] 
+"Pong Game" -> "Pong Game" [label="Start / 0"] 
+"Pong Game" -> "Start Game" [label="Exit / 1"]
+"Pong Game" -> "Pause" [label="Pause / 1"]
+"Pause"  -> "Pong Game" [label="Start / 1"]
+"Pause"  -> "Start Game" [label="Exit / 1"]
+"Pause"  -> "Pause" [label="Pause / 0"] 
+}
+
+

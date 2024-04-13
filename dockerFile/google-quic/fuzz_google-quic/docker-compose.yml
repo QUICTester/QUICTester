@@ -1,0 +1,152 @@
+version: "3.5"
+services:
+
+  fuzz_google-quiche_B:
+    image: quictester/fuzz_google-quiche:42dab6be
+    container_name: fuzz_google-quiche_B
+    build:
+       context: .
+       dockerfile: Dockerfile.google-quiche
+    environment:
+      - LEARNER_PORT_TEMP=3303
+      - SERVER_PORT_TEMP=4403
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5503
+      - SERVER_PORT_SHORT=6603
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7703
+      - SERVER_PORT_LONG=8803
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - CA_CERT=/tmp/secrets/caCert/google-quic-ca.pem
+      - SERVER_CERT=/tmp/secrets/serverCert/google-quic-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/google-quic-key.pkcs8
+      - SERVER_NAME=google-quiche
+      - SERVER_PATH=/tmp/chromium/src/out/noClientAuth/quic_server
+    ports:
+      - "3303:3303"
+      - "4403:4403"
+      - "13303:13303"
+      - "14403:14403"
+
+      - "5503:5503"
+      - "6603:6603"
+      - "15503:15503"
+      - "16603:16603"
+
+      - "7703:7703"
+      - "8803:8803"
+      - "17703:17703"
+      - "18803:18803"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_google-quiche_BWCA:
+    image: quictester/fuzz_google-quiche:42dab6be
+    container_name: fuzz_google-quiche_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.google-quiche
+    environment:
+      - LEARNER_PORT_TEMP=3304
+      - SERVER_PORT_TEMP=4404
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5504
+      - SERVER_PORT_SHORT=6604
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7704
+      - SERVER_PORT_LONG=8804
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - LEARN_LIB=--learnlib
+      - CA_CERT=/tmp/secrets/caCert/google-quic-ca.pem
+      - SERVER_CERT=/tmp/secrets/serverCert/google-quic-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/google-quic-key.pkcs8
+      - SERVER_NAME=google-quiche
+      - SERVER_PATH=/tmp/chromium/src/out/clientAuth/quic_server
+    ports:
+      - "3304:3304"
+      - "4404:4404"
+      - "13304:13304"
+      - "14404:14404"
+
+      - "5504:5504"
+      - "6604:6604"
+      - "5504:15504"
+      - "16604:16604"
+
+      - "7704:7704"
+      - "8804:8804"
+      - "17704:17704"
+      - "18804:18804"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_google-quiche_PSK:
+    image: quictester/fuzz_google-quiche:42dab6be
+    container_name: fuzz_google-quiche_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.google-quiche
+    environment:
+      - LEARNER_PORT_TEMP=3354
+      - SERVER_PORT_TEMP=4454
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5554
+      - SERVER_PORT_SHORT=6654
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7754
+      - SERVER_PORT_LONG=8854
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - CA_CERT=/tmp/secrets/caCert/google-quic-ca.pem
+      - SERVER_CERT=/tmp/secrets/serverCert/google-quic-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/google-quic-key.pkcs8
+      - SERVER_NAME=google-quiche
+      - SERVER_PATH=/tmp/chromium/src/out/noClientAuth/quic_server
+    ports:
+      - "3354:3354"
+      - "4454:4454"
+      - "13354:13354"
+      - "14454:14454"
+
+      - "5554:5554"
+      - "6654:6654"
+      - "15554:15554"
+      - "16654:16654"
+
+      - "7754:7754"
+      - "8854:8854"
+      - "17754:17754"
+      - "18854:18854"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

@@ -1,0 +1,28 @@
+digraph "neqoModels/neqo-BWRCA-CS-1/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s7 [label=s7];
+s0 -> s1  [label="initPing/retry "];
+s0 -> s1  [label="initConClose/retry "];
+s0 -> s1  [label="initCltHello-vldACK/retry "];
+s0 -> s1  [label="initCltHello-invldACK/retry "];
+s1 -> s2  [label="[IncRetryTkn]/ "];
+s2 -> s5  [label="initPing/PingACK "];
+s2 -> s4  [label="initConClose/<ConClosed> "];
+s2 -> s3  [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s2 -> s3  [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s3 -> s6  [label="hndFin/HndshkDone,VldNewConID,NewToken "];
+s3 -> s4  [label="hndConClose/ConClose "];
+s3 -> s4  [label="hndCert/ConClose "];
+s5 -> s4  [label="initConClose/ConClose "];
+s5 -> s3  [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s5 -> s3  [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s6 -> s7  [label="VldNewConID/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

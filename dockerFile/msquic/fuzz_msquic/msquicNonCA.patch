@@ -1,0 +1,18 @@
+--- msquicTest/src/inc/msquichelper.h	2024-02-01 14:12:43.683270508 +1030
++++ msquicTest/src/inc/msquichelper.h	2023-06-02 10:07:21.858152037 +0930
+@@ -461,8 +461,15 @@
+     QUIC_CREDENTIAL_CONFIG_HELPER Helper;
+     CxPlatZeroMemory(&Helper, sizeof(Helper));
+     const QUIC_CREDENTIAL_CONFIG* Config = &Helper.CredConfig;
++
++    // EDITED HERE for no client authentication
+     Helper.CredConfig.Flags = QUIC_CREDENTIAL_FLAG_NONE;
+ 
++    // ADDED HERE for client authentication
++    //Helper.CredConfig.Flags = QUIC_CREDENTIAL_FLAG_SET_CA_CERTIFICATE_FILE;
++    //Helper.CredConfig.Flags |= QUIC_CREDENTIAL_FLAG_REQUIRE_CLIENT_AUTHENTICATION;
++    //Helper.CredConfig.CaCertificateFile = "/tmp/secrets/caCert/ca-cert.pem";
++
+     const char* Cert;
+     const char* KeyFile;
+ 

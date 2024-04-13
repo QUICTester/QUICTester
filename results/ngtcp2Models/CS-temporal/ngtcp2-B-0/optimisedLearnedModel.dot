@@ -1,0 +1,32 @@
+digraph g {
+
+s0 [shape="circle" label="s0"];
+s1 [shape="circle" label="s1"];
+s2 [shape="circle" label="s2"];
+s3 [shape="circle" label="s3"];
+s4 [shape="circle" label="s4"];
+s5 [shape="circle" label="s5"];
+s6 [shape="circle" label="s6"];
+s7 [shape="circle" label="s7"];
+s0 -> s1 [label="initConClose/<ConClosed> "];
+s0 -> s2 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s2 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s4 [label="[RmPadFrmInitPkts]/ "];
+s2 -> s5 [label="hndFin/VldNewConID,HndshkDone,NewToken,NewSessionTicket,NewSessionTicket "];
+s2 -> s1 [label="hndConClose/<ConClosed> "];
+s2 -> s1 [label="hndNoFr/ConClose "];
+s2 -> s1 [label="hndUnxpFrType/ConClose "];
+s2 -> s3 [label="[ChgDestConID-Ori]/ "];
+s3 -> s1 [label="initConClose/<ConClosed> "];
+s3 -> s1 [label="hndConClose/<ConClosed> "];
+s4 -> s1 [label="initConClose/<ConClosed> "];
+s5 -> s7 [label="VldNewConID/ "];
+s5 -> s1 [label="InvldNewConID/ConClose "];
+s5 -> s6 [label="[ChgDestConID-Ori]/ "];
+s6 -> s1 [label="hndConClose/<ConClosed> "];
+s7 -> s6 [label="[ChgDestConID-Ori]/ "];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

@@ -1,0 +1,22 @@
+digraph "s2nModels/s2n-BWR-s-0/learnedModel" {
+s0 [label=s0];
+s1 [label=s1];
+s2 [label=s2];
+s3 [label=s3];
+s4 [label=s4];
+s5 [label=s5];
+s6 [label=s6];
+s0 -> s1  [label="initPing_short/retry "];
+s0 -> s1  [label="initConClose_short/retry "];
+s0 -> s1  [label="initCltHello-vldACK_short/retry "];
+s0 -> s1  [label="initCltHello-invldACK_short/retry "];
+s1 -> s2  [label="[IncRetryTkn]/ "];
+s2 -> s4  [label="initConClose_short/<ConClosed> "];
+s2 -> s3  [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s2 -> s3  [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s3 -> s5  [label="hndFin_short/HndshkDone,VldNewConID "];
+s3 -> s4  [label="hndConClose_short/<ConClosed> "];
+s5 -> s6  [label="VldNewConID_short/ "];
+__start0 [label="", shape=none];
+__start0 -> s0  [label=""];
+}

@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+
+  # Aioquic
+  aioquic:
+    image: aiortc/aioquic:239f99b8
+    container_name: aioquic_server
+    build:
+       context: .
+       dockerfile: Dockerfile.aioquic
+    environment:
+      - SERVER_PORT=4401
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CA_CERT=/tmp/secrets/caCert/ca-cert.pem
+      - SERVER_NAME=aioquic
+      - SERVER_PATH=/tmp/aioquic/examples/http3_server.py
+    ports:
+      - "4401:4401"
+    volumes:
+      - ../../../secrets/:/tmp/secrets/
+    network_mode: "host"
