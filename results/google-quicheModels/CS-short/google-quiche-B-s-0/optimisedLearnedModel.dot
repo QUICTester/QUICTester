@@ -1,21 +1,24 @@
-digraph "../results/google-quicheModels/google-quiche-B-B-s-0/learnedModel" {
-s0 [label=s0];
-s1 [label=s1];
-s2 [label=s2];
-s3 [label=s3];
-s4 [label=s4];
-s5 [label=s5];
-s0 -> s3  [label="initConClose_short/<ConClosed> "];
-s0 -> s2  [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
-s0 -> s2  [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
-s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
-s1 -> s3  [label="initConClose_short/<ConClosed> "];
-s2 -> s4  [label="hndFin_short/HndshkDone,NewToken,VldNewConID,NewSessionTicket,NewSessionTicket "];
-s2 -> s3  [label="hndConClose_short/<ConClosed> "];
-s2 -> s3  [label="hndNoFr_short/ConClose "];
-s2 -> s3  [label="hndUnxpFrType_short/ConClose "];
-s4 -> s5  [label="VldNewConID_short/ "];
-s4 -> s3  [label="InvldNewConID_short/ConClose "];
-__start0 [label="", shape=none];
-__start0 -> s0  [label=""];
+digraph g {
+
+s0 [shape="circle" label="s0"];
+s1 [shape="circle" label="s1"];
+s2 [shape="circle" label="s2"];
+s3 [shape="circle" label="s3"];
+s4 [shape="circle" label="s4"];
+s5 [shape="circle" label="s5"];
+s0 -> s1 [label="initConClose_short/<ConClosed> "];
+s0 -> s2 [label="initCltHello-vldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s2 [label="initCltHello-invldACK_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s4 [label="[RmPadFrmInitPkts]/ "];
+s2 -> s3 [label="hndFin_short/HndshkDone,NewToken,VldNewConID,NewSessionTicket,NewSessionTicket "];
+s2 -> s1 [label="hndConClose_short/<ConClosed> "];
+s2 -> s1 [label="hndNoFr_short/ConClose "];
+s2 -> s1 [label="hndUnxpFrType_short/ConClose "];
+s3 -> s5 [label="VldNewConID_short/ "];
+s3 -> s1 [label="InvldNewConID_short/ConClose "];
+s4 -> s1 [label="initConClose_short/<ConClosed> "];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
 }

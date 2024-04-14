@@ -1,0 +1,40 @@
+digraph g {
+
+s0 [shape="circle" label="s0"];
+s1 [shape="circle" label="s1"];
+s2 [shape="circle" label="s2"];
+s3 [shape="circle" label="s3"];
+s4 [shape="circle" label="s4"];
+s5 [shape="circle" label="s5"];
+s6 [shape="circle" label="s6"];
+s7 [shape="circle" label="s7"];
+s8 [shape="circle" label="s8"];
+s9 [shape="circle" label="s9"];
+s0 -> s4 [label="initPing_long/PingACK "];
+s0 -> s1 [label="initConClose_long/<ConClosed> "];
+s0 -> s3 [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s3 [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s2 [label="[RmPadFrmInitPkts]/ "];
+s2 -> s1 [label="initConClose_long/<ConClosed> "];
+s3 -> s5 [label="hndFin_long/HndshkDone,VldNewConID,NewSessionTicket,NewSessionTicket "];
+s3 -> s1 [label="hndConClose_long/<ConClosed> "];
+s3 -> s1 [label="hndUnxpFrType_long/ConClose "];
+s3 -> s7 [label="[ChgDestConID-Ori]/ "];
+s4 -> s1 [label="initConClose_long/<ConClosed> "];
+s4 -> s3 [label="initCltHello-vldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s3 [label="initCltHello-invldACK_long/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s1 [label="initUnxpFrType_long/ConClose "];
+s5 -> s8 [label="VldNewConID_long/ "];
+s5 -> s1 [label="InvldNewConID_long/ConClose "];
+s5 -> s6 [label="[ChgDestConID-Ori]/ "];
+s6 -> s9 [label="VldNewConID_long/ "];
+s6 -> s1 [label="InvldNewConID_long/ConClose "];
+s7 -> s6 [label="hndFin_long/HndshkDone,VldNewConID,NewSessionTicket,NewSessionTicket "];
+s7 -> s1 [label="hndConClose_long/<ConClosed> "];
+s7 -> s1 [label="hndUnxpFrType_long/ConClose "];
+s8 -> s9 [label="[ChgDestConID-Ori]/ "];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
+}

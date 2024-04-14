@@ -21,32 +21,31 @@ InvldNewConID_long
 
 
 Output Alphabets: 
-
+PingACK
 <ConClosed>
 initSvrHello
 hndEncExt
 hndCert
 hndCertVer
 hndFin
+
 <ConAct>
-PingACK
 HndshkDone
-NewToken
 VldNewConID
 NewSessionTicket
 ConClose
 
 
-Date: 2024-04-07 10:13:14.896601
+Date: 2024-04-13 19:49:19.648136
 Input Dictionary: B-l
-Target server port: 8803
-Mapper port: 7703
+Target server port: 8809
+Mapper port: 7709
 -----------------------------------
 TTT Algorithm
 Wp Method
-learning rounds [#]: 5
-Number of states: 6
-Membership queries [Resets]: 69943
-Total Learning Time (hours): 82.89302583666667
+learning rounds [#]: 8
+Number of states: 10
+Membership queries [Resets]: 192957
+Total Learning Time (hours): 257.3318090266667
 -----------------------------------
 Crash Count: 0

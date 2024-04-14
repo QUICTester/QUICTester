@@ -32,33 +32,22 @@ hndFin
 <ConAct>
 VldNewConID
 HndshkDone
+NewSessionTicket
 ConClose
 
 
-Date: 2023-10-10 09:22:25.294743
-Input Dictionary: B-lCS
-Target server port: 4475
-Mapper port: 3385
+Date: 2024-04-11 20:26:51.898399
+Input Dictionary: B-l
+Target server port: 8830
+Mapper port: 7730
 -----------------------------------
-Learning Finished.
-Learning Rounds:  2
+TTT Algorithm
+Wp Method
+learning rounds [#]: 7
 Number of states: 9
-Time (in seconds)
-  Total                : 35346.63
-  Learning algorithm   : 26726.37
-  Conformance checking : 8620.26
-Learning Algorithm
- # Membership Queries  : 3413
- # MQ Saved by Caching : 31
- # Steps               : 13064
-Equivalence Query
- # Membership Queries  : 1032
- # Steps               : 7244
+Membership queries [Resets]: 8710
+Total Learning Time (hours): 13.959743311111112
 -----------------------------------
-Crash Count: 2
-4445
-20308
-9.82
-4445
-20308
-9.82
+Crash Count: 0
+
+Crash Input Sequences: 

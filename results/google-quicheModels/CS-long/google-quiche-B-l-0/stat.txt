@@ -37,24 +37,16 @@ NewSessionTicket
 ConClose
 
 
-Date: 2024-03-08 07:05:54.610348
+Date: 2024-04-07 10:13:14.896601
 Input Dictionary: B-l
 Target server port: 8803
 Mapper port: 7703
 -----------------------------------
-Learning Finished.
-Learning Rounds:  1
+TTT Algorithm
+Wp Method
+learning rounds [#]: 5
 Number of states: 6
-Time (in seconds)
-  Total                : 20537.93
-  Learning algorithm   : 7519.7
-  Conformance checking : 13018.23
-Learning Algorithm
- # Membership Queries  : 2166
- # MQ Saved by Caching : 19
- # Steps               : 7220
-Equivalence Query
- # Membership Queries  : 3031
- # Steps               : 20000
+Membership queries [Resets]: 69943
+Total Learning Time (hours): 82.89302583666667
 -----------------------------------
 Crash Count: 0
