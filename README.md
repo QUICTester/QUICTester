@@ -1,4 +1,4 @@
-# QUICTESTER: Blackbox Protocol Fuzzer for QUIC Servers
+# QUICTESTER: Protocol Temporal-State Fuzzing for Analyzing QUIC Implementations
 Learning-based fuzzing consists of 3 components, Learner, Mapper and the SUT (QUIC server). <br/>
 Develop and test on Ubuntu 20.04 with Python3.8.
 
@@ -118,9 +118,9 @@ The fuzzing will consume quite many resources, consider:
 
 ## Example
 ### fuzzing aioquic (commit 239f99b8a3d4f5bc88cb280df765f35722cefe57)
-### "QUIC" Run with docker file (require docker)
+### "QUIC" Run with docker file (require docker and at least 4 free CPU cores)
 ```cd dockerFile/aioquic/fuzz_aioquic```<br/>
-```sudo docker compose build```<br/>
+```sudo docker compose build --no-cache```<br/>
 ```sudo docker compose up fuzz_aioquic_B -d```<br/>
 
 ### Build the server manually
