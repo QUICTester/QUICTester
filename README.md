@@ -1,8 +1,8 @@
 # QUICTESTER: Protocol Temporal-State Fuzzing for Analyzing QUIC Implementations
-Learning-based fuzzing consists of 3 components, Learner, Mapper and the SUT (QUIC server). <br/>
-Develop and test on Ubuntu 20.04 with Python3.8.
+Learning-based fuzzing consists of 3 components, the Learner, Mapper and SUT (QUIC server under test). <br/>
+Development and testing performed on Ubuntu 20.04 with Python3.8.
 
-The fuzzing will consume quite many resources, consider:
+The fuzzing process will consume many resources. To ensure OS limits don't interfere, consider doing the following:
 - add ```ulimit -n 65536``` to .bashrc<br/>
 - add ```ulimit -s 16384``` to .bashrc<br/>
 - add ```vm.max_map_count=100000``` in ```/etc/sysctl.conf``` and run ```sysctl -p```
@@ -14,7 +14,7 @@ The fuzzing will consume quite many resources, consider:
 | findND      | Program that can reproduce and record any non-deterministic behaviour detected during learning. | 
 | quicLearner | Source code for the Learner and results from the fuzzing.   | 
 | quicMapper  | Source code for the Mapper, config file (inOutput.py) for the Learner and Mapper. |
-| results     | Implementations tested, result tables and faults found |
+| results     | Implementations tested, result tables and descriptions of faults found |
 | scripts     | Tools for automated analysis task. |
 | secrets     | Certificate of CA, server and client; mapperSecrets.log for Wireshark decryption. |
 
@@ -26,10 +26,10 @@ The fuzzing will consume quite many resources, consider:
 ### Mapper: QUIC-specific Test Harness (quicMapper/)
 #### mapper.py
 - Built from aioquic client library (https://github.com/aiortc/aioquic).
-- Receive abstract input from the Learner and produce concrete input (valid QUIC packet).
-- Send concrete input to the QUIC server.
-- Receive concrete output from the QUIC server and extract its abstract output.
-- Send the abstract output to the Learner.
+- Receives abstract inputs from the Learner and produces concrete inputs (valid QUIC packets).
+- Sends concrete inputs to the QUIC server.
+- Receives concrete outputs from the QUIC server and extract its abstract output.
+- Sends the abstract output to the Learner.
 
 - **Note: This can be used as a stand alone tool, see --sequence option in the help menu.**
 - Requirements:
@@ -49,7 +49,7 @@ The fuzzing will consume quite many resources, consider:
   ```cd quicMapper```<br/>
   ```env/bin/python mapper.py -help```<br/>
   ```cd ..```<br/>
-- TLS decryption keys for Wireshark are in secrets/mapperSecrets.log
+- TLS decryption keys for Wireshark are available in secrets/mapperSecrets.log
 
 ### Mapper Help Menu (Usage)
 |  Arguments  | Description |
@@ -73,11 +73,11 @@ The fuzzing will consume quite many resources, consider:
 ### Learner (quicLearner/)
 #### learner.py
 - Built from LearnLib (https://github.com/LearnLib/learnlib) and AALpy libraries (https://github.com/DES-Lab/AALpy).
-- Generate abstract input.
-- Receive abstract output.
-- Learn and build the model of QUIC server.
+- Generates abstract inputs.
+- Receives abstract output.
+- Responsible for learning and building the models for the tested QUIC server.
 - Requirements:
-- To use LearnLib, you need to setup the Java Gateway Server (included in setup.sh) which required Maven to build the package:<br/>
+- To use LearnLib, you need to setup the Java Gateway Server (included in setup.sh) which requires Maven to build the package:<br/>
   ```sudo apt install maven```<br/>
   ```git submodule update --init```<br/>
   ```git apply quicLearner/learnlib-py4j-example.patch```<br/>
@@ -118,19 +118,21 @@ The fuzzing will consume quite many resources, consider:
 
 ## Example
 ### fuzzing aioquic (commit 239f99b8a3d4f5bc88cb280df765f35722cefe57)
-### "QUIC" Run with docker file (require docker and at least 4 free CPU cores)
+### Can be either run inside Docker, or manually built and run
+### "Quic" start via docker file (requires docker and at least 4 free CPU cores)
 ```cd dockerFile/aioquic/fuzz_aioquic```<br/>
 ```sudo docker compose build --no-cache```<br/>
 ```sudo docker compose up fuzz_aioquic_B -d```<br/>
 
-### Build the server manually
+### Manual Build and Fuzz
+#### Build the server manually
 github: https://github.com/aiortc/aioquic.git (look for dependencies here)
 ```mkdir quicServers```<br/>
 ```cd quicServers```<br/>
 ```git clone https://github.com/aiortc/aioquic.git aioquic```<br/>
 ```cd aioquic```<br/>
 ```git checkout 239f99b8a3d4f5bc88cb280df765f35722cefe57```<br/>
-### Aioquic virtual environment installation (tested on Ubuntu 20.04)
+#### Aioquic virtual environment installation (tested on Ubuntu 20.04)
 ```python3 -m venv env```<br/>
 ```source env/bin/activate```<br/>
 ```python -m pip install -e .```<br/>
@@ -140,7 +142,7 @@ github: https://github.com/aiortc/aioquic.git (look for dependencies here)
 ```deactivate```<br/>
 ```cd ../..```<br/>
 
-### Run
+#### Run
 ```cd quicLearner```<br/>
 Fuzz Basic (default handshake) configuration with all possible input:<br/>
 ```setsid env/bin/python3 learner.py -s aioquic --config B -i BWRCA-s -p 3341 -t 4431 --learnlib -r "../quicServers/aioquic/env/bin/python ../quicServers/aioquic/examples/http3_server.py --port 4431 --certificate ../secrets/serverCert/server-cert.pem --private-key ../secrets/serverCert/server-key.pem -l ../secrets/aioquicServer.log" > run/learner_aio_BWRCA-CS_3341.log 2>&1 &```<br/>
@@ -148,11 +150,11 @@ Fuzz Basic with Retry (handshake with client address validation) configuration w
 ```setsid env/bin/python3 learner.py -s aioquic --config BWR -i BWRCA-s -p 3342 -t 4432 --learnlib -r "../quicServers/aioquic/env/bin/python ../quicServers/aioquic/examples/http3_server.py --port 4432 --certificate ../secrets/serverCert/server-cert.pem --private-key ../secrets/serverCert/server-key.pem -l ../secrets/aioquicServer.log --retry" > run/learner_aio_BWRCA-CS_3342.log 2>&1 &```<br/>
 Decryption keys for Wireshark are in secrets/aioquicServer.log or secrets/mapperSecrets.log<br/>
 
-### Result
-The result will be in the ```results/<serverName>Models/<serverName>-<serverConfig>-<inputDictionary>-<N>/``` directory after the fuzzing is completed. The fuzzing process typically lasts for several hours to days.<br/>
+### Results
+The results will be stored in the ```results/<serverName>Models/<serverName>-<serverConfig>-<inputDictionary>-<N>/``` directory after the fuzzing is completed. The fuzzing process typically lasts for several hours, or several days for some configurations.<br/>
 Files to analyse:
 - optimisedLearnedModel.pdf (tools are provided in ```scripts/```)
-- stat.txt (see if the server crashes during fuzzing)
+- stat.txt (for information on server crashes during fuzzing)
 <br/>
 
 
