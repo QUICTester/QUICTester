@@ -1,0 +1,151 @@
+version: "3.5"
+services:
+  fuzz_neqo_B:
+    image: quictester/fuzz_neqo:aaabc1c1
+    container_name: fuzz_neqo_B
+    build:
+       context: .
+       dockerfile: Dockerfile.neqo
+    environment:
+      - LEARNER_PORT_TEMP=3315
+      - SERVER_PORT_TEMP=4415
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5515
+      - SERVER_PORT_SHORT=6615
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7715
+      - SERVER_PORT_LONG=8815
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - DB=/tmp/neqo/test-fixture/db
+      - SERVER_NAME=neqo
+      - SERVER_PATH=/tmp/neqo/target/debug/neqo-server
+    ports:
+      - "3315:3315"
+      - "4415:4415"
+      - "13315:13315"
+      - "14415:14415"
+
+      - "5515:5515"
+      - "6615:6615"
+      - "15515:15515"
+      - "16615:16615"
+
+      - "7715:7715"
+      - "8815:8815"
+      - "17715:17715"
+      - "18815:18815"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_neqo_BWR:
+    image: quictester/fuzz_neqo:aaabc1c1
+    container_name: fuzz_neqo_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.neqo
+    environment:
+      - LEARNER_PORT_TEMP=3316
+      - SERVER_PORT_TEMP=4416
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5516
+      - SERVER_PORT_SHORT=6616
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7716
+      - SERVER_PORT_LONG=8816
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=--retry
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - DB=/tmp/neqo/test-fixture/db
+      - SERVER_NAME=neqo
+      - SERVER_PATH=/tmp/neqo/target/debug/neqo-server
+    ports:
+      - "3316:3316"
+      - "4416:4416"
+      - "13316:13316"
+      - "14416:14416"
+
+      - "5516:5516"
+      - "6616:6616"
+      - "15516:15516"
+      - "16616:16616"
+
+      - "7716:7716"
+      - "8816:8816"
+      - "17716:17716"
+      - "18816:18816"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_neqo_PSK:
+    image: quictester/fuzz_neqo:aaabc1c1
+    container_name: fuzz_neqo_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.neqo
+    environment:
+      - LEARNER_PORT_TEMP=3363
+      - SERVER_PORT_TEMP=4463
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5563
+      - SERVER_PORT_SHORT=6663
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7763
+      - SERVER_PORT_LONG=8863
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - DB=/tmp/neqo/test-fixture/db
+      - SERVER_NAME=neqo
+      - SERVER_PATH=/tmp/neqo/target/debug/neqo-server
+    ports:
+      - "3363:3363"
+      - "4463:4463"
+      - "13363:13363"
+      - "14463:14463"
+
+      - "5563:5563"
+      - "6663:6663"
+      - "15563:15563"
+      - "16663:16663"
+
+      - "7763:7763"
+      - "8863:8863"
+      - "17763:17763"
+      - "18863:18863"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

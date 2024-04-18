@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+
+  # Quinn (same as quinnFixed in quicServers/)
+  quinn:
+    image: quinn-rs/quinn:e1e1e6e3
+    container_name: quinn_server
+    build:
+       context: .
+       dockerfile: Dockerfile.quinn
+    environment:
+      - SERVER_PORT=4441
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CA_CERT=/tmp/secrets/rustCert/cert.der
+      - SERVER_NAME=quinn
+      - SERVER_PATH=/tmp/quinn/target/debug/examples/server
+    ports:
+      - "4441:4441"
+    volumes:
+      - ../../../secrets/:/tmp/secrets/
+    network_mode: "host"

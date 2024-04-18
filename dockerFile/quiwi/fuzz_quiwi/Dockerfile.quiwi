@@ -2,26 +2,32 @@ FROM ubuntu:20.04
 RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
 
 RUN DEBIAN_FRONTEND=noninteractive apt update --fix-missing -y && apt upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl graphviz cmake libtool libev-dev pkg-config libssl-dev
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl graphviz wget 
 
-# install quicly
 WORKDIR /tmp
-RUN git clone https://github.com/h2o/quicly.git quicly
-WORKDIR /tmp/quicly
-RUN git checkout d44cc8b2 
-RUN git submodule update --init --recursive
-COPY handshake_timeout.patch .
-RUN patch -p1 < handshake_timeout.patch
-RUN cmake . -DWITH_FUSION=OFF
-RUN make
+RUN wget https://dl.google.com/go/go1.19.linux-amd64.tar.gz
+RUN tar -xvf go1.19.linux-amd64.tar.gz
+RUN mv go /usr/local
+ENV GOROOT=/usr/local/go
+ENV GOPATH=$HOME/go
+ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+RUN . ~/.profile
 
-RUN apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+WORKDIR /tmp
+RUN git clone https://github.com/goburrow/quic.git  quiwi
+WORKDIR /tmp/quiwi
+RUN git checkout b7b5dadb
+
+WORKDIR /tmp/quiwi/cmd/quiwi
+RUN go build
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
                         
 RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
     pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
     pip install Werkzeug==2.0.3 && \
     pip install "flask<2.2.0"
-    
+
 WORKDIR /tmp/quicLearner
 RUN python3 -m pip install pydot py4j==0.10.9.7
 

@@ -1,0 +1,266 @@
+version: "3.5"
+services:
+  fuzz_quinn_B:
+    image: quictester/fuzz_quinn:e1e1e6e3
+    container_name: fuzz_quinn_B
+    build:
+       context: .
+       dockerfile: Dockerfile.quinn
+    environment:
+      - LEARNER_PORT_TEMP=3341
+      - SERVER_PORT_TEMP=4441
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5541
+      - SERVER_PORT_SHORT=6641
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7741
+      - SERVER_PORT_LONG=8841
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - CA_CERT=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/rustCert/cert.pem
+      - CLIENT_KEY=/tmp/secrets/rustCert/key.pem
+      - SERVER_NAME=quinn
+      - SERVER_PATH=/tmp/quinn/target/debug/examples/server
+    ports:
+      - "3341:3341"
+      - "4441:4441"
+      - "13341:13341"
+      - "14441:14441"
+
+      - "5541:5541"
+      - "6641:6641"
+      - "15541:15541"
+      - "16641:16641"
+
+      - "7741:7741"
+      - "8841:8841"
+      - "17741:17741"
+      - "18841:18841"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quinn_BWR:
+    image: quictester/fuzz_quinn:e1e1e6e3
+    container_name: fuzz_quinn_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.quinn
+    environment:
+      - LEARNER_PORT_TEMP=3342
+      - SERVER_PORT_TEMP=4442
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5542
+      - SERVER_PORT_SHORT=6642
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7742
+      - SERVER_PORT_LONG=8842
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=--stateless-retry
+      - CLIENT_AUTH=
+      - CA_CERT=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/rustCert/cert.pem
+      - CLIENT_KEY=/tmp/secrets/rustCert/key.pem
+      - SERVER_NAME=quinn
+      - SERVER_PATH=/tmp/quinn/target/debug/examples/server
+    ports:
+      - "3342:3342"
+      - "4442:4442"
+      - "13342:13342"
+      - "14442:14442"
+
+      - "5542:5542"
+      - "6642:6642"
+      - "15542:15542"
+      - "16642:16642"
+      
+      - "7742:7742"
+      - "8842:8842"
+      - "17742:17742"
+      - "18842:18842"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quinn_BWCA:
+    image: quictester/fuzz_quinn:e1e1e6e3
+    container_name: fuzz_quinn_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.quinn
+    environment:
+      - LEARNER_PORT_TEMP=3343
+      - SERVER_PORT_TEMP=4443
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5543
+      - SERVER_PORT_SHORT=6643
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7743
+      - SERVER_PORT_LONG=8843
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=--ca
+      - CA_CERT=/tmp/secrets/rustCert/cert.der
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/rustCert/cert.pem
+      - CLIENT_KEY=/tmp/secrets/rustCert/key.pem
+      - SERVER_NAME=quinn
+      - SERVER_PATH=/tmp/quinn/target/debug/examples/server
+    ports:
+      - "3343:3343"
+      - "4443:4443"
+      - "13343:13343"
+      - "14443:14443"
+
+      - "5543:5543"
+      - "6643:6643"
+      - "15543:15543"
+      - "16643:16643"
+      
+      - "7743:7743"
+      - "8843:8843"
+      - "17743:17743"
+      - "18843:18843"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quinn_BWRCA:
+    image: quictester/fuzz_quinn:e1e1e6e3
+    container_name: fuzz_quinn_BWRCA
+    build:
+       context: .
+       dockerfile: Dockerfile.quinn
+    environment:
+      - LEARNER_PORT_TEMP=3344
+      - SERVER_PORT_TEMP=4444
+      - INPUT_TEMP=BWRCA
+
+      - LEARNER_PORT_SHORT=5544
+      - SERVER_PORT_SHORT=6644
+      - INPUT_SHORT=BWRCA-s
+
+      - LEARNER_PORT_LONG=7744
+      - SERVER_PORT_LONG=8844
+      - INPUT_LONG=BWRCA-l
+
+      - CONFIG=BWRCA
+      - LEARN_LIB=--learnlib
+      - RETRY=--stateless-retry
+      - CLIENT_AUTH=--ca
+      - CA_CERT=/tmp/secrets/rustCert/cert.der
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/rustCert/cert.pem
+      - CLIENT_KEY=/tmp/secrets/rustCert/key.pem
+      - SERVER_NAME=quinn
+      - SERVER_PATH=/tmp/quinn/target/debug/examples/server
+    ports:
+      - "3344:3344"
+      - "4444:4444"
+      - "13344:13344"
+      - "14444:14444"
+
+      - "5544:5544"
+      - "6644:6644"
+      - "15544:15544"
+      - "16644:16644"
+      
+      - "7744:7744"
+      - "8844:8844"
+      - "17744:17744"
+      - "18844:18844"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quinn_PSK:
+    image: quictester/fuzz_quinn:e1e1e6e3
+    container_name: fuzz_quinn_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.quinn
+    environment:
+      - LEARNER_PORT_TEMP=3381
+      - SERVER_PORT_TEMP=4481
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5581
+      - SERVER_PORT_SHORT=6681
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7781
+      - SERVER_PORT_LONG=8881
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - CA_CERT=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/rustCert/cert.pem
+      - CLIENT_KEY=/tmp/secrets/rustCert/key.pem
+      - SERVER_NAME=quinn
+      - SERVER_PATH=/tmp/quinn/target/debug/examples/server
+    ports:
+      - "3381:3381"
+      - "4481:4481"
+      - "13381:13381"
+      - "14481:14481"
+
+      - "5581:5581"
+      - "6681:6681"
+      - "15581:15581"
+      - "16681:16681"
+      
+      - "7781:7781"
+      - "8881:8881"
+      - "17781:17781"
+      - "18881:18881"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

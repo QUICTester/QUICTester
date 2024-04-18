@@ -1,0 +1,63 @@
+--- quinn/quinn/examples/server.rs	2023-10-24 16:32:14.456123595 +1030
++++ quinn/quinn/examples/server.rs	2023-10-11 17:28:37.290195546 +1030
+@@ -37,6 +37,11 @@
+     /// Address to listen on
+     #[clap(long = "listen", default_value = "[::1]:4433")]
+     listen: SocketAddr,
++
++    // ADDED here
++    // Root certificate for client auth
++    #[clap(long = "ca")]
++    ca: Option<PathBuf>,
+ }
+ 
+ fn main() {
+@@ -120,10 +125,48 @@
+         (vec![cert], key)
+     };
+ 
++    // ADDED HERE
++    let temp_certs = certs.clone();
++    let temp_key = key.clone();
++
+     let mut server_crypto = rustls::ServerConfig::builder()
+         .with_safe_defaults()
+         .with_no_client_auth()
+         .with_single_cert(certs, key)?;
++
++    // ADDED here
++    // if ca cert is provided, enable cliet authentication
++    if options.ca != None {
++        // ADDED here
++        // for client auth
++        let mut roots = rustls::RootCertStore::empty();
++
++        if let Some(ca_path) = options.ca {
++            roots.add(&rustls::Certificate(fs::read(&ca_path)?))?;
++        } else {
++            let dirs = directories_next::ProjectDirs::from("org", "quinn", "quinn-examples").unwrap();
++            match fs::read(dirs.data_local_dir().join("cert.der")) {
++                Ok(cert) => {
++                    roots.add(&rustls::Certificate(cert))?;
++                }
++                Err(ref e) if e.kind() == io::ErrorKind::NotFound => {
++                    info!("local server certificate not found");
++                }
++                Err(e) => {
++                    error!("failed to open local server certificate: {}", e);
++                }
++            }
++        }
++        
++        //let mut client_auth = <dyn rustls::server::ClientCertVerifier as Example>::AllowAnyAuthenticatedClient::new(roots,);
++        let mut client_auth = rustls::server::AllowAnyAuthenticatedClient::new(roots,).boxed();
++
++        server_crypto = rustls::ServerConfig::builder()
++        .with_safe_defaults()
++        .with_client_cert_verifier(client_auth) // client auth
++        .with_single_cert(temp_certs, temp_key)?;
++    }
++
+     server_crypto.alpn_protocols = common::ALPN_QUIC_HTTP.iter().map(|&x| x.into()).collect();
+     if options.keylog {
+         server_crypto.key_log = Arc::new(rustls::KeyLogFile::new());

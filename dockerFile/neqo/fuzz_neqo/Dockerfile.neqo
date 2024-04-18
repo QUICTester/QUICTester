@@ -1,0 +1,47 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl graphviz mercurial ninja-build python3 python3-pip build-essential clang libnss3-dev libnspr4-dev libnss3 libnspr4 python-is-python3
+
+# RUN echo 'alias python=python3' >> ~/.bashrc
+# RUN . ~/.bashrc
+# RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN rustup install 1.65.0
+
+WORKDIR /tmp
+RUN git clone https://chromium.googlesource.com/external/gyp.git gyp
+RUN git clone https://github.com/mozilla/neqo.git neqo
+
+WORKDIR /tmp/gyp
+# ENV GYP_HOME /tmp/gyp
+# ENV $PATH "$PATH:$GYP_HOME"
+RUN pip3 install setuptools six
+RUN python3 setup.py build
+RUN python3 setup.py install
+
+WORKDIR /tmp/neqo
+RUN git checkout aaabc1c1
+COPY neqo.patch .
+RUN patch -p1 < neqo.patch
+COPY Cargo.lock .
+RUN cargo +1.65.0 build
+COPY test-fixture /tmp/neqo/test-fixture
+
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

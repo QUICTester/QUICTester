@@ -1,0 +1,148 @@
+version: "3.5"
+services:
+  fuzz_quiwi_B:
+    image: quictester/fuzz_quiwi:b7b5dadb
+    container_name: fuzz_quiwi_B
+    build:
+       context: .
+       dockerfile: Dockerfile.quiwi
+    environment:
+      - LEARNER_PORT_TEMP=3345
+      - SERVER_PORT_TEMP=4445
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5545
+      - SERVER_PORT_SHORT=6645
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7745
+      - SERVER_PORT_LONG=8845
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiwi
+      - SERVER_PATH=/tmp/quiwi/cmd/quiwi/quiwi server
+    ports:
+      - "3345:3345"
+      - "4445:4445"
+      - "13345:13345"
+      - "14445:14445"
+
+      - "5545:5545"
+      - "6645:6645"
+      - "15545:15545"
+      - "16645:16645"
+
+      - "7745:7745"
+      - "8845:8845"
+      - "17745:17745"
+      - "18845:18845"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quiwi_BWR:
+    image: quictester/fuzz_quiwi:b7b5dadb
+    container_name: fuzz_quiwi_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.quiwi
+    environment:
+      - LEARNER_PORT_TEMP=3346
+      - SERVER_PORT_TEMP=4446
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5546
+      - SERVER_PORT_SHORT=6646
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7746
+      - SERVER_PORT_LONG=8846
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=-retry
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiwi
+      - SERVER_PATH=/tmp/quiwi/cmd/quiwi/quiwi server
+    ports:
+      - "3346:3346"
+      - "4446:4446"
+      - "13346:13346"
+      - "14446:14446"
+
+      - "5546:5546"
+      - "6646:6646"
+      - "15546:15546"
+      - "16646:16646"
+
+      - "7746:7746"
+      - "8846:8846"
+      - "17746:17746"
+      - "18846:18846"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quiwi_PSK:
+    image: quictester/fuzz_quiwi:b7b5dadb
+    container_name: fuzz_quiwi_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.quiwi
+    environment:
+      - LEARNER_PORT_TEMP=3383
+      - SERVER_PORT_TEMP=4483
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5583
+      - SERVER_PORT_SHORT=6683
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7783
+      - SERVER_PORT_LONG=8883
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiwi
+      - SERVER_PATH=/tmp/quiwi/cmd/quiwi/quiwi server
+    ports:
+      - "3383:3383"
+      - "4483:4483"
+      - "13383:13383"
+      - "14483:14483"
+
+      - "5583:5583"
+      - "6683:6683"
+      - "15583:15583"
+      - "16683:16683"
+
+      - "7783:7783"
+      - "8883:8883"
+      - "17783:17783"
+      - "18883:18883"
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

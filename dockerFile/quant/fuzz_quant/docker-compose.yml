@@ -1,0 +1,156 @@
+version: "3.5"
+services:
+
+  fuzz_quant_B:
+    image: quictester/fuzz_quant:511d91c3
+    container_name: fuzz_quant_B
+    build:
+       context: .
+       dockerfile: Dockerfile.quant
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3328
+      - SERVER_PORT_TEMP=4428
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5528
+      - SERVER_PORT_SHORT=6628
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7728
+      - SERVER_PORT_LONG=8828
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quant
+      - SERVER_PATH=/tmp/quant/Release/bin/server
+    ports:
+      - "3328:3328"
+      - "4428:4428"
+      - "13328:13328"
+      - "14428:14428"
+
+      - "5528:5528"
+      - "6628:6628"
+      - "15528:15528"
+      - "16628:16628"
+
+      - "7728:7728"
+      - "8828:8828"
+      - "17728:17728"
+      - "18828:18828"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quant_BWR:
+    image: quictester/fuzz_quant:511d91c3
+    container_name: fuzz_quant_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.quant
+    environment:
+      - LEARNER_PORT_TEMP=3329
+      - SERVER_PORT_TEMP=4429
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5529
+      - SERVER_PORT_SHORT=6629
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7729
+      - SERVER_PORT_LONG=8829
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=-r
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quant
+      - SERVER_PATH=/tmp/quant/Release/bin/server
+    ports:
+      - "3329:3329"
+      - "4429:4429"
+      - "13329:13329"
+      - "14429:14429"
+
+      - "5529:5529"
+      - "6629:6629"
+      - "15529:15529"
+      - "16629:16629"
+
+      - "7729:7729"
+      - "8829:8829"
+      - "17729:17729"
+      - "18829:18829"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quant_PSK:
+    image: quictester/fuzz_quant:511d91c3
+    container_name: fuzz_quant_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.quant
+    environment:
+      - LEARNER_PORT_TEMP=3371
+      - SERVER_PORT_TEMP=4471
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5571
+      - SERVER_PORT_SHORT=6671
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7771
+      - SERVER_PORT_LONG=8871
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quant
+      - SERVER_PATH=/tmp/quant/Release/bin/server
+    ports:
+      - "3371:3371"
+      - "4471:4471"
+      - "13371:13371"
+      - "14471:14471"
+
+      - "5571:5571"
+      - "6671:6671"
+      - "15571:15571"
+      - "16671:16671"
+
+      - "7771:7771"
+      - "8871:8871"
+      - "17771:17771"
+      - "18871:18871"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

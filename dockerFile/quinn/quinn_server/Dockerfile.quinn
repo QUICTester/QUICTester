@@ -1,0 +1,18 @@
+FROM ubuntu:20.04
+RUN DEBIAN_FRONTEND=noninteractive apt update -y && apt upgrade --fix-missing -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+WORKDIR /tmp
+RUN git clone https://github.com/quinn-rs/quinn.git  quinn
+
+WORKDIR /tmp/quinn
+RUN git checkout e1e1e6e3
+COPY quinnCA.patch .
+RUN patch -p1 < quinnCA.patch
+RUN cargo build --examples
+
+# this command run quinn server only
+CMD $SERVER_PATH ./ -c $SERVER_CERT -k $SERVER_KEY --listen 127.0.0.1:$SERVER_PORT

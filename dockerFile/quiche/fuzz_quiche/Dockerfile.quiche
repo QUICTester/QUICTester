@@ -33,11 +33,6 @@ RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
 WORKDIR /tmp/quicLearner
 RUN python3 -m pip install pydot py4j==0.10.9.7
 
-# make sure the fuzzer and server have enough stack size
-RUN echo "ulimit -s 65536" >> ~/.bashrc
-# use . to replace source because it is running in /bin/sh
-RUN . ~/.bashrc
-
 COPY run_fuzzing.sh /run_fuzzing.sh
 RUN chmod +x /run_fuzzing.sh
 

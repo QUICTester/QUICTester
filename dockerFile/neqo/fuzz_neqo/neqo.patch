@@ -1,0 +1,12 @@
+--- neqo/neqo-transport/src/addr_valid.rs	2024-02-01 16:14:51.411446070 +1030
++++ neqo/neqo-transport/src/addr_valid.rs	2023-06-02 10:07:05.638223817 +0930
+@@ -107,7 +107,7 @@
+         peer_address: SocketAddr,
+         now: Instant,
+     ) -> Res<Vec<u8>> {
+-        const EXPIRATION_RETRY: Duration = Duration::from_secs(5);
++        const EXPIRATION_RETRY: Duration = Duration::from_secs(20); //EDITED HERE previosuly 5 seconds. // set to 20 for non-complex model
+         const EXPIRATION_NEW_TOKEN: Duration = Duration::from_secs(60 * 60 * 24);
+ 
+         // TODO(mt) rotate keys on a fixed schedule.
+
