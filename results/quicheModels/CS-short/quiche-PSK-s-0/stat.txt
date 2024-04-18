@@ -36,27 +36,18 @@ HndshkDone
 ConClose
 
 
-Date: 2023-11-22 03:03:18.751907
+Date: 2024-04-14 19:00:11.312644
 Input Dictionary: PSK-s
 Target server port: 6673
 Mapper port: 5573
 -----------------------------------
-Learning Finished.
-Learning Rounds:  2
+TTT Algorithm
+Wp Method
+learning rounds [#]: 7
 Number of states: 9
-Time (in seconds)
-  Total                : 34829.43
-  Learning algorithm   : 20228.53
-  Conformance checking : 14600.9
-Learning Algorithm
- # Membership Queries  : 4329
- # MQ Saved by Caching : 44
- # Steps               : 16908
-Equivalence Query
- # Membership Queries  : 3055
- # Steps               : 21183
+Membership queries [Resets]: 9755
+Total Learning Time (hours): 13.751920161666666
 -----------------------------------
-Crash Count: 2
-7384
-38091
-9.67
+Crash Count: 0
+
+Crash Input Sequences: 

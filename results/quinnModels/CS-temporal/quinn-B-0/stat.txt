@@ -1,81 +1,70 @@
 Input Alphabets: 
 initPing_short
-initConClose_short
-initCltHello-vldACK:AES-128-GCM-SHA256_short
-initCltHello-vldACK:AES-256-GCM-SHA384_short
-initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short
-initCltHello-invldACK:AES-128-GCM-SHA256_short
-initCltHello-invldACK:AES-256-GCM-SHA384_short
-initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short
-initNoFr_short
-initUnxpFrType_short
-hndPing_short
-hndFin_short
-hndConClose_short
-hndNoFr_short
-hndUnxpFrType_short
-VldNewConID_short
-InvldNewConID_short
 initPing_long
+initConClose_short
 initConClose_long
+initCltHello-vldACK:AES-128-GCM-SHA256_short
 initCltHello-vldACK:AES-128-GCM-SHA256_long
+initCltHello-vldACK:AES-256-GCM-SHA384_short
 initCltHello-vldACK:AES-256-GCM-SHA384_long
+initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short
 initCltHello-vldACK:CHACHA20-POLY1305-SHA256_long
+initCltHello-invldACK:AES-128-GCM-SHA256_short
 initCltHello-invldACK:AES-128-GCM-SHA256_long
+initCltHello-invldACK:AES-256-GCM-SHA384_short
 initCltHello-invldACK:AES-256-GCM-SHA384_long
+initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short
 initCltHello-invldACK:CHACHA20-POLY1305-SHA256_long
+initNoFr_short
 initNoFr_long
+initUnxpFrType_short
 initUnxpFrType_long
+hndPing_short
 hndPing_long
+hndFin_short
 hndFin_long
+hndConClose_short
 hndConClose_long
+hndNoFr_short
 hndNoFr_long
+hndUnxpFrType_short
 hndUnxpFrType_long
+VldNewConID_short
 VldNewConID_long
+InvldNewConID_short
 InvldNewConID_long
 [ChgDestConID-Ori]
 [RmPadFrmInitPkts]
 
 
 Output Alphabets: 
-
-<ConClosed>
 PingACK
+<ConClosed>
 initSvrHello
 hndEncExt
 hndCert
 hndCertVer
 hndFin
+
 <ConAct>
 HndshkDone
 VldNewConID
+NewSessionTicket
 ConClose
 
 
-Date: 2023-10-14 03:48:37.171455
-Input Dictionary: B-CS
-Target server port: 6661
-Mapper port: 5561
+Date: 2024-04-18 05:39:02.425458
+Input Dictionary: B
+Target server port: 4441
+Mapper port: 3341
 -----------------------------------
-Learning Finished.
-Learning Rounds:  1
-Number of states: 8
-Time (in seconds)
-  Total                : 40555.56
-  Learning algorithm   : 37274.73
-  Conformance checking : 3280.83
-Learning Algorithm
- # Membership Queries  : 10368
- # MQ Saved by Caching : 36
- # Steps               : 34992
-Equivalence Query
- # Membership Queries  : 758
- # Steps               : 5000
+TTT Algorithm
+Wp Method
+learning rounds [#]: 7
+Number of states: 9
+Membership queries [Resets]: 31290
+Total Learning Time (hours): 23.696472484444445
 -----------------------------------
 Crash Count: 0
-11126
-39992
-11.27
-11126
-39992
-11.27
+
+Crash Input Sequences: 

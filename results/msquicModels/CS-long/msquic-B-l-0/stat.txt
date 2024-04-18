@@ -22,8 +22,8 @@ InvldNewConID_long
 
 Output Alphabets: 
 
-<ConClosed>
 ConClose
+<ConClosed>
 initSvrHello
 hndEncExt
 hndCert
@@ -34,27 +34,18 @@ VldNewConID
 NewSessionTicket
 
 
-Date: 2023-12-12 20:30:29.127020
+Date: 2024-04-18 01:24:51.187670
 Input Dictionary: B-l
 Target server port: 8811
 Mapper port: 7711
 -----------------------------------
-Learning Finished.
-Learning Rounds:  2
-Number of states: 8
-Time (in seconds)
-  Total                : 22446.45
-  Learning algorithm   : 10864.08
-  Conformance checking : 11582.37
-Learning Algorithm
- # Membership Queries  : 3311
- # MQ Saved by Caching : 58
- # Steps               : 12062
-Equivalence Query
- # Membership Queries  : 3114
- # Steps               : 20644
+TTT Algorithm
+Wp Method
+learning rounds [#]: 8
+Number of states: 9
+Membership queries [Resets]: 9308
+Total Learning Time (hours): 10.024277743055556
 -----------------------------------
 Crash Count: 0
-6425
-32706
-6.24
+
+Crash Input Sequences: 
