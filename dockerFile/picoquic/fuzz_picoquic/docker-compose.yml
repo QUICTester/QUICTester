@@ -1,0 +1,261 @@
+version: "3.5"
+services:
+
+  fuzz_picoquic_B:
+    image: quictester/fuzz_picoquic:d2f01093
+    container_name: fuzz_picoquic_B
+    build:
+       context: .
+       dockerfile: Dockerfile.picoquic
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3323
+      - SERVER_PORT_TEMP=4423
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5523
+      - SERVER_PORT_SHORT=6623
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7723
+      - SERVER_PORT_LONG=8823
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=picoquic
+      - SERVER_PATH=/tmp/picoquic/picoquicdemo
+    ports:
+      - "3323:3323"
+      - "4423:4423"
+      - "13323:13323"
+      - "14423:14423"
+
+      - "5523:5523"
+      - "6623:6623"
+      - "15523:15523"
+      - "16623:16623"
+
+      - "7723:7723"
+      - "8823:8823"
+      - "17723:17723"
+      - "18823:18823"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_picoquic_BWR:
+    image: quictester/fuzz_picoquic:d2f01093
+    container_name: fuzz_picoquic_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.picoquic
+    environment:
+      - LEARNER_PORT_TEMP=3324
+      - SERVER_PORT_TEMP=4424
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5524
+      - SERVER_PORT_SHORT=6624
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7724
+      - SERVER_PORT_LONG=8824
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=-r
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=picoquic
+      - SERVER_PATH=/tmp/picoquic/picoquicdemo
+    ports:
+      - "3324:3324"
+      - "4424:4424"
+      - "13324:13324"
+      - "14424:14424"
+
+      - "5524:5524"
+      - "6624:6624"
+      - "15524:15524"
+      - "16624:16624"
+
+      - "7724:7724"
+      - "8824:8824"
+      - "17724:17724"
+      - "18824:18824"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_picoquic_BWCA:
+    image: quictester/fuzz_picoquic:d2f01093
+    container_name: fuzz_picoquic_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.picoquic
+    environment:
+      - LEARNER_PORT_TEMP=3325
+      - SERVER_PORT_TEMP=4425
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5525
+      - SERVER_PORT_SHORT=6625
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7725
+      - SERVER_PORT_LONG=8825
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=-t /tmp/secrets/caCert/ca-cert.pem
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=picoquic
+      - SERVER_PATH=/tmp/picoquic/picoquicdemo
+    ports:
+      - "3325:3325"
+      - "4425:4425"
+      - "13325:13325"
+      - "14425:14425"
+
+      - "5525:5525"
+      - "6625:6625"
+      - "15525:15525"
+      - "16625:16625"
+
+      - "7725:7725"
+      - "8825:8825"
+      - "17725:17725"
+      - "18825:18825"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_picoquic_BWRCA:
+    image: quictester/fuzz_picoquic:d2f01093
+    container_name: fuzz_picoquic_BWRCA
+    build:
+       context: .
+       dockerfile: Dockerfile.picoquic
+    environment:
+      - LEARNER_PORT_TEMP=3326
+      - SERVER_PORT_TEMP=4426
+      - INPUT_TEMP=BWRCA
+
+      - LEARNER_PORT_SHORT=5526
+      - SERVER_PORT_SHORT=6626
+      - INPUT_SHORT=BWRCA-s
+
+      - LEARNER_PORT_LONG=7726
+      - SERVER_PORT_LONG=8826
+      - INPUT_LONG=BWRCA-l
+
+      - CONFIG=BWRCA
+      - LEARN_LIB=--learnlib
+      - RETRY=-r
+      - CLIENT_AUTH=-t /tmp/secrets/caCert/ca-cert.pem
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=picoquic
+      - SERVER_PATH=/tmp/picoquic/picoquicdemo
+    ports:
+      - "3326:3326"
+      - "4426:4426"
+      - "13326:13326"
+      - "14426:14426"
+
+      - "5526:5526"
+      - "6626:6626"
+      - "15526:15526"
+      - "16626:16626"
+
+      - "7726:7726"
+      - "8826:8826"
+      - "17726:17726"
+      - "18826:18826"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_picoquic_PSK:
+    image: quictester/fuzz_picoquic:d2f01093
+    container_name: fuzz_picoquic_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.picoquic
+    environment:
+      - LEARNER_PORT_TEMP=3367
+      - SERVER_PORT_TEMP=4467
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5567
+      - SERVER_PORT_SHORT=6667
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7767
+      - SERVER_PORT_LONG=8867
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=picoquic
+      - SERVER_PATH=/tmp/picoquic/picoquicdemo
+    ports:
+      - "3367:3367"
+      - "4467:4467"
+      - "13367:13367"
+      - "14467:14467"
+
+      - "5567:5567"
+      - "6667:6667"
+      - "15567:15567"
+      - "16667:16667"
+
+      - "7767:7767"
+      - "8867:8867"
+      - "17767:17767"
+      - "18867:18867"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+
+

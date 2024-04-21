@@ -1,0 +1,49 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl graphviz cmake libtool libev-dev pkg-config libssl-dev libarchive-dev libgoogle-perftools-dev
+
+RUN cpan Net::EmptyPort
+RUN cpan Scope::Guard
+
+# install picotls
+WORKDIR /tmp
+RUN git clone https://github.com/h2o/picotls.git picotls
+WORKDIR /tmp/picotls
+RUN git checkout adf6fa1b
+RUN git submodule init
+RUN git submodule update
+RUN cmake .
+RUN make
+RUN make check
+
+
+# install picoquic
+WORKDIR /tmp
+RUN git clone https://github.com/p-quic/pquic.git pquic
+WORKDIR /tmp/pquic
+RUN git checkout 841c8228
+RUN git submodule update --init
+WORKDIR /tmp/pquic/ubpf/vm
+RUN make
+WORKDIR /tmp/pquic/picoquic/michelfralloc
+RUN make
+WORKDIR /tmp/pquic
+RUN cmake .
+RUN make
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

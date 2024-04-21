@@ -1,0 +1,104 @@
+diff -ru quiche4j/http3-server.sh quiche4j/http3-server.sh
+--- quiche4j/http3-server.sh	2024-04-21 16:03:47.324291700 +0930
++++ quiche4j/http3-server.sh	2023-07-27 22:31:10.897584658 +0930
+@@ -3,7 +3,11 @@
+ 
+ VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+ BIND=${1:-"localhost:4433"}
++CERT=${2}
++KEY=${3}
++
++echo $VERSION
+ 
+ java \
+     -cp quiche4j-examples/target/quiche4j-examples-$VERSION.jar \
+-    io.quiche4j.examples.Http3Server $BIND
+\ No newline at end of file
++    io.quiche4j.examples.Http3Server $BIND $CERT $KEY
+\ No newline at end of file
+diff -ru quiche4j/quiche4j-examples/src/main/java/io/quiche4j/examples/Http3Server.java quiche4j/quiche4j-examples/src/main/java/io/quiche4j/examples/Http3Server.java
+--- quiche4j/quiche4j-examples/src/main/java/io/quiche4j/examples/Http3Server.java	2024-04-21 16:03:47.324291700 +0930
++++ quiche4j/quiche4j-examples/src/main/java/io/quiche4j/examples/Http3Server.java	2024-04-21 16:37:17.623824141 +0930
+@@ -27,6 +27,10 @@
+ import io.quiche4j.Quiche;
+ import io.quiche4j.Utils;
+ 
++// ADDED HERE to convert bytes[] to string
++import java.nio.charset.StandardCharsets;
++
++
+ public class Http3Server {
+ 
+     protected final static class PartialResponse {
+@@ -85,6 +89,9 @@
+     public static void main(String[] args) throws IOException {
+         String hostname = "localhost";
+         int port = 4433;
++        String certFile = "";
++        String keyFile = "";
++
+         if (0 < args.length) {
+             if (args[0].contains(":")) {
+                 final String[] parts = args[0].split(":", 2);
+@@ -94,17 +101,24 @@
+             } else {
+                 port = Integer.parseInt(args[0]);
+             }
++
++            certFile = args[1];
++            keyFile = args[2];
+         }
+ 
+         final byte[] buf = new byte[65535];
+         final byte[] out = new byte[MAX_DATAGRAM_SIZE];
+ 
++        // ADDED HERE to see the application protocol version supported by this server
++        //System.out.println(String.format("Application protocol: %s", new String(Http3.APPLICATION_PROTOCOL, StandardCharsets.UTF_8)));
++
+         final Config config = new ConfigBuilder(Quiche.PROTOCOL_VERSION)
+             .withApplicationProtos(Http3.APPLICATION_PROTOCOL)
+             .withVerifyPeer(false)
+-            .loadCertChainFromPemFile(Utils.copyFileFromJAR("certs", "/cert.crt"))
+-            .loadPrivKeyFromPemFile(Utils.copyFileFromJAR("certs", "/cert.key"))
+-            .withMaxIdleTimeout(5_000)
++            // EDITED HERE to use my own certs
++            .loadCertChainFromPemFile(certFile) //.loadCertChainFromPemFile(Utils.copyFileFromJAR("certs", certFile))
++            .loadPrivKeyFromPemFile(keyFile) //.loadPrivKeyFromPemFile(Utils.copyFileFromJAR("certs", keyFile))
++            .withMaxIdleTimeout(30_000)
+             .withMaxUdpPayloadSize(MAX_DATAGRAM_SIZE)
+             .withInitialMaxData(10_000_000)
+             .withInitialMaxStreamDataBidiLocal(1_000_000)
+@@ -315,16 +329,32 @@
+                 }
+             }
+ 
++            // ADDED HERE to fix java.util.ConcurrentModificationException
++            // FIXED HERE
++            List<String> toRemove = new ArrayList<>();
++
+             // CLEANUP CLOSED CONNS
+             for (String connId : clients.keySet()) {
+                 if (clients.get(connId).connection().isClosed()) {
+                     System.out.println("> cleaning up " + connId);
+ 
+-                    clients.remove(connId);
++                    // PROBLEM HERE
++                    // clients.remove(connId);
++                    // FIXED HERE
++                    toRemove.add(connId);
+ 
+                     System.out.println("! # of clients: " + clients.size());
+                 }
+             }
++            
++            // FIXED HERE
++            // ADDED HERE to remove all the connections (instead of removing in the loop above)
++            for (String connId : toRemove){
++                clients.remove(connId);
++            }
++            
++            // FIXED HERE
++            toRemove.clear();
+ 
+             // BACK TO READING
+         }

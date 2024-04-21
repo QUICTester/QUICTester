@@ -1,0 +1,44 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update --fix-missing -y && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl graphviz cmake libtool libev-dev pkg-config libssl-dev
+
+RUN cpan Net::EmptyPort
+RUN cpan Scope::Guard
+
+# install picotls
+WORKDIR /tmp
+RUN git clone https://github.com/h2o/picotls.git picotls
+WORKDIR /tmp/picotls
+RUN git checkout 1c89c85c
+RUN git submodule init
+RUN git submodule update
+RUN cmake .
+RUN make
+RUN make check
+
+# install picoquic
+WORKDIR /tmp
+RUN git clone https://github.com/private-octopus/picoquic.git picoquic
+WORKDIR /tmp/picoquic
+RUN git checkout d2f01093
+COPY client_auth.patch .
+RUN patch -p1 < client_auth.patch
+RUN cmake .
+RUN make
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]

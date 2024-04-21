@@ -1,0 +1,50 @@
+version: "3.5"
+services:
+  fuzz_quiche4j_BWR:
+    image: quictester/fuzz_quiche4j:ea5effce
+    container_name: fuzz_quiche4j_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.quiche4j
+    environment:
+      - LEARNER_PORT_TEMP=3334
+      - SERVER_PORT_TEMP=4434
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5534
+      - SERVER_PORT_SHORT=6634
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7734
+      - SERVER_PORT_LONG=8834
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quiche4j
+      - SERVER_PATH=/tmp/quiche4j/quiche4j-examples/target/quiche4j-examples-*.jar
+    ports:
+      - "3334:3334"
+      - "4434:4434"
+      - "13334:13334"
+      - "14434:14434"
+
+      - "5534:5534"
+      - "6634:6634"
+      - "15534:15534"
+      - "16634:16634"
+
+      - "7734:7734"
+      - "8834:8834"
+      - "17734:17734"
+      - "18834:18834"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

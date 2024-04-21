@@ -1,0 +1,58 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git graphviz cmake libssl-dev wget libevent-dev
+
+WORKDIR /tmp
+RUN wget https://dl.google.com/go/go1.19.linux-amd64.tar.gz
+RUN tar -xvf go1.19.linux-amd64.tar.gz
+RUN mv go /usr/local
+ENV GOROOT=/usr/local/go
+ENV GOPATH=$HOME/go
+ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+RUN . ~/.profile
+
+WORKDIR /tmp
+RUN git clone https://github.com/alibaba/xquic.git xquic
+WORKDIR /tmp/xquic
+RUN git checkout 00f62288
+RUN git clone https://github.com/google/boringssl.git ./third_party/boringssl
+
+WORKDIR /tmp/xquic/third_party/boringssl
+RUN git checkout 17832275
+RUN mkdir -p build
+WORKDIR /tmp/xquic/third_party/boringssl/build
+RUN cmake -DBUILD_SHARED_LIBS=0 -DCMAKE_C_FLAGS="-fPIC" -DCMAKE_CXX_FLAGS="-fPIC" ..
+RUN make ssl crypto
+
+WORKDIR /tmp/xquic/third_party/boringssl
+ENV SSL_TYPE_STR="boringssl"
+ENV SSL_PATH_STR="/tmp/xquic/third_party/boringssl"
+ENV SSL_INC_PATH_STR="/tmp/xquic/third_party/boringssl/include"
+ENV SSL_LIB_PATH_STR="/tmp/xquic/third_party/boringssl/build/ssl/libssl.a;/tmp/xquic/third_party/boringssl/build/crypto/libcrypto.a"
+
+WORKDIR /tmp/xquic
+RUN git submodule update --init --recursive
+COPY xquic.patch .
+RUN patch -p1 < xquic.patch
+RUN mkdir -p build
+WORKDIR /tmp/xquic/build
+RUN cmake -DGCOV=on -DCMAKE_BUILD_TYPE=Debug -DXQC_ENABLE_TESTING=1 -DXQC_SUPPORT_SENDMMSG_BUILD=1 -DXQC_ENABLE_EVENT_LOG=1 -DXQC_ENABLE_BBR2=1 -DXQC_DISABLE_RENO=0 -DSSL_TYPE=${SSL_TYPE_STR} -DSSL_PATH=${SSL_PATH_STR} -DSSL_INC_PATH=${SSL_INC_PATH_STR} -DSSL_LIB_PATH=${SSL_LIB_PATH_STR} ..
+RUN make -j 2
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]
+

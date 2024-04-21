@@ -1,0 +1,13 @@
+--- quic-go/example/main.go	2024-04-19 10:50:38.722724683 +0930
++++ quic-go/example/main_clientAuth.go	2024-04-19 10:54:19.238255952 +0930
+@@ -193,8 +193,8 @@
+ 	var tlsConf *tls.Config
+ 	tlsConf = &tls.Config{
+ 		Certificates: []tls.Certificate{cert},
+-		// ClientAuth: tls.RequireAndVerifyClientCert,
+-		ClientAuth: tls.NoClientCert,
++		ClientAuth: tls.RequireAndVerifyClientCert,
++		// ClientAuth: tls.NoClientCert,
+ 		ClientCAs: caCerts,
+ 	}
+ 

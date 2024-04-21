@@ -1,0 +1,17 @@
+--- xquic/tests/test_server.c	2024-04-20 18:00:23.439297495 +0930
++++ xquic/tests/test_server.c	2023-07-06 16:17:27.619226122 +0930
+@@ -1353,8 +1353,12 @@
+ 
+     xqc_engine_ssl_config_t  engine_ssl_config;
+     memset(&engine_ssl_config, 0, sizeof(engine_ssl_config));
+-    engine_ssl_config.private_key_file = "./server.key";
+-    engine_ssl_config.cert_file = "./server.crt";
++    //engine_ssl_config.private_key_file = "/server.key";
++    //engine_ssl_config.cert_file = "./server.crt";
++
++    // ADDED HERE
++    engine_ssl_config.private_key_file = "../secrets/serverCert/xquic.key";
++    engine_ssl_config.cert_file = "../secrets/serverCert/xquic.crt";
+     engine_ssl_config.ciphers = XQC_TLS_CIPHERS;
+     engine_ssl_config.groups = XQC_TLS_GROUPS;
+ 

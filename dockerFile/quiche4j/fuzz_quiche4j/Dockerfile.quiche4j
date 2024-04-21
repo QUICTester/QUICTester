@@ -1,0 +1,36 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update --fix-missing -y && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y build-essential git curl graphviz default-jdk maven cmake
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+WORKDIR /tmp
+RUN git clone https://github.com/kachayev/quiche4j.git quiche4j
+WORKDIR /tmp/quiche4j
+RUN git checkout ea5effce
+COPY quiche4j.patch .
+RUN patch -p1 < quiche4j.patch
+RUN rustup install nightly
+RUN rustup default nightly
+RUN cargo build --release --manifest-path quiche4j-jni/Cargo.toml
+RUN mvn clean install
+
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]
+
+

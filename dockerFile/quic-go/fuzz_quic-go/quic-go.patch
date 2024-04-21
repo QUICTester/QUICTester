@@ -1,0 +1,103 @@
+--- quic-go/example/main.go	2024-04-18 16:09:32.931916626 +0930
++++ quic-go/example/main.go	2024-04-19 10:50:38.722724683 +0930
+@@ -14,17 +14,23 @@
+ 	"strconv"
+ 	"strings"
+ 	"sync"
++	"crypto/tls" // ADDED here
++	"net" //ADDED here
++	"crypto/x509" //ADDED here
++	"io/ioutil" // ADDED here
+ 
+ 	_ "net/http/pprof"
+ 
+ 	"github.com/lucas-clemente/quic-go"
+ 	"github.com/lucas-clemente/quic-go/http3"
+-	"github.com/lucas-clemente/quic-go/internal/testdata"
++	//"github.com/lucas-clemente/quic-go/internal/testdata" // REMOVE HERE
+ 	"github.com/lucas-clemente/quic-go/internal/utils"
+ 	"github.com/lucas-clemente/quic-go/logging"
+ 	"github.com/lucas-clemente/quic-go/qlog"
+ )
+ 
++
++
+ type binds []string
+ 
+ func (b binds) String() string {
+@@ -144,6 +150,13 @@
+ 	www := flag.String("www", "", "www data")
+ 	tcp := flag.Bool("tcp", false, "also listen on TCP")
+ 	enableQlog := flag.Bool("qlog", false, "output a qlog (in the same directory)")
++
++	// ADDED HERE
++	certPath := flag.String("c", "../secrets/serverCert/server-cert.pem", "server certificate")
++	keyPath := flag.String("k", "../secrets/serverCert/server-key.pem", "server private key")
++	caCertPath := flag.String("ca", "../secrets/caCert/ca-cert.pem", "CA to verify client cert")
++	retry := flag.Bool("retry", false, "enable address validation")
++
+ 	flag.Parse()
+ 
+ 	logger := utils.DefaultLogger
+@@ -160,7 +173,31 @@
+ 	}
+ 
+ 	handler := setupHandler(*www)
+-	quicConf := &quic.Config{}
++	quicConf := &quic.Config{
++		// ADDED here for retry
++		RequireAddressValidation: func(net.Addr) bool { return *retry},
++	}
++
++	// ADDED HERE
++	cert, err := tls.LoadX509KeyPair(*certPath, *keyPath)
++	if err != nil {
++		fmt.Println(err)
++		os.Exit(1)
++	}
++
++	caCerts := x509.NewCertPool()
++	data, err := ioutil.ReadFile(*caCertPath)
++	if err == nil{
++		caCerts.AppendCertsFromPEM(data)
++	}
++	var tlsConf *tls.Config
++	tlsConf = &tls.Config{
++		Certificates: []tls.Certificate{cert},
++		// ClientAuth: tls.RequireAndVerifyClientCert,
++		ClientAuth: tls.NoClientCert,
++		ClientCAs: caCerts,
++	}
++
+ 	if *enableQlog {
+ 		quicConf.Tracer = qlog.NewTracer(func(_ logging.Perspective, connID []byte) io.WriteCloser {
+ 			filename := fmt.Sprintf("server_%x.qlog", connID)
+@@ -173,6 +210,7 @@
+ 		})
+ 	}
+ 
++	// EDITED HERE
+ 	var wg sync.WaitGroup
+ 	wg.Add(len(bs))
+ 	for _, b := range bs {
+@@ -180,15 +218,17 @@
+ 		go func() {
+ 			var err error
+ 			if *tcp {
+-				certFile, keyFile := testdata.GetCertificatePaths()
+-				err = http3.ListenAndServe(bCap, certFile, keyFile, handler)
++				//certFile, keyFile := testdata.GetCertificatePaths()
++				//err = http3.ListenAndServe(bCap, certFile, keyFile, handler)
++				err = http3.ListenAndServe(bCap, *certPath, *keyPath, handler)
+ 			} else {
+ 				server := http3.Server{
+ 					Handler:    handler,
+ 					Addr:       bCap,
+ 					QuicConfig: quicConf,
++					TLSConfig: tlsConf,
+ 				}
+-				err = server.ListenAndServeTLS(testdata.GetCertificatePaths())
++				err = server.ListenAndServe()
+ 			}
+ 			if err != nil {
+ 				fmt.Println(err)

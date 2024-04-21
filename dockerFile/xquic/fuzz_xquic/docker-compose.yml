@@ -1,0 +1,101 @@
+version: "3.5"
+services:
+
+  fuzz_xquic_B:
+    image: quictester/fuzz_xquic:00f62288
+    container_name: fuzz_xquic_B
+    build:
+       context: .
+       dockerfile: Dockerfile.xquic
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3351
+      - SERVER_PORT_TEMP=4451
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5551
+      - SERVER_PORT_SHORT=6651
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7751
+      - SERVER_PORT_LONG=8851
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=xquic
+      - SERVER_PATH=/tmp/xquic/build/test_server
+    ports:
+      - "3351:3351"
+      - "4451:4451"
+      - "13351:13351"
+      - "14451:14451"
+
+      - "5551:5551"
+      - "6651:6651"
+      - "15551:15551"
+      - "16651:16651"
+
+      - "7751:7751"
+      - "8851:8851"
+      - "17751:17751"
+      - "18851:18851"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_xquic_PSK:
+    image: quictester/fuzz_xquic:00f62288
+    container_name: fuzz_xquic_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.xquic
+    environment:
+      - LEARNER_PORT_TEMP=3387
+      - SERVER_PORT_TEMP=4487
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5587
+      - SERVER_PORT_SHORT=6687
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7787
+      - SERVER_PORT_LONG=8887
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=xquic
+      - SERVER_PATH=/tmp/xquic/build/test_server
+    ports:
+      - "3387:3387"
+      - "4487:4487"
+      - "13387:13387"
+      - "14487:14487"
+
+      - "5587:5587"
+      - "6687:6687"
+      - "15587:15587"
+      - "16687:16687"
+
+      - "7787:7787"
+      - "8887:8887"
+      - "17787:17787"
+      - "18887:18887"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

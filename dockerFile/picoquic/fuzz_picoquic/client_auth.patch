@@ -1,0 +1,15 @@
+--- picoquic/picoquic/config.c	2024-02-05 14:46:10.827103863 +1030
++++ picoquic/picoquic/config.c	2023-06-02 10:11:05.529162133 +0930
+@@ -857,6 +857,12 @@
+ 
+         picoquic_set_default_bdp_frame_option(quic, config->bdp_frame_option);
+ 
++        // ADDED here
++        // if trust root file is given, enable client authentication
++        if(ret == 0 && config->root_trust_file != NULL){
++            picoquic_set_client_authentication(quic,1);
++        }
++
+         if (ret != 0) {
+             /* Something went wrong */
+             DBG_PRINTF("QUIC configuration fails, ret = %d (0x%x)", ret, ret);

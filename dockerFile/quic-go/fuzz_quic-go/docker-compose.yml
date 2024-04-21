@@ -1,0 +1,263 @@
+version: "3.5"
+services:
+
+  fuzz_quic-go_B:
+    image: quictester/fuzz_quic-go:f78683ab
+    container_name: fuzz_quic-go_B
+    build:
+       context: .
+       dockerfile: Dockerfile.quic-go
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3335
+      - SERVER_PORT_TEMP=4435
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5535
+      - SERVER_PORT_SHORT=6635
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7735
+      - SERVER_PORT_LONG=8835
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - CA_CERT=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quic-go
+      - SERVER_PATH=/tmp/quic-go/example/main_noClientAuthentication
+    ports:
+      - "3335:3335"
+      - "4435:4435"
+      - "13335:13335"
+      - "14435:14435"
+
+      - "5535:5535"
+      - "6635:6635"
+      - "15535:15535"
+      - "16635:16635"
+
+      - "7735:7735"
+      - "8835:8835"
+      - "17735:17735"
+      - "18835:18835"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quic-go_BWR:
+    image: quictester/fuzz_quic-go:f78683ab
+    container_name: fuzz_quic-go_BWR
+    build:
+       context: .
+       dockerfile: Dockerfile.quic-go
+    environment:
+      - LEARNER_PORT_TEMP=3336
+      - SERVER_PORT_TEMP=4436
+      - INPUT_TEMP=BWR
+
+      - LEARNER_PORT_SHORT=5536
+      - SERVER_PORT_SHORT=6636
+      - INPUT_SHORT=BWR-s
+
+      - LEARNER_PORT_LONG=7736
+      - SERVER_PORT_LONG=8836
+      - INPUT_LONG=BWR-l
+
+      - CONFIG=BWR
+      - LEARN_LIB=--learnlib
+      - RETRY=-retry
+      - CLIENT_AUTH=
+      - CA_CERT=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quic-go
+      - SERVER_PATH=/tmp/quic-go/example/main_noClientAuthentication
+    ports:
+      - "3336:3336"
+      - "4436:4436"
+      - "13336:13336"
+      - "14436:14436"
+
+      - "5536:5536"
+      - "6636:6636"
+      - "15536:15536"
+      - "16636:16636"
+
+      - "7736:7736"
+      - "8836:8836"
+      - "17736:17736"
+      - "18836:18836"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quic-go_BWCA:
+    image: quictester/fuzz_quic-go:f78683ab
+    container_name: fuzz_quic-go_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.quic-go
+    environment:
+      - LEARNER_PORT_TEMP=3337
+      - SERVER_PORT_TEMP=4437
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5537
+      - SERVER_PORT_SHORT=6637
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7737
+      - SERVER_PORT_LONG=8837
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=-ca
+      - CA_CERT=../secrets/caCert/ca-cert.pem
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quic-go
+      - SERVER_PATH=/tmp/quic-go/example/main_clientAuthentication
+    ports:
+      - "3337:3337"
+      - "4437:4437"
+      - "13337:13337"
+      - "14437:14437"
+
+      - "5537:5537"
+      - "6637:6637"
+      - "15537:15537"
+      - "16637:16637"
+
+      - "7737:7737"
+      - "8837:8837"
+      - "17737:17737"
+      - "18837:18837"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quic-go_BWRCA:
+    image: quictester/fuzz_quic-go:f78683ab
+    container_name: fuzz_quic-go_BWRCA
+    build:
+       context: .
+       dockerfile: Dockerfile.quic-go
+    environment:
+      - LEARNER_PORT_TEMP=3338
+      - SERVER_PORT_TEMP=4438
+      - INPUT_TEMP=BWRCA
+
+      - LEARNER_PORT_SHORT=5538
+      - SERVER_PORT_SHORT=6638
+      - INPUT_SHORT=BWRCA-s
+
+      - LEARNER_PORT_LONG=7738
+      - SERVER_PORT_LONG=8838
+      - INPUT_LONG=BWRCA-l
+
+      - CONFIG=BWRCA
+      - LEARN_LIB=--learnlib
+      - RETRY=-retry
+      - CLIENT_AUTH=-ca
+      - CA_CERT=../secrets/caCert/ca-cert.pem
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quic-go
+      - SERVER_PATH=/tmp/quic-go/example/main_clientAuthentication
+    ports:
+      - "3338:3338"
+      - "4438:4438"
+      - "13338:13338"
+      - "14438:14438"
+
+      - "5538:5538"
+      - "6638:6638"
+      - "15538:15538"
+      - "16638:16638"
+
+      - "7738:7738"
+      - "8838:8838"
+      - "17738:17738"
+      - "18838:18838"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_quic-go_PSK:
+    image: quictester/fuzz_quic-go:f78683ab
+    container_name: fuzz_quic-go_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.quic-go
+    environment:
+      - LEARNER_PORT_TEMP=3377
+      - SERVER_PORT_TEMP=4477
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5577
+      - SERVER_PORT_SHORT=6677
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7777
+      - SERVER_PORT_LONG=8877
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - RETRY=
+      - CLIENT_AUTH=
+      - CA_CERT=
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=quic-go
+      - SERVER_PATH=/tmp/quic-go/example/main_noClientAuthentication
+    ports:
+      - "3377:3377"
+      - "4477:4477"
+      - "13377:13377"
+      - "14477:14477"
+
+      - "5577:5577"
+      - "6677:6677"
+      - "15577:15577"
+      - "16677:16677"
+
+      - "7777:7777"
+      - "8877:8877"
+      - "17777:17777"
+      - "18877:18877"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
