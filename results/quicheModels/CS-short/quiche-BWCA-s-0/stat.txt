@@ -14,14 +14,14 @@ hndFin_short
 hndConClose_short
 hndNoFr_short
 hndUnxpFrType_short
-hndCert_short
-hndCertVer_short
-hndEmpCert_short
-hndInvldCert_short
 VldNewConID_short
 InvldNewConID_short
 [ChgDestConID-Ori]
 [RmPadFrmInitPkts]
+hndCert_short
+hndCertVer_short
+hndEmpCert_short
+hndInvldCert_short
 
 
 Output Alphabets: 
@@ -38,32 +38,21 @@ hndFin
 ConClose
 VldNewConID
 HndshkDone
+NewSessionTicket
 
 
-Date: 2023-10-11 05:05:56.893059
-Input Dictionary: BWCA-sCS
-Target server port: 4477
-Mapper port: 3387
+Date: 2024-04-15 17:09:37.056299
+Input Dictionary: BWCA-s
+Target server port: 6632
+Mapper port: 5532
 -----------------------------------
-Learning Finished.
-Learning Rounds:  1
-Number of states: 10
-Time (in seconds)
-  Total                : 41883.74
-  Learning algorithm   : 36927.58
-  Conformance checking : 4956.16
-Learning Algorithm
- # Membership Queries  : 5290
- # MQ Saved by Caching : 23
- # Steps               : 21160
-Equivalence Query
- # Membership Queries  : 701
- # Steps               : 5000
+TTT Algorithm
+Wp Method
+learning rounds [#]: 12
+Number of states: 15
+Membership queries [Resets]: 27581
+Total Learning Time (hours): 35.90896985138889
 -----------------------------------
-Crash Count: 1
-5991
-26160
-11.63
-5991
-26160
-11.63
+Crash Count: 0
+
+Crash Input Sequences: 

@@ -21,8 +21,6 @@ InvldNewConID_short
 
 
 Output Alphabets: 
-
-<ConClosed>
 PingACK
 <ConAct>
 initSvrHello
@@ -31,37 +29,25 @@ hndCert
 hndCertVer
 hndFin
 VldNewConID
+NewSessionTicket
+
 HndshkDone
+<ConClosed>
 ConClose
 
 
-Date: 2023-10-09 02:53:29.427439
-Input Dictionary: B-sCS
-Target server port: 4481
-Mapper port: 3391
+Date: 2024-04-18 11:48:14.349097
+Input Dictionary: B-s
+Target server port: 6639
+Mapper port: 5539
 -----------------------------------
-Learning Finished.
-Learning Rounds:  1
-Number of states: 8
-Time (in seconds)
-  Total                : 12038.46
-  Learning algorithm   : 9480.91
-  Conformance checking : 2557.55
-Learning Algorithm
- # Membership Queries  : 2888
- # MQ Saved by Caching : 19
- # Steps               : 10108
-Equivalence Query
- # Membership Queries  : 749
- # Steps               : 5000
+TTT Algorithm
+Wp Method
+learning rounds [#]: 7
+Number of states: 9
+Membership queries [Resets]: 9133
+Total Learning Time (hours): 6.189267830833334
 -----------------------------------
 Crash Count: 0
-3637
-15108
-3.34
-3637
-15108
-3.34
-3637
-15108
-3.34
+
+Crash Input Sequences: 

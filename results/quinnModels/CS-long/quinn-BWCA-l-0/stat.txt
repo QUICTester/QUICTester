@@ -14,56 +14,45 @@ hndFin_long
 hndConClose_long
 hndNoFr_long
 hndUnxpFrType_long
-hndCert_long
-hndCertVer_long
-hndEmpCert_long
-hndInvldCert_long
 VldNewConID_long
 InvldNewConID_long
 [ChgDestConID-Ori]
 [RmPadFrmInitPkts]
+hndCert_long
+hndCertVer_long
+hndEmpCert_long
+hndInvldCert_long
 
 
 Output Alphabets: 
-
-<ConClosed>
 PingACK
+<ConClosed>
 initSvrHello
 hndEncExt
 hndCertReq
 hndCert
 hndCertVer
 hndFin
+
 <ConAct>
 ConClose
 HndshkDone
 VldNewConID
+NewSessionTicket
 
 
-Date: 2023-10-14 00:35:53.968228
-Input Dictionary: BWCA-lCS
-Target server port: 4477
-Mapper port: 3387
+Date: 2024-04-18 10:24:00.102739
+Input Dictionary: BWCA-l
+Target server port: 8843
+Mapper port: 7743
 -----------------------------------
-Learning Finished.
-Learning Rounds:  1
-Number of states: 10
-Time (in seconds)
-  Total                : 28862.42
-  Learning algorithm   : 25171.08
-  Conformance checking : 3691.34
-Learning Algorithm
- # Membership Queries  : 5290
- # MQ Saved by Caching : 23
- # Steps               : 21160
-Equivalence Query
- # Membership Queries  : 746
- # Steps               : 5000
+TTT Algorithm
+Wp Method
+learning rounds [#]: 9
+Number of states: 11
+Membership queries [Resets]: 15663
+Total Learning Time (hours): 19.343538063055554
 -----------------------------------
 Crash Count: 0
-6036
-26160
-8.02
-6036
-26160
-8.02
+
+Crash Input Sequences: 

@@ -43,8 +43,8 @@ InvldNewConID_long
 
 Output Alphabets: 
 
-<ConClosed>
 ConClose
+<ConClosed>
 initSvrHello
 hndEncExt
 hndFin
@@ -53,27 +53,18 @@ VldNewConID
 NewSessionTicket
 
 
-Date: 2023-11-28 05:27:34.473717
+Date: 2024-04-21 16:53:24.740445
 Input Dictionary: PSK
 Target server port: 4459
 Mapper port: 3359
 -----------------------------------
-Learning Finished.
-Learning Rounds:  2
-Number of states: 10
-Time (in seconds)
-  Total                : 61776.96
-  Learning algorithm   : 52516.02
-  Conformance checking : 9260.94
-Learning Algorithm
- # Membership Queries  : 19880
- # MQ Saved by Caching : 175
- # Steps               : 91165
-Equivalence Query
- # Membership Queries  : 3372
- # Steps               : 23344
+TTT Algorithm
+Wp Method
+learning rounds [#]: 9
+Number of states: 11
+Membership queries [Resets]: 47254
+Total Learning Time (hours): 32.98677827388889
 -----------------------------------
 Crash Count: 0
-23252
-114509
-17.16
+
+Crash Input Sequences: 

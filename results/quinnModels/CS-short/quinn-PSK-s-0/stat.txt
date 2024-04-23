@@ -23,12 +23,12 @@ InvldNewConID_short
 
 
 Output Alphabets: 
-
-<ConClosed>
 PingACK
+<ConClosed>
 initSvrHello
 hndEncExt
 hndFin
+
 <ConAct>
 HndshkDone
 VldNewConID
@@ -36,27 +36,18 @@ NewSessionTicket
 ConClose
 
 
-Date: 2023-11-23 08:20:50.589437
+Date: 2024-04-17 13:40:51.034589
 Input Dictionary: PSK-s
 Target server port: 6681
 Mapper port: 5581
 -----------------------------------
-Learning Finished.
-Learning Rounds:  3
-Number of states: 36
-Time (in seconds)
-  Total                : 60261.14
-  Learning algorithm   : 50351.45
-  Conformance checking : 9909.69
-Learning Algorithm
- # Membership Queries  : 20156
- # MQ Saved by Caching : 293
- # Steps               : 127500
-Equivalence Query
- # Membership Queries  : 4375
- # Steps               : 29395
+TTT Algorithm
+Wp Method
+learning rounds [#]: 8
+Number of states: 10
+Membership queries [Resets]: 11998
+Total Learning Time (hours): 7.7059785775
 -----------------------------------
 Crash Count: 0
-24531
-156895
-16.74
+
+Crash Input Sequences: 

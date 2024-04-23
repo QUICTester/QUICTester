@@ -1,31 +1,34 @@
-digraph "../results/quiwiModels/quiwi-B-0/learnedModel" {
-s0 [label=s0];
-s1 [label=s1];
-s2 [label=s2];
-s3 [label=s3];
-s4 [label=s4];
-s5 [label=s5];
-s6 [label=s6];
-s7 [label=s7];
-s0 -> s4  [label="initPing/PingACK "];
-s0 -> s3  [label="initConClose/<ConClosed> "];
-s0 -> s2  [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
-s0 -> s2  [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
-s0 -> s1  [label="[RmPadFrmInitPkts]/ "];
-s1 -> s3  [label="initConClose/<ConClosed> "];
-s2 -> s5  [label="hndFin/NewSessionTicket,HndshkDone "];
-s2 -> s3  [label="hndConClose/<ConClosed> "];
-s2 -> s3  [label="hndUnxpFrType/ConClose "];
-s2 -> s7  [label="[ChgDestConID-Ori]/ "];
-s4 -> s3  [label="initConClose/<ConClosed> "];
-s4 -> s2  [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
-s4 -> s2  [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
-s4 -> s3  [label="initUnxpFrType/ConClose "];
-s5 -> s6  [label="[ChgDestConID-Ori]/ "];
-s6 -> s3  [label="hndConClose/<ConClosed> "];
-s7 -> s6  [label="hndFin/NewSessionTicket,HndshkDone "];
-s7 -> s3  [label="hndConClose/<ConClosed> "];
-s7 -> s3  [label="hndUnxpFrType/ConClose "];
-__start0 [label="", shape=none];
-__start0 -> s0  [label=""];
+digraph g {
+
+s0 [shape="circle" label="s0"];
+s1 [shape="circle" label="s1"];
+s2 [shape="circle" label="s2"];
+s3 [shape="circle" label="s3"];
+s4 [shape="circle" label="s4"];
+s5 [shape="circle" label="s5"];
+s6 [shape="circle" label="s6"];
+s7 [shape="circle" label="s7"];
+s0 -> s4 [label="initPing/PingACK "];
+s0 -> s2 [label="initConClose/<ConClosed> "];
+s0 -> s1 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s1 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s0 -> s3 [label="[RmPadFrmInitPkts]/ "];
+s1 -> s5 [label="hndFin/NewSessionTicket,HndshkDone "];
+s1 -> s2 [label="hndConClose/<ConClosed> "];
+s1 -> s2 [label="hndUnxpFrType/ConClose "];
+s1 -> s7 [label="[ChgDestConID-Ori]/ "];
+s3 -> s2 [label="initConClose/<ConClosed> "];
+s4 -> s2 [label="initConClose/<ConClosed> "];
+s4 -> s1 [label="initCltHello-vldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s1 [label="initCltHello-invldACK/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "];
+s4 -> s2 [label="initUnxpFrType/ConClose "];
+s5 -> s6 [label="[ChgDestConID-Ori]/ "];
+s6 -> s2 [label="hndConClose/<ConClosed> "];
+s7 -> s6 [label="hndFin/NewSessionTicket,HndshkDone "];
+s7 -> s2 [label="hndConClose/<ConClosed> "];
+s7 -> s2 [label="hndUnxpFrType/ConClose "];
+
+__start0 [label="" shape="none" width="0" height="0"];
+__start0 -> s0;
+
 }
