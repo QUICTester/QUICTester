@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 
+# author: Kian Kai Ang
 # differential testing for the learned models (same config, same dictionary, same timeout but different server)
 
 # Usage:
@@ -158,7 +158,7 @@ compare(){
 
     # call python script to identify all input sequences lead to deviations
     echo "  Extracting all the deviating state transitions to $diffModelsDir/ ..."
-    python3 extractDeviations.py -d $diffModelsDir
+    python3 extractDeviations.py -d $diffModelsDir -s $sutName
 }
 
 for dir in $MODEL_PATH; do
