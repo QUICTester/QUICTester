@@ -1,166 +1,840 @@
-['[RmPadFrmInitPkts] ', 'initCltHello-invldACK ']
-['[RmPadFrmInitPkts] ', 'initCltHello-vldACK ']
-['[RmPadFrmInitPkts] ', 'initConClose ']
-['[RmPadFrmInitPkts] ', 'initNoFr ']
-['[RmPadFrmInitPkts] ', 'initPing ']
-['[RmPadFrmInitPkts] ', 'initUnxpFrType ']
-['[RmPadFrmInitPkts] ']
-['hndConClose ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndConClose ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'InvldNewConID ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'VldNewConID ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndConClose ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndFin ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndNoFr ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'initConClose ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndNoFr ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndUnxpFrType ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initConClose ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndConClose ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndFin ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndFin ', 'hndConClose ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndFin ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndFin ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', 'hndFin ', 'InvldNewConID ']
-['initCltHello-invldACK ', 'hndFin ', 'VldNewConID ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndFin ', 'VldNewConID ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'hndConClose ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndConClose ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndFin ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initConClose ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initPing ']
-['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndConClose ']
-['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', 'hndFin ', 'hndConClose ']
-['initCltHello-invldACK ', 'hndFin ', 'hndFin ']
-['initCltHello-invldACK ', 'hndFin ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', 'hndFin ', 'initConClose ']
-['initCltHello-invldACK ', 'hndNoFr ']
-['initCltHello-invldACK ', 'hndUnxpFrType ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndUnxpFrType ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', 'hndUnxpFrType ', 'hndConClose ']
-['initCltHello-invldACK ', 'hndUnxpFrType ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', 'hndUnxpFrType ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', 'hndUnxpFrType ', 'initConClose ']
-['initCltHello-invldACK ', 'hndUnxpFrType ']
-['initCltHello-invldACK ', 'initCltHello-invldACK ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initConClose ']
-['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK ', 'initCltHello-vldACK ']
-['initCltHello-invldACK ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK ', 'initConClose ']
-['initCltHello-invldACK ', 'initUnxpFrType ']
-['initCltHello-invldACK ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ', 'hndConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ', 'initConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', 'hndConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', 'hndFin ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ', 'hndConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ', 'initConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', 'hndUnxpFrType ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndNoFr ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndUnxpFrType ', 'hndConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndUnxpFrType ', 'initConClose ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndUnxpFrType ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ', 'hndFin ', 'VldNewConID ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ', 'hndFin ', 'hndFin ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndConClose ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'VldNewConID ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'hndFin ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'hndUnxpFrType ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'VldNewConID ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ', 'VldNewConID ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initConClose ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndUnxpFrType ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initConClose ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-vldACK ']
-['initCltHello-vldACK:AES-128-GCM-SHA256 ']
-['initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
-['initConClose ', 'hndConClose ']
-['initConClose ', 'initCltHello-invldACK ']
-['initConClose ', 'initCltHello-vldACK ']
-['initConClose ', 'initNoFr ']
-['initConClose ', 'initUnxpFrType ']
-['initConClose ']
-['initNoFr ']
-['initPing ', '[RmPadFrmInitPkts] ']
-['initPing ', 'hndConClose ']
-['initPing ', 'initCltHello-invldACK ', 'hndFin ']
-['initPing ', 'initCltHello-invldACK ', 'hndUnxpFrType ']
-['initPing ', 'initCltHello-invldACK ']
-['initPing ', 'initCltHello-vldACK ']
-['initPing ', 'initNoFr ']
-['initPing ', 'initUnxpFrType ']
-['initPing ']
-['initUnxpFrType ']
+Input sequences: ['[RmPadFrmInitPkts] ', 'hndConClose ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "', '"hndConClose/ "']
+###############################################################################################################
+
+Input sequences: ['[RmPadFrmInitPkts] ', 'initCltHello-invldACK ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['[RmPadFrmInitPkts] ', 'initCltHello-vldACK ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['[RmPadFrmInitPkts] ', 'initNoFr ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "', '"initNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['[RmPadFrmInitPkts] ', 'initPing ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "', '"initPing/ "']
+###############################################################################################################
+
+Input sequences: ['[RmPadFrmInitPkts] ', 'initUnxpFrType ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "', '"initUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['[RmPadFrmInitPkts] ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['hndConClose ']
+
+State transitions: ['"hndConClose/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[ChgDestConID-Ori] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[ChgDestConID-Ori]/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[ChgDestConID-Ori] ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[ChgDestConID-Ori]/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "', '"hndFin/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'InvldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"InvldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"VldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"hndFin/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"hndNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndUnxpFrType ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndUnxpFrType/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"hndConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"hndFin/HndshkDone "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', 'InvldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"InvldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', 'VldNewConID ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"VldNewConID/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"VldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"hndConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"hndConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"hndFin/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"[RmPadFrmInitPkts]/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-vldACK ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"hndConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"hndFin/HndshkDone "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"hndConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndFin ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndUnxpFrType ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndUnxpFrType ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndFin/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "', '"initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"VldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"VldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', '[RmPadFrmInitPkts] ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"[RmPadFrmInitPkts]/ "', '"hndFin/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"hndFin/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"VldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"[ChgDestConID-Ori]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"[RmPadFrmInitPkts]/ "', '"VldNewConID/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "', '"initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndFin/HndshkDone "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"hndUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK ']
+
+State transitions: ['"initCltHello-vldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-vldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-vldACK:AES-256-GCM-SHA384_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndConClose ']
+
+State transitions: ['"initConClose/<ConClosed> "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initCltHello-invldACK ']
+
+State transitions: ['"initConClose/<ConClosed> "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initCltHello-vldACK ']
+
+State transitions: ['"initConClose/<ConClosed> "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initNoFr ']
+
+State transitions: ['"initConClose/<ConClosed> "', '"initNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initUnxpFrType ']
+
+State transitions: ['"initConClose/<ConClosed> "', '"initUnxpFrType/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ']
+
+State transitions: ['"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initNoFr ']
+
+State transitions: ['"initNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'hndConClose ']
+
+State transitions: ['"initPing/PingACK "', '"hndConClose/ "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initCltHello-invldACK ']
+
+State transitions: ['"initPing/PingACK "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initCltHello-vldACK ']
+
+State transitions: ['"initPing/PingACK "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initNoFr ']
+
+State transitions: ['"initPing/PingACK "', '"initNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initUnxpFrType ']
+
+State transitions: ['"initPing/PingACK "', '"initUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initPing ']
+
+State transitions: ['"initPing/PingACK "']
+###############################################################################################################
+
+Input sequences: ['initUnxpFrType ']
+
+State transitions: ['"initUnxpFrType/ "']
+###############################################################################################################
+

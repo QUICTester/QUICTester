@@ -1,80 +1,570 @@
-['[RmPadFrmInitPkts] ', 'hndConClose ']
-['[RmPadFrmInitPkts] ']
-['hndConClose ']
-['initCltHello-invldACK ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndCert ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndEmpCert ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'InvldNewConID ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'VldNewConID ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'VldNewConID ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ', 'hndConClose ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ', 'initConClose ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'hndConClose ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'initConClose ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndInvldCert ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndNoFr ']
-['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'initConClose ']
-['initCltHello-invldACK ', 'hndCert ', 'hndEmpCert ']
-['initCltHello-invldACK ', 'hndCert ', 'hndInvldCert ']
-['initCltHello-invldACK ', 'hndCert ', 'hndNoFr ']
-['initCltHello-invldACK ', 'hndCert ', 'initConClose ']
-['initCltHello-invldACK ', 'hndCert ']
-['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', 'VldNewConID ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', 'VldNewConID ']
-['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndEmpCert ', 'initConClose ']
-['initCltHello-invldACK ', 'hndEmpCert ']
-['initCltHello-invldACK ', 'hndInvldCert ', '[ChgDestConID-Ori] ']
-['initCltHello-invldACK ', 'hndInvldCert ', 'hndEmpCert ']
-['initCltHello-invldACK ', 'hndInvldCert ', 'hndInvldCert ']
-['initCltHello-invldACK ', 'hndInvldCert ', 'hndNoFr ']
-['initCltHello-invldACK ', 'hndInvldCert ', 'initConClose ']
-['initCltHello-invldACK ', 'hndNoFr ']
-['initCltHello-invldACK ', 'initConClose ']
-['initCltHello-invldACK ']
-['initCltHello-invldACK:AES-128-GCM-SHA256 ']
-['initCltHello-invldACK:AES-256-GCM-SHA384 ']
-['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
-['initCltHello-vldACK ']
-['initCltHello-vldACK:AES-128-GCM-SHA256 ']
-['initCltHello-vldACK:AES-256-GCM-SHA384 ']
-['initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
-['initConClose ', 'InvldNewConID ', '[RmPadFrmInitPkts] ']
-['initConClose ', 'InvldNewConID ', 'initCltHello-invldACK ']
-['initConClose ', 'InvldNewConID ', 'initCltHello-vldACK ']
-['initConClose ', 'InvldNewConID ', 'initConClose ']
-['initConClose ', 'InvldNewConID ', 'initPing ']
-['initConClose ', 'InvldNewConID ']
-['initConClose ', 'VldNewConID ']
-['initConClose ', '[RmPadFrmInitPkts] ']
-['initConClose ', 'hndCert ']
-['initConClose ', 'hndCertVer ']
-['initConClose ', 'hndConClose ']
-['initConClose ', 'hndEmpCert ']
-['initConClose ', 'hndFin ']
-['initConClose ', 'hndInvldCert ']
-['initConClose ', 'hndNoFr ']
-['initConClose ', 'hndPing ']
-['initConClose ', 'hndUnxpFrType ']
-['initConClose ', 'initCltHello-invldACK ']
-['initConClose ', 'initCltHello-vldACK ']
-['initConClose ', 'initConClose ']
-['initConClose ', 'initNoFr ']
-['initConClose ', 'initUnxpFrType ']
-['initConClose ']
-['initPing ', 'hndCert ']
-['initPing ', 'hndCertVer ']
-['initPing ', 'hndConClose ']
-['initPing ', 'hndFin ']
-['initPing ', 'hndInvldCert ']
-['initPing ', 'hndNoFr ']
-['initPing ', 'hndUnxpFrType ']
-['initPing ', 'initCltHello-invldACK ']
-['initPing ', 'initCltHello-vldACK ']
-['initPing ', 'initConClose ']
-['initPing ', 'initNoFr ']
-['initPing ', 'initUnxpFrType ']
-['initPing ']
+Input sequences: ['[RmPadFrmInitPkts] ', 'hndConClose ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "', '"hndConClose/ "']
+###############################################################################################################
+
+Input sequences: ['[RmPadFrmInitPkts] ']
+
+State transitions: ['"[RmPadFrmInitPkts]/ "']
+###############################################################################################################
+
+Input sequences: ['hndConClose ']
+
+State transitions: ['"hndConClose/ "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'InvldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"InvldNewConID/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'VldNewConID ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"VldNewConID/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"VldNewConID/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "', '"[RmPadFrmInitPkts]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndFin/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"hndNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndCertVer ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndCertVer/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"hndNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndCertVer ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndCertVer/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', 'InvldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndFin/<ConClosed> "', '"InvldNewConID/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', 'VldNewConID ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndFin/<ConClosed> "', '"VldNewConID/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', 'VldNewConID ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndFin/<ConClosed> "', '"VldNewConID/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', '[ChgDestConID-Ori] ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndFin/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndFin/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndFin ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndFin/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndFin/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', '[ChgDestConID-Ori] ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"[ChgDestConID-Ori]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'hndCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"hndCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'hndCertVer ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"hndCertVer/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"hndFin/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"hndNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"hndUnxpFrType/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"hndUnxpFrType/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndCert ', 'hndCertVer ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndCert/ "', '"hndCertVer/ "', '"hndEmpCert/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndCert ', 'hndCertVer ', 'hndFin ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndCert/ "', '"hndCertVer/ "', '"hndFin/NewSessionTicket,HndshkDone "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndCert ', 'hndCertVer ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndCert/ "', '"hndCertVer/ "', '"hndInvldCert/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndCert ', 'hndCertVer ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndCert/ "', '"hndCertVer/ "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndCert ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndCert/ "', '"hndEmpCert/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndCert ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndCert/ "', '"hndInvldCert/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndCert ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndCert/ "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndCertVer ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndCertVer/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndFin/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndInvldCert ', 'hndConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndInvldCert/<ConClosed> "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndInvldCert ', 'hndFin ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndInvldCert/<ConClosed> "', '"hndFin/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndInvldCert ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndInvldCert/<ConClosed> "', '"hndNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndInvldCert ', 'hndPing ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndInvldCert/<ConClosed> "', '"hndPing/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndInvldCert ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndInvldCert/<ConClosed> "', '"hndUnxpFrType/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndNoFr ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndFin ', 'hndUnxpFrType ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndFin/<ConClosed> "', '"hndUnxpFrType/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndEmpCert/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndInvldCert ', 'hndEmpCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndInvldCert/ "', '"hndEmpCert/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndInvldCert ', 'hndInvldCert ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndInvldCert/ "', '"hndInvldCert/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'hndInvldCert ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"hndInvldCert/ "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ', 'initConClose ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-invldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-invldACK:CHACHA20-POLY1305-SHA256_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK ']
+
+State transitions: ['"initCltHello-vldACK:AES-256-GCM-SHA384_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK:AES-128-GCM-SHA256 ']
+
+State transitions: ['"initCltHello-vldACK:AES-128-GCM-SHA256_short/initSvrHello,hndEncExt,hndCertReq,hndCert,hndCertVer,hndFin "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK:AES-256-GCM-SHA384 ']
+
+State transitions: ['"initCltHello-vldACK:AES-256-GCM-SHA384_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initCltHello-vldACK:CHACHA20-POLY1305-SHA256 ']
+
+State transitions: ['"initCltHello-vldACK:CHACHA20-POLY1305-SHA256_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'InvldNewConID ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initConClose/ConClose "', '"InvldNewConID/<ConClosed> "', '"[RmPadFrmInitPkts]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'InvldNewConID ', 'initCltHello-invldACK ']
+
+State transitions: ['"initConClose/ConClose "', '"InvldNewConID/<ConClosed> "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'InvldNewConID ', 'initCltHello-vldACK ']
+
+State transitions: ['"initConClose/ConClose "', '"InvldNewConID/<ConClosed> "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'InvldNewConID ', 'initConClose ']
+
+State transitions: ['"initConClose/ConClose "', '"InvldNewConID/<ConClosed> "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'InvldNewConID ', 'initPing ']
+
+State transitions: ['"initConClose/ConClose "', '"InvldNewConID/<ConClosed> "', '"initPing/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'InvldNewConID ']
+
+State transitions: ['"initConClose/ConClose "', '"InvldNewConID/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'VldNewConID ']
+
+State transitions: ['"initConClose/ConClose "', '"VldNewConID/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', '[RmPadFrmInitPkts] ']
+
+State transitions: ['"initConClose/ConClose "', '"[RmPadFrmInitPkts]/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndCert ']
+
+State transitions: ['"initConClose/ConClose "', '"hndCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndCertVer ']
+
+State transitions: ['"initConClose/ConClose "', '"hndCertVer/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndConClose ']
+
+State transitions: ['"initConClose/ConClose "', '"hndConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndEmpCert ']
+
+State transitions: ['"initConClose/ConClose "', '"hndEmpCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndFin ']
+
+State transitions: ['"initConClose/ConClose "', '"hndFin/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndInvldCert ']
+
+State transitions: ['"initConClose/ConClose "', '"hndInvldCert/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndNoFr ']
+
+State transitions: ['"initConClose/ConClose "', '"hndNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndPing ']
+
+State transitions: ['"initConClose/ConClose "', '"hndPing/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'hndUnxpFrType ']
+
+State transitions: ['"initConClose/ConClose "', '"hndUnxpFrType/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initCltHello-invldACK ']
+
+State transitions: ['"initConClose/ConClose "', '"initCltHello-invldACK:AES-128-GCM-SHA256_short/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initCltHello-vldACK ']
+
+State transitions: ['"initConClose/ConClose "', '"initCltHello-vldACK:AES-128-GCM-SHA256_short/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initConClose ']
+
+State transitions: ['"initConClose/ConClose "', '"initConClose/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initNoFr ']
+
+State transitions: ['"initConClose/ConClose "', '"initNoFr/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ', 'initUnxpFrType ']
+
+State transitions: ['"initConClose/ConClose "', '"initUnxpFrType/<ConClosed> "']
+###############################################################################################################
+
+Input sequences: ['initConClose ']
+
+State transitions: ['"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initCltHello-invldACK ']
+
+State transitions: ['"initPing/ "', '"initCltHello-invldACK:AES-256-GCM-SHA384_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initCltHello-vldACK ']
+
+State transitions: ['"initPing/ "', '"initCltHello-vldACK:AES-256-GCM-SHA384_short/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initConClose ']
+
+State transitions: ['"initPing/ "', '"initConClose/ConClose "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initNoFr ']
+
+State transitions: ['"initPing/ "', '"initNoFr/ "']
+###############################################################################################################
+
+Input sequences: ['initPing ', 'initUnxpFrType ']
+
+State transitions: ['"initPing/ "', '"initUnxpFrType/ "']
+###############################################################################################################
+
+Input sequences: ['initPing ']
+
+State transitions: ['"initPing/ "']
+###############################################################################################################
+
