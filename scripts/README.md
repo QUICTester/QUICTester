@@ -20,7 +20,7 @@ The installation script is included in [setup.py](../setup.sh).
     - CS-long for long timeout results
     - CS-temporal for mixed (short and long) timeout results
 2. Run ```./crossCheck.sh```
-3. The deviating state transitions will be saved in [results/](../results)&lt;SUT_name&gt;Models/crossCheckResults/1_&lt;config&gt;_deviating_state_trans.txt.
+3. The deviating state transitions will be saved in [results/](../results)&lt;SUT_name&gt;Models/crossCheckResults/1_&lt;config&gt;_deviating_state_trans.txt. For visualization, please refer to the pdf produced from each cross-check.
 
 ### Automated Analysis on all unique models and the reference models.
 1. Categorise the results into 3 different directories in the ../results/*Models
