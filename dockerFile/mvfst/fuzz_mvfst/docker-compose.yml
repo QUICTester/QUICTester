@@ -1,0 +1,184 @@
+version: "3.5"
+services:
+
+  # Facebook Move Fast
+  fuzz_mvfst_B:
+    image: quictester/fuzz_mvfst:v2023.09.18.00
+    container_name: fuzz_mvfst_B
+    build:
+       context: .
+       dockerfile: Dockerfile.mvfst
+    environment:
+      # for Basic
+      - LEARNER_PORT_TEMP=3352
+      - SERVER_PORT_TEMP=4452
+      - H2_SERVER_PORT_TEMP=10001
+      - INPUT_TEMP=B
+
+      - LEARNER_PORT_SHORT=5552
+      - SERVER_PORT_SHORT=6652
+      - H2_SERVER_PORT_SHORT=10002
+      - INPUT_SHORT=B-s
+
+      - LEARNER_PORT_LONG=7752
+      - SERVER_PORT_LONG=8852
+      - H2_SERVER_PORT_LONG=10003
+      - INPUT_LONG=B-l
+
+      - CONFIG=B
+      - LEARN_LIB=--learnlib
+      - CLIENT_AUTH=none
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/clientCert/client-cert.pem
+      - CLIENT_KEY=/tmp/secrets/clientCert/client-key.pem
+      - SERVER_NAME=mvfst
+      - SERVER_PATH=/tmp/fbcode_builder_getdeps-ZtmpZproxygenZbuildZfbcode_builder-root/build/proxygen/proxygen/httpserver
+      - LOG=/tmp/secrets/aioquicServer.log
+    ports:
+      - "3352:3352"
+      - "4452:4452"
+      - "10001:10001"
+      - "13352:13352"
+      - "14452:14452"
+
+      - "5552:5552"
+      - "6652:6652"
+      - "10002:10002"
+      - "15552:15552"
+      - "16652:16652"
+
+      - "7752:7752"
+      - "8852:8852"
+      - "10003:10003"
+      - "17752:17752"
+      - "18852:18852"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+
+  fuzz_mvfst_BWCA:
+    image: quictester/fuzz_mvfst:v2023.09.18.00
+    container_name: fuzz_mvfst_BWCA
+    build:
+       context: .
+       dockerfile: Dockerfile.mvfst
+    environment:
+      # for Basic with Client Auth
+      - LEARNER_PORT_TEMP=3388
+      - SERVER_PORT_TEMP=4488
+      - H2_SERVER_PORT_TEMP=10004
+      - INPUT_TEMP=BWCA
+
+      - LEARNER_PORT_SHORT=5588
+      - SERVER_PORT_SHORT=6688
+      - H2_SERVER_PORT_SHORT=10005
+      - INPUT_SHORT=BWCA-s
+
+      - LEARNER_PORT_LONG=7788
+      - SERVER_PORT_LONG=8888
+      - H2_SERVER_PORT_LONG=10006
+      - INPUT_LONG=BWCA-l
+
+      - CONFIG=BWCA
+      - LEARN_LIB=--learnlib
+      - CLIENT_AUTH=required
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/clientCert/client-cert.pem
+      - CLIENT_KEY=/tmp/secrets/clientCert/client-key.pem
+      - SERVER_NAME=mvfst
+      - SERVER_PATH=/tmp/fbcode_builder_getdeps-ZtmpZproxygenZbuildZfbcode_builder-root/build/proxygen/proxygen/httpserver
+      - LOG=/tmp/secrets/aioquicServer.log
+    ports:
+      - "3388:3388"
+      - "4488:4488"
+      - "10004:10004"
+      - "13388:13388"
+      - "14488:14488"
+
+      - "5588:5588"
+      - "6688:6688"
+      - "10005:10005"
+      - "15588:15588"
+      - "16688:16688"
+
+      - "7788:7788"
+      - "8888:8888"
+      - "10006:10006"
+      - "17788:17788"
+      - "18888:18888"
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"
+
+  fuzz_mvfst_PSK:
+    image: quictester/fuzz_mvfst:v2023.09.18.00
+    container_name: fuzz_mvfst_PSK
+    build:
+       context: .
+       dockerfile: Dockerfile.mvfst
+    environment:
+      # for Basic with PSK
+      - LEARNER_PORT_TEMP=3389
+      - SERVER_PORT_TEMP=4489
+      - H2_SERVER_PORT_TEMP=10007
+      - INPUT_TEMP=PSK
+
+      - LEARNER_PORT_SHORT=5589
+      - SERVER_PORT_SHORT=6689
+      - H2_SERVER_PORT_SHORT=10008
+      - INPUT_SHORT=PSK-s
+
+      - LEARNER_PORT_LONG=7789
+      - SERVER_PORT_LONG=8889
+      - H2_SERVER_PORT_LONG=10009
+      - INPUT_LONG=PSK-l
+
+      - CONFIG=PSK
+      - LEARN_LIB=--learnlib
+      - CLIENT_AUTH=none
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - CLIENT_CERT=/tmp/secrets/clientCert/client-cert.pem
+      - CLIENT_KEY=/tmp/secrets/clientCert/client-key.pem
+      - SERVER_NAME=mvfst
+      - SERVER_PATH=/tmp/fbcode_builder_getdeps-ZtmpZproxygenZbuildZfbcode_builder-root/build/proxygen/proxygen/httpserver
+      - LOG=/tmp/secrets/aioquicServer.log
+    ports:
+      - "3389:3389"
+      - "4489:4489"
+      - "10007:10007"
+      - "13389:13389"
+      - "14489:14489"
+
+      - "5589:5589"
+      - "6689:6689"
+      - "10008:10008"
+      - "15589:15589"
+      - "16689:16689"
+
+      - "7789:7789"
+      - "8889:8889"
+      - "10009:10009"
+      - "17789:17789"
+      - "18889:18889" 
+
+    volumes:
+      - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
+      - ../../../quicLearner/:/tmp/quicLearner/
+      - ../../../quicMapper/:/tmp/quicMapper/
+      - ../../../secrets/:/tmp/secrets/
+      - ../../../results/:/tmp/results/
+    network_mode: "host"

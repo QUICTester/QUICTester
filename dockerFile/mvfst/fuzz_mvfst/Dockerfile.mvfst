@@ -1,0 +1,138 @@
+FROM ubuntu:20.04
+RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/archive.ubuntu.com\/ubuntu/' /etc/apt/sources.list
+
+RUN DEBIAN_FRONTEND=noninteractive apt update --fix-missing -y && apt upgrade -y 
+RUN DEBIAN_FRONTEND=noninteractive apt install -y git \
+                                                g++ \
+                                                clang \
+                                                python3 \
+                                                pkg-config \
+                                                sudo \
+                                                wget \
+                                                libssl-dev \
+                                                graphviz
+WORKDIR /tmp
+RUN git clone --branch v2023.09.18.00 https://github.com/facebook/proxygen.git proxygen
+WORKDIR /tmp/proxygen
+RUN sudo ./build/fbcode_builder/getdeps.py install-system-deps --recursive --install-prefix=$(pwd)/_build proxygen
+# Fetch ninja
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests ninja
+# Fetch cmake
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests cmake
+COPY zlib.patch .
+RUN patch -p1 < zlib.patch
+# Fetch zlib
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests zlib
+# Fetch zstd
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests zstd
+# Fetch boost
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests boost
+# Fetch double-conversion
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests double-conversion
+# Fetch fmt
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests fmt
+# Fetch gflags
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests gflags
+# Fetch glog
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests glog
+# Fetch googletest
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests googletest
+# Fetch libevent
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests libevent
+# Fetch lz4
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests lz4
+# Fetch snappy
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests snappy
+# Fetch autoconf
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests autoconf
+# Fetch automake
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests automake
+# Fetch libtool
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests libtool
+# Fetch gperf
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests gperf
+# Fetch libsodium
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests libsodium
+# Fetch xz
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests xz
+# Fetch folly
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests folly
+# Fetch fizz
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests fizz
+# Fetch mvfst
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests mvfst
+# Fetch wangle
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests wangle
+# Build ninja
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests ninja
+# Build cmake
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests cmake
+# Build zlib
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests zlib
+# Build zstd
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests zstd
+# Build boost
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests boost
+# Build double-conversion
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests double-conversion
+# Build fmt
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests fmt
+# Build gflags
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests gflags
+# Build glog
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests glog
+# Build googletest
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests googletest
+# Build libevent
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests libevent
+# Build lz4
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests lz4
+# Build snappy
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests snappy
+# Build autoconf
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests autoconf
+# Build automake
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests automake
+# Build libtool
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests libtool
+# Build gperf
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests gperf
+# Build libsodium
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests libsodium
+# Build xz
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests xz
+# Build folly
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests folly
+# Build fizz
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests fizz
+# Build mvfst
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests mvfst
+# Build wangle
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --no-tests wangle
+# Build proxygen
+RUN python3 build/fbcode_builder/getdeps.py build --num-jobs 4 --src-dir=. proxygen  --project-install-prefix proxygen:/usr/local
+# Cleanup
+# WORKDIR /tmp/fbcode_builder_getdeps-ZtmpZmvfstZbuildZfbcode_builder-root/build/mvfst/quic/samples
+# CMD cd /tmp/quicLearner && 
+RUN DEBIAN_FRONTEND=noninteractive apt install -y pip python3-tk lsof libssl-dev python3-dev default-jdk
+                        
+RUN pip install asgiref dnslib httpbin starlette wsproto aioquic pydot && \
+    pip install asgiref dnslib httpbin starlette wsproto --no-cache-dir && \
+    pip install Werkzeug==2.0.3 && \
+    pip install "flask<2.2.0"
+
+WORKDIR /tmp/quicLearner
+RUN python3 -m pip install pydot py4j==0.10.9.7
+RUN sudo rm -R /tmp/proxygen
+# CMD sleep infinity
+
+COPY run_fuzzing.sh /run_fuzzing.sh
+RUN chmod +x /run_fuzzing.sh
+
+ENTRYPOINT ["/run_fuzzing.sh"]
+
+# fuzz all 3 different timeout settings
+# CMD \
+#     setsid python3 learner.py -s $SERVER_NAME --config $CONFIG -i $INPUT_TEMP -p $LEARNER_PORT_TEMP -t $SERVER_PORT_TEMP -c $CLIENT_CERT -k $CLIENT_KEY --docker -r "$SERVER_PATH/hq -port=$SERVER_PORT_TEMP -h2port=$H2_SERVER_PORT_TEMP -mode=server -host=0.0.0.0 -key=$SERVER_KEY -cert=$SERVER_CERT -protocol=hq-interop -connect_udp=true -threads=2 -client_auth_mode=$CLIENT_AUTH" > run/learner_${SERVER_NAME}_${INPUT_TEMP}_${LEARNER_PORT_TEMP}.log 2>&1 && \
+#     setsid python3 learner.py -s $SERVER_NAME --config $CONFIG -i $INPUT_SHORT -p $LEARNER_PORT_SHORT -t $SERVER_PORT_SHORT -c $CLIENT_CERT -k $CLIENT_KEY --docker -r "$SERVER_PATH/hq -port=$SERVER_PORT_SHORT -h2port=$H2_SERVER_PORT_SHORT -mode=server -host=0.0.0.0 -key=$SERVER_KEY -cert=$SERVER_CERT -protocol=hq-interop -connect_udp=true -threads=2 -client_auth_mode=$CLIENT_AUTH" > run/learner_${SERVER_NAME}_${INPUT_SHORT}_${LEARNER_PORT_SHORT}.log 2>&1 && \
+#     setsid python3 learner.py -s $SERVER_NAME --config $CONFIG -i $INPUT_LONG -p $LEARNER_PORT_LONG -t $SERVER_PORT_LONG -c $CLIENT_CERT -k $CLIENT_KEY --docker -r "$SERVER_PATH/hq -port=$SERVER_PORT_LONG -h2port=$H2_SERVER_PORT_LONG -mode=server -host=0.0.0.0 -key=$SERVER_KEY -cert=$SERVER_CERT -protocol=hq-interop -connect_udp=true -threads=2 -client_auth_mode=$CLIENT_AUTH" > run/learner_${SERVER_NAME}_${INPUT_LONG}_${LEARNER_PORT_LONG}.log 2>&1

@@ -121,7 +121,7 @@ services:
       - INPUT_LONG=PSK-l
 
       - CONFIG=PSK
-      - RETRY=
+      - RETRY=--noRetry
       - LEARN_LIB=--learnlib
       - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
       - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem

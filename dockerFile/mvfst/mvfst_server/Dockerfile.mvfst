@@ -1,0 +1,116 @@
+FROM ubuntu:20.04
+RUN DEBIAN_FRONTEND=noninteractive apt update -y  --fix-missing && apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y git \
+                                                g++ \
+                                                clang \
+                                                python3 \
+                                                pkg-config \
+                                                sudo \
+                                                wget \
+                                                libssl-dev
+WORKDIR /tmp
+RUN git clone --branch v2023.09.18.00 https://github.com/facebook/proxygen.git proxygen
+WORKDIR /tmp/proxygen
+RUN sudo ./build/fbcode_builder/getdeps.py install-system-deps --recursive --install-prefix=$(pwd)/_build proxygen
+# Fetch ninja
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests ninja
+# Fetch cmake
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests cmake
+# Fetch zlib
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests zlib
+# Fetch zstd
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests zstd
+# Fetch boost
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests boost
+# Fetch double-conversion
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests double-conversion
+# Fetch fmt
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests fmt
+# Fetch gflags
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests gflags
+# Fetch glog
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests glog
+# Fetch googletest
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests googletest
+# Fetch libevent
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests libevent
+# Fetch lz4
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests lz4
+# Fetch snappy
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests snappy
+# Fetch autoconf
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests autoconf
+# Fetch automake
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests automake
+# Fetch libtool
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests libtool
+# Fetch gperf
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests gperf
+# Fetch libsodium
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests libsodium
+# Fetch xz
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests xz
+# Fetch folly
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests folly
+# Fetch fizz
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests fizz
+# Fetch mvfst
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests mvfst
+# Fetch wangle
+RUN python3 build/fbcode_builder/getdeps.py fetch --no-tests wangle
+# Build ninja
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests ninja
+# Build cmake
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests cmake
+# Build zlib
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests zlib
+# Build zstd
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests zstd
+# Build boost
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests boost
+# Build double-conversion
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests double-conversion
+# Build fmt
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests fmt
+# Build gflags
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests gflags
+# Build glog
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests glog
+# Build googletest
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests googletest
+# Build libevent
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests libevent
+# Build lz4
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests lz4
+# Build snappy
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests snappy
+# Build autoconf
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests autoconf
+# Build automake
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests automake
+# Build libtool
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests libtool
+# Build gperf
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests gperf
+# Build libsodium
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests libsodium
+# Build xz
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests xz
+# Build folly
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests folly
+# Build fizz
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests fizz
+# Build mvfst
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests mvfst
+# Build wangle
+RUN python3 build/fbcode_builder/getdeps.py build --no-tests wangle
+# Build proxygen
+RUN python3 build/fbcode_builder/getdeps.py build --src-dir=. proxygen  --project-install-prefix proxygen:/usr/local
+# Cleanup
+# WORKDIR /tmp/fbcode_builder_getdeps-ZtmpZmvfstZbuildZfbcode_builder-root/build/mvfst/quic/samples
+
+RUN sudo rm -R /tmp/proxygen
+# CMD sleep infinity
+
+# this command run mvfst server only
+CMD $SERVER_DIR/hq -port=$SERVER_PORT -h2port=$H2_SERVER_PORT -mode=server -host=0.0.0.0 -key=$SERVER_KEY -cert=$SERVER_CERT -protocol=hq-interop -connect_udp=true -threads=1 && sleep infinity 

@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+
+  # Facebook Move Fast
+  mvfst:
+    image: mrverb/mvfst:v2023.09.18.00
+    container_name: mvfst_server
+    build:
+       context: .
+       dockerfile: Dockerfile.mvfst
+    environment:
+      - SERVER_PORT=4452
+      - H2_SERVER_PORT=4488
+      - SERVER_CERT=/tmp/secrets/serverCert/server-cert.pem
+      - SERVER_KEY=/tmp/secrets/serverCert/server-key.pem
+      - SERVER_NAME=mvfst
+      - SERVER_DIR=/tmp/fbcode_builder_getdeps-ZtmpZproxygenZbuildZfbcode_builder-root/build/proxygen/proxygen/httpserver
+    ports:
+      - "4452:4452"
+      - "4488:4488"
+    volumes:
+      - ../../../secrets/:/tmp/secrets/
+    network_mode: "host"

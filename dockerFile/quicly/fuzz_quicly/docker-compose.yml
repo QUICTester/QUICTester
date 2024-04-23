@@ -108,16 +108,16 @@ services:
        context: .
        dockerfile: Dockerfile.quicly
     environment:
-      - LEARNER_PORT_TEMP=3383
-      - SERVER_PORT_TEMP=4483
+      - LEARNER_PORT_TEMP=3379
+      - SERVER_PORT_TEMP=4479
       - INPUT_TEMP=PSK
 
-      - LEARNER_PORT_SHORT=5583
-      - SERVER_PORT_SHORT=6683
+      - LEARNER_PORT_SHORT=5579
+      - SERVER_PORT_SHORT=6679
       - INPUT_SHORT=PSK-s
 
-      - LEARNER_PORT_LONG=7783
-      - SERVER_PORT_LONG=8883
+      - LEARNER_PORT_LONG=7779
+      - SERVER_PORT_LONG=8879
       - INPUT_LONG=PSK-l
 
       - CONFIG=PSK
@@ -128,20 +128,20 @@ services:
       - SERVER_NAME=quicly
       - SERVER_PATH=/tmp/quicly/cli
     ports:
-      - "3383:3383"
-      - "4483:4483"
-      - "13383:13383"
-      - "14483:14483"
+      - "3379:3379"
+      - "4479:4479"
+      - "13379:13379"
+      - "14479:14479"
 
-      - "5583:5583"
-      - "6683:6683"
-      - "15583:15583"
-      - "16683:16683"
+      - "5579:5579"
+      - "6679:6679"
+      - "15579:15579"
+      - "16679:16679"
 
-      - "7783:7783"
-      - "8883:8883"
-      - "17783:17783"
-      - "18883:18883"
+      - "7779:7779"
+      - "8879:8879"
+      - "17779:17779"
+      - "18879:18879"
     volumes:
       - ../../../learnlib-py4j-example/:/tmp/learnlib-py4j-example/
       - ../../../quicLearner/:/tmp/quicLearner/
