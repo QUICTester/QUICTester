@@ -6,5 +6,8 @@ The server does not include the active\_connection\_id\_limit in its transport p
 ## Impacted Servers & Versions
 PQUIC (Tested on commit 841c8228)
 
+## Fixed Version
+This bug was fixed in commit [5bde5bb](https://github.com/p-quic/pquic/commit/5bde5bb5534ae3fc233547b2db88f418fceff170).
+
 ## Input Sequence
 [Input.INITIAL_CLIENT_HELLO_VALID_ACK, Input.HANDSHAKE_FINISHED, Input.INVALID_NEW_CONNECTION_ID]

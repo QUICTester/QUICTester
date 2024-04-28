@@ -1,4 +1,4 @@
-# Bugs Found
+# 🐛 Bugs Found
 
 | Bug ID | Server | Description | Details |
 | :----- | :----- | :---------- | :------------- |
@@ -11,7 +11,7 @@
 | QT7    | Picoquic (d2f01093) | Specification violation: Retry token tied to retry_source_connection_id. | [Click for more info](bugDetails/QT7.md) |
 | QT8    | PQUIC (841c8228) | Specification violation: Invalid original_destination_connection_id. | [Click for more info](bugDetails/QT8.md) |
 | QT9    | PQUIC (841c8228) | Specification violation: Limitless active_connection_id_limit. | [Click for more info](bugDetails/QT9.md) |
-| QT10   | PQUIC (841c8228) | Specification violation: Retention of the unused encryption keys. | [Click for more info](bugDetails/QT10.md) |
+| QT10   | PQUIC (841c8228) | Specification violation ([CVE-2024-25679](https://nvd.nist.gov/vuln/detail/CVE-2024-25679)): Retention of the unused encryption keys. | [Click for more info](bugDetails/QT10.md) |
 | QT11   | Quiche (24a959ab) | Specification violation: Client authentication bypass using an empty certificate. | [Click for more info](bugDetails/QT11.md) |
 | QT12   | Quiche4j (ea5effce) | Memory-corruption bug: Concurrent modification exception. | [Click for more info](bugDetails/QT12.md) |
 | QT13   | Quiche4j (ea5effce) | Specification violation: Limitless active_connection_id_limit. | [Click for more info](bugDetails/QT13.md) |
@@ -26,7 +26,7 @@
 | QT22 - QT29   | Aioquic, LSQUIC, Neqo, Quic-go, Quinn, Quiwi, S2n-quic, XQUIC | Specification violation: Only discard the first Initial packets carried in a UDP datagram with a payload size smaller than the minimum allowed maximum datagram size of 1200 bytes. | [Click for more info](bugDetails/QT22-29.md) |
 | QT30   | LSQuic (1b113d19) | Specification violation: Accepts Handshake packet from an unmatched Destination Connection ID after the handshake is complete. | [Click for more info](bugDetails/QT30.md) |
 | QT31 - QT38   | Kwik, MsQuic, Quant, Quiche, Quic-go, Quiche4j, Quiwi, S2n-quic | Specification violation: Accept Handshake packet from an unmatched Destination Connection ID until the handshake is complete. | [Click for more info](bugDetails/QT31-38.md) |
-| QT39   | Quinn (4395b969 & 0af891e0) | Memory-corruption bug: Unwrap() a None value when processing an unexpected frame. | [Click for more info](bugDetails/QT39.md) |
+| QT39   | Quinn (4395b969 & 0af891e0) | Memory-corruption bug ([CVE-2023-42805](https://nvd.nist.gov/vuln/detail/CVE-2023-42805)): Unwrap() a None value when processing an unexpected frame. | [Click for more info](bugDetails/QT39.md) |
 | QT40   | PQUIC (841c8228) | Memory-corruption bug:  Buffer overflow when processing frame type 0x30. | [Click for more info](bugDetails/QT40.md) |
 | QT41   | PQUIC (841c8228) | Logic bug: Infinite loop when processing frame type 0xFF | [Click for more info](bugDetails/QT41.md) |
 | QT42   | Aioquic (239f99b8) | Specification violation: Accept Handshake packet from an unmatched Destination Connection ID. | [Click for more info](bugDetails/QT42.md) |
@@ -37,7 +37,7 @@
 | QT47   | XQUIC (00f62288) | Specification violation:  Does not close the connection when receiving a packet without a frame. | [Click for more info](bugDetails/QT47.md) |
 | QT48   | Kwik (745fd4e2) | Memory-corruption bug: Exceeds the operating system’s maximum number of memory map- pings for a single process (100,000) when receiving PING frame from 50,000 clients. | [Click for more info](bugDetails/QT48.md) |
 | QT49   | Kwik (745fd4e2) | Specification violation: Process CRYPTO frame in a 0-RTT packet. | [Click for more info](bugDetails/QT49.md) |
-| QT50   | Lsquic (1b113d19) | Specification violation: Retention of the unused encryption keys (PSK configuration). | [Click for more info](bugDetails/QT50.md) |
+| QT50   | Lsquic (1b113d19) | Specification violation ([CVE-2024-25678](https://nvd.nist.gov/vuln/detail/CVE-2024-25678)): Retention of the unused encryption keys (PSK configuration). | [Click for more info](bugDetails/QT50.md) |
 | QT51   | Lsquic (v4.0.2) | Logic bug: Incorrect handling of re-transmission, leaving a half-opening connection on the client side (PSK configuration). | [Click for more info](bugDetails/QT51.md) |
 | QT52   | PQUIC (841c8228) | Specification violation: Does not send HANDSHAKE_DONE after the handshake is confirmed (PSK configuration). | [Click for more info](bugDetails/QT52.md) |
 | QT53   | Quinn (4395b969 & 0af891e0) | Specification violation: Process CRYPTO frame in 0-RTT packet. |  [Click for more info](bugDetails/QT53.md) |

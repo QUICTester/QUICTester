@@ -6,5 +6,8 @@ The Neqo server in all configurations can only accept at most 32767 connections,
 ## Impacted Servers & Versions
 Neqo (Tested on commit aaabc1c1)
 
+## Fixed Version
+This bug has been fixed in [NSPR](https://bugzilla.mozilla.org/show_bug.cgi?id=1890927).
+
 ## Input Sequence
 [Input.INITIAL_CLIENT_HELLO_VALID_ACK] x 32768

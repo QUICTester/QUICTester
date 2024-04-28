@@ -1,10 +1,13 @@
 # QT7
 
 ## Bug Description
-Retry token tied to retry_source_connection_id
+Retry token tied to retry_source_connection_id.
 
 ## Impacted Servers & Versions
 Picoquic (Tested on commit d2f01093)
+
+## Fixed Version
+Developer stated the code was written specifically to add an additional constraint to ensure the client follows the specification. Fix: Propose an amendment to the QUIC specification to address the ambiguity.
 
 ## Input Sequence
 [Input.INITIAL_CLIENT_HELLO_VALID_ACK, Input.INCLUDE_RETRY_TOKEN, Input.INITIAL_PING, Input.INITIAL_CLIENT_HELLO_VALID_ACK]

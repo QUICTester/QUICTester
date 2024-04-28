@@ -6,5 +6,8 @@ Neqo server crashes when attempting to dereference a null pointer in cases where
 ## Impacted Servers & Versions
 Neqo (Tested on commit aaabc1c1)
 
+## Fixed Version
+This bug has been fixed in commit [ac51239](https://github.com/mozilla/neqo/pull/1814).
+
 ## Input Sequence
 [Input.INITIAL_CONNECTION_CLOSE]
