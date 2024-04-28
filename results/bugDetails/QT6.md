@@ -15,4 +15,4 @@ This bug was fixed in commit 4f695ac.
 ## Learned Model
 The learned model below illustrates the flow of this bug (highlighted in red colour).
 
-![Learned Model](resources/picoquicBWCA-s.pdf)
+![Learned Model](resources/picoquicBWCA.png)
