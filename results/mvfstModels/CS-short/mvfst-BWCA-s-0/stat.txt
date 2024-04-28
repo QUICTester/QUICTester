@@ -38,27 +38,18 @@ NewSessionTicket
 HndshkDone
 
 
-Date: 2024-01-03 18:33:26.824955
+Date: 2024-04-25 15:18:27.717028
 Input Dictionary: BWCA-s
 Target server port: 6688
 Mapper port: 5588
 -----------------------------------
-Learning Finished.
-Learning Rounds:  1
+TTT Algorithm
+Wp Method
+learning rounds [#]: 7
 Number of states: 8
-Time (in seconds)
-  Total                : 15378.72
-  Learning algorithm   : 9125.15
-  Conformance checking : 6253.57
-Learning Algorithm
- # Membership Queries  : 4232
- # MQ Saved by Caching : 23
- # Steps               : 15870
-Equivalence Query
- # Membership Queries  : 2919
- # Steps               : 20000
+Membership queries [Resets]: 11121
+Total Learning Time (hours): 6.785085165833333
 -----------------------------------
 Crash Count: 0
-7151
-35870
-4.27
+
+Crash Input Sequences: 

@@ -23,37 +23,28 @@ InvldNewConID_long
 
 
 Output Alphabets: 
-<ConClosed>
-
 ConClose
 initSvrHello
 hndEncExt
 hndFin
+
+<ConClosed>
 NewSessionTicket
 HndshkDone
 
 
-Date: 2024-01-03 18:12:53.524065
+Date: 2024-04-25 20:19:40.078396
 Input Dictionary: PSK-l
 Target server port: 8889
 Mapper port: 7789
 -----------------------------------
-Learning Finished.
-Learning Rounds:  1
+TTT Algorithm
+Wp Method
+learning rounds [#]: 6
 Number of states: 6
-Time (in seconds)
-  Total                : 17442.51
-  Learning algorithm   : 7749.37
-  Conformance checking : 9693.14
-Learning Algorithm
- # Membership Queries  : 2646
- # MQ Saved by Caching : 21
- # Steps               : 8379
-Equivalence Query
- # Membership Queries  : 2967
- # Steps               : 20000
+Membership queries [Resets]: 7460
+Total Learning Time (hours): 6.711069759722222
 -----------------------------------
 Crash Count: 0
-5613
-28379
-4.85
+
+Crash Input Sequences: 
