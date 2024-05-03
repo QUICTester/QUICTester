@@ -16,7 +16,7 @@ The fuzzing process will consume many resources. To ensure OS limits don't inter
 | findND      | Program that can reproduce and record any non-deterministic behaviour detected during learning. | 
 | quicLearner | Source code for the Learner and results from the fuzzing.   | 
 | quicMapper  | Source code for the Mapper, config file (inOutput.py) for the Learner and Mapper. |
-| results     | Implementations tested, result tables and descriptions of faults found |
+| results     | Faults summary with descriptions. |
 | scripts     | Tools for automated analysis task. |
 | secrets     | Certificate of CA, server and client; mapperSecrets.log for Wireshark decryption. |
 <br/>
