@@ -1,7 +1,7 @@
 # QT1 ([CVE-2024-22588](https://nvd.nist.gov/vuln/detail/CVE-2024-22588))
 
 ## Bug Description
-Once a key is created for an encryption level, the Kwik server will continue decrypting and processing packets from that encryption level, even after moving to a new encryption level. This allows attackers to disrupt a connection with a PSK configuration by sending a CONNECTION_CLOSE frame that is encrypted via the initial key computed. Network traffic sniffing is needed as part of exploitation.
+Once a key is created for an encryption level, the Kwik server will continue decrypting and processing packets from that encryption level, even after moving to a new encryption level. This allows attackers to disrupt a connection by sending a CONNECTION_CLOSE frame that is encrypted via the initial key computed. Network traffic sniffing is needed as part of exploitation.
 
 ## Impacted Servers & Versions
 Kwik (Tested on commit 745fd4e2)
