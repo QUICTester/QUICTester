@@ -2,7 +2,7 @@
 
 | Bug ID | Server | Description | Details |
 | :----- | :----- | :---------- | :------------- |
-| QT1    | Kwik (745fd4e2) | Specification violation: Retention of the unused encryption keys. | [Click for more info](bugDetails/QT1.md) |
+| QT1    | Kwik (745fd4e2) | Specification violation ([CVE-2024-22588](https://nvd.nist.gov/vuln/detail/CVE-2024-22588)): Retention of the unused encryption keys. | [Click for more info](bugDetails/QT1.md) |
 | QT2    | Kwik (745fd4e2) | Specification violation: Implementation without a state machine that enable overwriting of the client's transport parameters and cryptographic information. | [Click for more info](bugDetails/QT2.md) |
 | QT3    | MsQuic (5c070cdc) | Specification violation: Does not issue its initial_source_connection_id at the correct connection state. | [Click for more info](bugDetails/QT3.md) |
 | QT4    | Neqo (aaabc1c1) | Memory-corruption bug: NULL pointer dereference at ```neqo-transport/src/path.rs:147``` when trying to get the primary path that is not initialized yet. | [Click for more info](bugDetails/QT4.md) |
