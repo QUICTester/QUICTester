@@ -1,7 +1,12 @@
 # 👾 QUICTESTER: Blackbox Protocol Fuzzer for QUIC Servers
 Learning-based fuzzing consists of 3 components, the Learner, Mapper and SUT (QUIC server under test). <br/>
 Development and testing performed on Ubuntu 20.04 with Python3.8. <br/>
-We have identified 55 faults, with 4 CVEs assigned: [CVE-2023-42805](https://nvd.nist.gov/vuln/detail/CVE-2023-42805), [CVE-2024-25679](https://nvd.nist.gov/vuln/detail/CVE-2024-25679), [CVE-2024-25678](https://nvd.nist.gov/vuln/detail/CVE-2024-25678), [CVE-2024-22588](https://nvd.nist.gov/vuln/detail/CVE-2024-22588).
+We have identified 55 faults, with 5 CVEs assigned: 
+- [CVE-2023-42805](https://nvd.nist.gov/vuln/detail/CVE-2023-42805)
+- [CVE-2024-25679](https://nvd.nist.gov/vuln/detail/CVE-2024-25679)
+- [CVE-2024-25678](https://nvd.nist.gov/vuln/detail/CVE-2024-25678)
+- [CVE-2024-22588](https://nvd.nist.gov/vuln/detail/CVE-2024-22588)
+- [CVE-2024-22590](https://nvd.nist.gov/vuln/detail/CVE-2024-22590)
 
 The fuzzing process will consume many resources. To ensure OS limits don't interfere, consider doing the following:
 - add ```ulimit -n 65536``` to .bashrc<br/>
