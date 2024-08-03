@@ -1,4 +1,4 @@
-# 👾 QUICTESTER: Blackbox Protocol Fuzzer for QUIC Servers
+# 👾 QUICTESTER: Blackbox Noncompliance Checking of QUIC Server Implementations
 Learning-based fuzzing consists of 3 components, the Learner, Mapper and SUT (QUIC server under test). <br/>
 Development and testing performed on Ubuntu 20.04 with Python3.8. <br/>
 We have identified 55 faults, with 5 CVEs assigned: 
