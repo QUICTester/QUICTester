@@ -1,5 +1,5 @@
 # 👾 QUICTESTER: Blackbox Noncompliance Checking of QUIC Server Implementations
-Learning-based tester consists of 3 components, the Learner, Mapper and SUT (QUIC server under test). <br/>
+Learning-based tester consists of 3 components, the Learner, Mapper and QUT (QUIC server under test). <br/>
 Development and testing performed on Ubuntu 20.04 with Python3.8. <br/>
 We have identified 55 faults, with 5 CVEs assigned: 
 - [CVE-2023-42805](https://nvd.nist.gov/vuln/detail/CVE-2023-42805)
