@@ -1,5 +1,5 @@
 # 👾 QUICTESTER: Blackbox Noncompliance Checking of QUIC Server Implementations
-Learning-based fuzzing consists of 3 components, the Learner, Mapper and SUT (QUIC server under test). <br/>
+Learning-based tester consists of 3 components, the Learner, Mapper and SUT (QUIC server under test). <br/>
 Development and testing performed on Ubuntu 20.04 with Python3.8. <br/>
 We have identified 55 faults, with 5 CVEs assigned: 
 - [CVE-2023-42805](https://nvd.nist.gov/vuln/detail/CVE-2023-42805)
@@ -8,7 +8,7 @@ We have identified 55 faults, with 5 CVEs assigned:
 - [CVE-2024-22588](https://nvd.nist.gov/vuln/detail/CVE-2024-22588)
 - [CVE-2024-22590](https://nvd.nist.gov/vuln/detail/CVE-2024-22590)
 
-The fuzzing process will consume many resources. To ensure OS limits don't interfere, consider doing the following:
+The testing process will consume many resources. To ensure OS limits don't interfere, consider doing the following:
 - add ```ulimit -n 65536``` to .bashrc<br/>
 - add ```ulimit -s 16384``` to .bashrc<br/>
 - add ```vm.max_map_count=100000``` in ```/etc/sysctl.conf``` and run ```sysctl -p```
@@ -17,9 +17,9 @@ The fuzzing process will consume many resources. To ensure OS limits don't inter
 ## 📂 Repository Organisation and Documentations
 | Directory   | Description |
 | :--------   | :--------   |
-| dockerFile  | Docker files to fuzz all 19 QUIC implementations (with all security configurations). | 
+| dockerFile  | Docker files to test all 19 QUIC implementations (with all security configurations). | 
 | findND      | Program that can reproduce and record any non-deterministic behaviour detected during learning. | 
-| quicLearner | Source code for the Learner and results from the fuzzing.   | 
+| quicLearner | Source code for the Learner, and temporary results generated during the testing process.   | 
 | quicMapper  | Source code for the Mapper, config file (inOutput.py) for the Learner and Mapper. |
 | results     | Faults summary with descriptions. |
 | scripts     | Tools for automated analysis task. |
@@ -55,7 +55,7 @@ cd ..
 ### 📖 Mapper Help Menu (Usage)
 |  Arguments  | Description |
 | :--------   | :--------   |
-| &#8209;&#8209;sequence  | Only fuzz a list of input sequence defined in mapper.py (for manual testing, optional) | 
+| &#8209;&#8209;sequence  | Only test a list of input sequence defined in mapper.py (for manual testing, optional) | 
 | -s / &#8209;&#8209;server   | Server to be tested (e.g., aioquic, google-quiche, kwik, lsquic, msquic, mvfst, neqo, ngtcp2, picoquic, pquic, quant, quiche, quiche4j, quic-go, quicly, quinn, quiwi, s2n-quic, xquic). | 
 | &#8209;&#8209;cipher  | Cipher suite to use (e.g., AES_128_GCM_SHA256, AES_256_GCM_SHA384, CHACHA20_POLY1305_SHA256). |
 | -p / &#8209;&#8209;port     | Mapper port (e.g., 5544). |
@@ -70,7 +70,7 @@ cd ..
 | &#8209;&#8209;secrets     | File to store the QUIC secrets (file, optional). The TLS decryption keys for Wireshark are available in secrets/mapperSecrets.log |
 | &#8209;&#8209;log     | Store Aioquic library log in file (file, optional). |
 | -i / &#8209;&#8209;input | Dictionary that the Learner will use for fuzing (e.g., B ,BWR, BWCA, BWRCA) (for Learner).   | 
-| &#8209;&#8209;count | Fuzzing iteration count of the Learner (for Learner).   | 
+| &#8209;&#8209;count | Input sequence count of the Learner (for Learner).   | 
 
 ### Learner (quicLearner/)
 The Learner is built from [LearnLib](https://github.com/LearnLib/learnlib) and [AALpy](https://github.com/DES-Lab/AALpy). It generates abstract inputs and receives abstract output. It is responsible for learning and building the models for the tested QUIC server.
@@ -112,8 +112,8 @@ cd ..
 **Notes: The Mapper will use the default certificate and private key in [secrets](secrets/clientCert/).**
 <br/><br/>
 
-## 💻 Example (Fuzzing Aioquic: commit 239f99b8)
-The fuzzing can be either run inside Docker, or manually built and run. Docker files for fuzzing all 19 QUIC implementations are provided in [dockerFile](dockerFile/).
+## 💻 Example (Test Aioquic: commit 239f99b8)
+The  testing can be either run inside Docker, or manually built and run. Docker files for testing all 19 QUIC implementations are provided in [dockerFile](dockerFile/).
 
 ### "Quic" start via docker file (requires docker and at least 4 free CPU cores)
 ```bash 
@@ -122,7 +122,7 @@ sudo docker compose build --no-cache
 sudo docker compose up fuzz_aioquic_B
 ```
 
-### Manual Build and Fuzz
+### Manual Build and Test
 ```bash 
 mkdir quicServers
 cd quicServers
@@ -142,21 +142,21 @@ cd ../..
 
 # Run
 cd quicLearner
-# Fuzz Basic (default handshake) configuration with short timeout (use "-i B-l" for long timeout and "-i B" for mixed timeout)
+# Test Basic (default handshake) configuration with short timeout (use "-i B-l" for long timeout and "-i B" for mixed timeout)
 setsid env/bin/python3 learner.py -s aioquic --config B -i B-s -p 3341 -t 4431 --learnlib -r "../quicServers/aioquic/env/bin/python ../quicServers/aioquic/examples/http3_server.py --port 4431 --certificate ../secrets/serverCert/server-cert.pem --private-key ../secrets/serverCert/server-key.pem -l ../secrets/aioquicServer.log" > run/learner_aioquic_B-s_3341.log 2>&1 &
-# Fuzz Basic with Retry (handshake with client address validation) configuration with short timeout (use "-i BWR-l" for long timeout and "-i BWR" for mixed timeout)
+# Test Basic with Retry (handshake with client address validation) configuration with short timeout (use "-i BWR-l" for long timeout and "-i BWR" for mixed timeout)
 setsid env/bin/python3 learner.py -s aioquic --config BWR -i BWR-s -p 3342 -t 4432 --learnlib -r "../quicServers/aioquic/env/bin/python ../quicServers/aioquic/examples/http3_server.py --port 4432 --certificate ../secrets/serverCert/server-cert.pem --private-key ../secrets/serverCert/server-key.pem -l ../secrets/aioquicServer.log --retry" > run/learner_aioquic_BWR-s_3342.log 2>&1 &
 ```
 Decryption keys for Wireshark are in secrets/aioquicServer.log or secrets/mapperSecrets.log<br/>
 
 ### 📑 Results
-The results will be stored in the ```results/<serverName>Models/<serverName>-<serverConfig>-<inputDictionary>-<N>/``` directory after the fuzzing is completed. The fuzzing process typically lasts for several hours, or several days for some configurations.<br/>
+The results will be stored in the ```results/<serverName>Models/<serverName>-<serverConfig>-<inputDictionary>-<N>/``` directory after the testing is completed. The testing process typically lasts for several hours, or several days for some configurations.<br/>
 Files to analyse:
 - optimisedLearnedModel.pdf (tools are provided in ```scripts/```)
-- stat.txt (for information on server crashes during fuzzing)
+- stat.txt (for information on server crashes during testing)
 <br/><br/>
 
-## 🔧 Configurations needed to fuzz a new QUIC implementation
+## 🔧 Configurations needed to test a new QUIC implementation
 Currently, we support 19 QUIC implementations, to add new implementations, in [quicMapper/inOutPut.py](quicMapper/inOutPut.py):
 - Add the server name, short timeout and long timeout to the ```Server``` class.
 - Add the server name to the ```LIST``` in bottom of the ```Server``` class.
@@ -166,9 +166,9 @@ In [quicMapper/mapper.py](quicMapper/mapper.py):
 - Add the server to the ```startConfigureMapper()``` function.
 - For ```alpnProtocols```, ```allAlpn``` is used in default.
 
-Once these are set, QUICTester is ready to fuzz a new QUIC server. Have fun! <br/><br/>
+Once these are set, QUICTester is ready to test a new QUIC server. Have fun! <br/><br/>
 
-## 🔨 Extending the fuzzer / Adding new input to the fuzzer
+## 🔨 Extending QUICTester / Adding new input
 Modify [quicMapper/mapper.py](quicMapper/mapper.py) and any relevant code (e.g. [connection.py](quicMapper/src/aioquic/quic/connection.py)).<br/>
 Then, in [quicMapper/inOutPut.py](quicMapper/inOutPut.py):
 - Add the input symbol to ```Input``` class.
