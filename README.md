@@ -21,7 +21,7 @@ The testing process will consume many resources. To ensure OS limits don't inter
 | findND      | Program that can reproduce and record any non-deterministic behaviour detected during learning. | 
 | quicLearner | Source code for the Learner, and temporary results generated during the testing process.   | 
 | quicMapper  | Source code for the Mapper, config file (inOutput.py) for the Learner and Mapper. |
-| results     | Faults summary with descriptions. |
+| results     | ***Description of all faults with input sequences for reproducing the fault.*** |
 | scripts     | Tools for automated analysis task. |
 | secrets     | Certificate of CA, server and client; mapperSecrets.log for Wireshark decryption. |
 <br/>
