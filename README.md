@@ -1,8 +1,9 @@
 # 👾 QUICTESTER
 
-Code release for [An Automated Blackbox Noncompliance Checker for QUIC Server Implementations](https://arxiv.org/pdf/2505.12690).
+Code release for [An Automated Blackbox Noncompliance Checker for QUIC Server Implementations](https://arxiv.org/abs/2505.12690).
 
-<a href="https://arxiv.org/pdf/2505.12690"><img alt="Paper preview" align="right" width="266" src="preview.png"></a>
+<a href="https://arxiv.org/abs/2505.12690"><img alt="Paper preview" align="right" width="266" src="preview.png"></a>
+
 
 QUICTester is a learning-based tester consists of 3 components, the Learner, Mapper and QUT (QUIC server under test). Its development and testing are performed on Ubuntu 20.04 with Python3.8. <br/>
 
