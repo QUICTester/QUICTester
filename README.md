@@ -5,7 +5,8 @@ Code release for [An Automated Blackbox Noncompliance Checker for QUIC Server Im
 <a href="https://arxiv.org/abs/2505.12690"><img alt="Paper preview" align="right" width="266" src="preview.png"></a>
 
 
-QUICTester is a learning-based tester consists of 3 components, the Learner, Mapper and QUT (QUIC server under test). Its development and testing are performed on Ubuntu 20.04 with Python3.8. <br/>
+This is a learning-based tester consists of 3 components, the Learner, Mapper and QUT (QUIC server under test). </br>
+Its development and testing are performed on Ubuntu 20.04 with Python3.8. <br/>
 
 In total, We have identified 55 faults, with 5 CVEs assigned: 
 - [CVE-2023-42805](https://nvd.nist.gov/vuln/detail/CVE-2023-42805)
