@@ -185,4 +185,15 @@ Then, in [quicMapper/inOutPut.py](quicMapper/inOutPut.py):
 - Map the input dictionary string to the input dictionary in [quicLearner/learner.py](quicLearner/learner.py):main().
 <br/>
 
+### Cite QUICTester as:
+
+```
+@inproceedings{quictester2025,
+    title={An Automated Blackbox Noncompliance Checker for {QUIC} Server Implementations},
+    author={Ang, Kian Kai and Farrelly, Guy and Pope, Cheryl and Ranasinghe, Damith C.},
+    booktitle={Asia Conference on Computer and Communications Security (AsiaCCS)},
+    year={2025}
+}
+```
+
 <hr/>
